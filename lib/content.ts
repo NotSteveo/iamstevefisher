@@ -61,7 +61,35 @@ function withHref(card: WorkCard): WorkCard {
   return card.href ? card : { ...card, href: `/work/${card.slug}` };
 }
 
-export const home = content.home;
+function normalize(s: string): string {
+  return s.toLowerCase().replace(/[^a-z0-9]+/g, "");
+}
+
+/**
+ * A few crawled "featured work" cards are missing `coverImage` even though
+ * the matching image exists in the page's `images` list (e.g. home's LEAP
+ * 2026 and Web refresh cards). Backfill by matching the card title against
+ * each image's context string.
+ */
+function backfillFeaturedWorkImages(page: PageContent): PageContent {
+  const sections = page.sections.map((section) => {
+    if (section.type !== "featured work" || !section.projects) return section;
+    const projects = section.projects.map((p) => {
+      if (p.coverImage) return p;
+      const normTitle = normalize(p.title);
+      const match = page.images.find((img) => {
+        if (!img.context) return false;
+        const normContext = normalize(img.context);
+        return normContext.includes(normTitle) || normTitle.includes(normContext);
+      });
+      return match ? { ...p, coverImage: match.url } : p;
+    });
+    return { ...section, projects };
+  });
+  return { ...page, sections };
+}
+
+export const home = backfillFeaturedWorkImages(content.home);
 export const workIndex: WorkIndexContent = {
   ...content.work_index,
   projects: content.work_index.projects.map(withHref),
