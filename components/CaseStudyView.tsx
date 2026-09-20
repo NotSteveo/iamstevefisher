@@ -56,11 +56,11 @@ export default function CaseStudyView({ study }: { study: CaseStudy }) {
         </div>
 
         {study.heroVideo ? (
-          <div className={`wrap ${styles.heroMedia}`}>
-            <CaseStudyVideo video={study.heroVideo} />
+          <div className={styles.heroMedia}>
+            <CaseStudyVideo video={study.heroVideo} rounded={false} />
           </div>
         ) : study.heroImage ? (
-          <div className={`wrap ${styles.heroMedia}`}>
+          <div className={styles.heroMedia}>
             <div className={styles.heroImageWrap}>
               <Image
                 src={asset(study.heroImage.url)}

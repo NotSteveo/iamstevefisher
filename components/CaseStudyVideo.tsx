@@ -2,10 +2,16 @@ import { asset } from "@/lib/assets";
 import type { VideoRef } from "@/lib/content";
 import styles from "./CaseStudyVideo.module.css";
 
-export default function CaseStudyVideo({ video }: { video: VideoRef }) {
+export default function CaseStudyVideo({
+  video,
+  rounded = true,
+}: {
+  video: VideoRef;
+  rounded?: boolean;
+}) {
   if (video.type.includes("iframe embed") && video.src) {
     return (
-      <div className={styles.embedWrap}>
+      <div className={`${styles.embedWrap} ${rounded ? styles.rounded : ""}`}>
         <iframe
           className={styles.embed}
           src={video.src}
@@ -21,7 +27,7 @@ export default function CaseStudyVideo({ video }: { video: VideoRef }) {
 
   return (
     <video
-      className={styles.video}
+      className={`${styles.video} ${rounded ? styles.rounded : ""}`}
       src={asset(video.mp4)}
       poster={video.poster ? asset(video.poster) : undefined}
       autoPlay

@@ -61,7 +61,10 @@ export function buildCaseStudy(page: WorkPageContent): CaseStudy {
   if (heroImage) images.splice(images.indexOf(heroImage), 1);
 
   const heroVideoIdx = videos.findIndex((v) => /hero|intro/i.test(v.context ?? ""));
-  const heroVideo = heroVideoIdx >= 0 ? videos[heroVideoIdx] : undefined;
+  // A page with only one video (no keyword match needed) — treat it as the hero
+  // rather than burying it in a half-width section grid cell.
+  const heroVideo =
+    heroVideoIdx >= 0 ? videos[heroVideoIdx] : videos.length === 1 ? videos[0] : undefined;
   if (heroVideo) videos.splice(videos.indexOf(heroVideo), 1);
 
   const caseSections: CaseStudySection[] = [];
