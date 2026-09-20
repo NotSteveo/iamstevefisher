@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Steve Fisher — Portfolio
 
-## Getting Started
+A local, self-hosted rebuild of [i-am-steve-fisher-bd14e5.webflow.io](https://i-am-steve-fisher-bd14e5.webflow.io/), built with Next.js (App Router) and hand-written CSS instead of Webflow's generated markup. Content, images, and video were pulled from the live Webflow site and are stored locally in this repo.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/` — routes (home, `/work`, `/work/[slug]`, `/about-us`, `/contact`, `/ai-musings`, `/ai-musings/[slug]`)
+- `components/` — shared UI (Navbar, ContactSection/ContactForm, WorkCard, case study renderer, etc.)
+- `lib/content.ts` — typed accessors over `data/content.json`, the crawled site content
+- `lib/caseStudy.ts` — groups a case study's flat section/image/video list into renderable blocks
+- `lib/assets.ts` + `lib/asset-map.json` — maps original Webflow CDN URLs to the local files in `public/images` and `public/videos`
+- `data/content.json` — structured content pulled from the live site (text, image URLs, video sources)
+- `scripts/download-assets.py` — one-off script that downloaded every referenced image/video into `public/` and generated `lib/asset-map.json`. Safe to re-run if `data/content.json` changes; safe to delete otherwise.
 
-## Learn More
+## Known content quirks (carried over faithfully from the live site)
 
-To learn more about Next.js, take a look at the following resources:
+- The homepage's "LEAP 2026" and "Web refresh" featured cards both link to `/work/quantum-metric-web-design` — there's no separate LEAP 2026 page on the live site either.
+- Both AI Musings index cards ("howtobrandai.com" and "Locksmith - After Effects plugin") link to the same `/ai-musings/how-to-brand-ai` post.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contact form
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`components/ContactForm.tsx` posts to `app/api/contact/route.ts`, which currently just validates and logs the submission — **it does not send email yet**. Wire it up to a real provider (e.g. [Resend](https://resend.com), Postmark, or a webhook) before relying on it in production.
 
-## Deploy on Vercel
+## Deploying
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Push to GitHub and import the repo on [Vercel](https://vercel.com/new) — no special configuration needed. Note that `public/videos` is ~70MB and `public/images` ~30MB; both are checked into git since they're static, immutable assets.

@@ -1,13 +1,35 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --black-900: #0c0407;
+  --black-800: #333;
+  --black-700: #4c4c4c;
+  --black-600: #666;
+  --black-400: #999;
+  --black-300: #b3b3b3;
+  --black-200: #ccc;
+  --black-100: #e5e5e5;
+  --black-50: #f9f9f9;
+  --white: #fff;
+  --black: #000;
+
+  --hero-ink: #272e2a;
+  --footer-bg: #f6f7f6;
+  --border-line: #e0e0e0;
+
+  --gradient-brand: linear-gradient(135deg, #188782, #40bf7f);
+  --gradient-brand-hover: linear-gradient(135deg, #249ac2, #4dcca6);
+
+  --font-body: var(--font-inter), Arial, sans-serif;
+  --font-display: var(--font-outfit), var(--font-inter), sans-serif;
+  --font-mono: var(--font-overpass-mono), monospace;
+
+  --container-width: 1200px;
+  --gutter: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
@@ -24,17 +46,14 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--black-800);
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.32px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 a {
@@ -42,8 +61,38 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  margin: 0;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--black-600);
 }

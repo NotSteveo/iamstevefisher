@@ -1,0 +1,682 @@
+{
+  "meta": {
+    "source": "https://i-am-steve-fisher-bd14e5.webflow.io/",
+    "crawledPages": 17,
+    "notes": [
+      "Video embeds are NOT Wistia despite Webflow injecting leftover 'wistia_*_style' <style> tags globally on every page (these are unused font-face styles from Webflow's own player library, not actual Wistia embeds). Actual video technologies found: (1) native HTML5 <video>/<source> background videos hosted on Webflow's CDN (used throughout the Quantum Metric case studies), (2) Vimeo iframe embeds (used on the Adobe Experience Cloud Workfront Digital Collaboration page), (3) one YouTube iframe embed (CBS Ghosts page). No wistia.com embeds were found on any crawled page.",
+      "Home page 'Featured Work' section has two cards - 'Quantum Metric | LEAP 2026' and 'Quantum Metric | Web refresh' - that both link to /work/quantum-metric-web-design (there is no separate LEAP 2026 case study page). Apparent site/CMS bug.",
+      "AI Musings index has two cards - 'howtobrandai.com' and 'Locksmith - After Effects plugin' - both linking to the exact same slug /ai-musings/how-to-brand-ai. Verified via actual href inspection. There is no distinct Locksmith post; the how-to-brand-ai page only contains content about howtobrandai.com. Apparent site/CMS bug - captured as a single page.",
+      "On /work/quantum-metric-web-design the visible link text 'quantummetric.com' has an href of '#' (broken/placeholder link), not an actual external URL.",
+      "On /work/adobe-experience-cloud-workfront-digital-collaboration the two Vimeo iframes both carry the title attribute 'Adobe Workfront CKO 2021' (mislabeled/leftover from another project's embed code) despite being on the Digital Collaboration project page.",
+      "All 17 target pages loaded successfully with no 404s or broken layouts observed."
+    ]
+  },
+
+  "home": {
+    "title": "I am Steve Fisher - Art Direction, Motion Design, Web Design, and more.",
+    "metaDescription": "I'm Steve Fisher — a senior art director working at the intersection of brand, motion, and product design. I've spent the last decade helping SaaS companies tell better stories, build stronger brands, and create smarter digital experiences.From full brand refreshes to conference visuals, video content, and web experience, I focus on work that's thoughtful, strategic, and built to last.",
+    "nav": [
+      {"label": "Work", "href": "/work"},
+      {"label": "AI Musings", "href": "/ai-musings"},
+      {"label": "About", "href": "/about-us"},
+      {"label": "Get in touch", "href": "/contact"}
+    ],
+    "sections": [
+      {
+        "type": "hero",
+        "text": [
+          "I am Steve Fisher.",
+          "Creative Director",
+          "Web Design",
+          "Motion",
+          "3d",
+          "I'm Steve Fisher, a creative director working at the intersection of brand and AI. I've spent over the last decade helping SaaS companies tell better stories, build stronger brands, and create smarter digital experiences.",
+          "Currently @ Quantum Metric / Creative Director / Remote"
+        ]
+      },
+      {
+        "type": "featured work",
+        "sectionTitle": "Featured Work",
+        "projects": [
+          {"title": "Quantum Metric | LEAP 2026", "href": "/work/quantum-metric-web-design", "tags": ["Conference", "Branding", "Motion"], "note": "links to quantum-metric-web-design slug, no dedicated LEAP 2026 page exists"},
+          {"title": "Quantum Metric | Web refresh", "href": "/work/quantum-metric-web-design", "tags": ["Web Design", "Branding"]},
+          {"title": "Quantum Metric | LEAP 2025", "href": "/work/quantum-metric-leap-2025", "tags": ["Conference", "Branding", "Motion"], "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fde03b992ac97eb609593f_LEAP-25_cover.jpg"},
+          {"title": "Quantum Metric | LEAP 2023", "href": "/work/quantum-metric-leap-2023", "tags": ["Conference", "Branding", "Motion"], "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fde787ef02c0c15b3b018d_leap-23_hero.png"},
+          {"title": "Quantum Metric | Felix AI", "href": "/work/quantum-metric-felix-ai-campaign", "tags": ["Branding", "3d", "Web Design"], "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fee028b108162036a2cdaf_Felix-AI_cover.jpg"},
+          {"title": "Quantum Metric | Peak Benchmark Report", "href": "/work/quantum-metric-peak-benchmark-report", "tags": ["Web Design", "3d"]}
+        ]
+      },
+      {
+        "type": "contact form",
+        "text": ["Don't leave me on read.", "Say hello.", "Name", "Email", "Your Message", "OR setup an appointment on Google Meet.", "Book an appointment"]
+      },
+      {
+        "type": "footer",
+        "text": ["© 2025 Fisher Creative. All Rights Reserved"]
+      }
+    ],
+    "images": [
+      {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f7352279e869460db99121_sego.svg", "context": "site logo (nav)"},
+      {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/69b46e7c5762c78ae2c8c798_LEAP-26_cover.jpg", "context": "featured work card - Quantum Metric LEAP 2026"},
+      {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b846f33eec1676153787a6_QM.png", "context": "featured work card - Quantum Metric Web refresh"},
+      {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fde03b992ac97eb609593f_LEAP-25_cover.jpg", "context": "featured work card - Quantum Metric LEAP 2025"},
+      {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fde787ef02c0c15b3b018d_leap-23_hero.png", "context": "featured work card - Quantum Metric LEAP 2023"},
+      {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fee028b108162036a2cdaf_Felix-AI_cover.jpg", "context": "featured work card - Quantum Metric Felix AI"}
+    ],
+    "videos": []
+  },
+
+  "work_index": {
+    "title": "I am Steve Fisher - Work",
+    "metaDescription": "This is the graphic design work of Steve Fisher.",
+    "sections": [
+      {"type": "section title", "text": "Work"}
+    ],
+    "categories": ["All projects", "Web Design", "Motion", "Branding", "Conference", "3d"],
+    "projects": [
+      {
+        "slug": "quantum-metric-leap-2025",
+        "title": "Quantum Metric | LEAP 2025",
+        "tags": ["Conference", "Branding", "Motion"],
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fde03b992ac97eb609593f_LEAP-25_cover.jpg"
+      },
+      {
+        "slug": "quantum-metric-leap-2024",
+        "title": "Quantum Metric | LEAP 2024",
+        "tags": ["Conference", "Branding", "Motion"],
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdea7276aa646e71a0e771_LEAP-24_cover.jpg"
+      },
+      {
+        "slug": "quantum-metric-leap-2023",
+        "title": "Quantum Metric | LEAP 2023",
+        "tags": ["Conference", "Branding", "Motion"],
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fde787ef02c0c15b3b018d_leap-23_hero.png"
+      },
+      {
+        "slug": "quantum-metric-felix-ai-campaign",
+        "title": "Quantum Metric | Felix AI",
+        "tags": ["Branding", "3d", "Web Design", "Interactive"],
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fee028b108162036a2cdaf_Felix-AI_cover.jpg"
+      },
+      {
+        "slug": "quantum-metric-peak-benchmark-report",
+        "title": "Quantum Metric | Peak Benchmark Report",
+        "tags": ["Web Design", "3d", "Interactive"],
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b846f33eec1676153787a6_QM.png"
+      },
+      {
+        "slug": "quantum-metric-web-design",
+        "title": "Quantum Metric | Web refresh",
+        "tags": ["Web Design"],
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be34a3a8b32acd6f7fb6f1_WF.png"
+      },
+      {
+        "slug": "adobe-workfront-web-design",
+        "title": "Adobe Workfront | Web design",
+        "tags": ["Web design"],
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be35bdb510f4bbb7d571be_WF.png"
+      },
+      {
+        "slug": "adobe-workfront-leap-2020-opener",
+        "title": "Adobe Workfront | LEAP 2020 Opener",
+        "tags": ["Conference", "Motion", "3d"],
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b70cc400a6b0b53c4f_48fad9111870185.600a23f7e084c.webp"
+      },
+      {
+        "slug": "adobe-workfront-cko-2021",
+        "title": "Adobe Workfront | CKO 2021",
+        "tags": ["Motion", "3d"],
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e033f5b8f914367d203_a51640163916867.63edeb4d099d6.png"
+      },
+      {
+        "slug": "adobe-experience-cloud-workfront-digital-collaboration",
+        "title": "Adobe Experience Cloud | Workfront Digital Collaboration",
+        "tags": ["Motion"],
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be34d75f740a290c232ed6_Adobe.png"
+      },
+      {
+        "slug": "cbs-ghosts---the-musical-lyric-video",
+        "title": "CBS | Ghosts - The Musical - Lyric video",
+        "tags": ["Motion"],
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be479706952eec7ab5d862_ghosts.jpg"
+      }
+    ],
+    "categoryMembership": {
+      "note": "Which projects appear under each filter tab, derived from the Webflow tab panes (a project can appear in multiple categories).",
+      "Web Design": ["quantum-metric-felix-ai-campaign", "quantum-metric-peak-benchmark-report", "quantum-metric-web-design", "adobe-workfront-web-design"],
+      "Motion": ["quantum-metric-leap-2025", "quantum-metric-leap-2024", "quantum-metric-leap-2023", "quantum-metric-felix-ai-campaign", "quantum-metric-web-design", "adobe-workfront-leap-2020-opener", "adobe-workfront-cko-2021", "adobe-experience-cloud-workfront-digital-collaboration", "cbs-ghosts---the-musical-lyric-video"],
+      "Branding": ["quantum-metric-leap-2025", "quantum-metric-leap-2024", "quantum-metric-leap-2023", "quantum-metric-felix-ai-campaign"],
+      "Conference": ["quantum-metric-leap-2025", "quantum-metric-leap-2024", "quantum-metric-leap-2023", "adobe-workfront-leap-2020-opener"],
+      "3d": ["quantum-metric-leap-2023", "quantum-metric-felix-ai-campaign", "quantum-metric-peak-benchmark-report", "adobe-workfront-leap-2020-opener", "adobe-workfront-cko-2021"]
+    }
+  },
+
+  "about": {
+    "title": "I am Steve Fisher - About",
+    "metaDescription": "About Steve Fisher",
+    "sections": [
+      {"type": "hero headline", "text": "It all started with a pirated version of Photoshop 20 years ago."},
+      {"type": "skill card", "heading": "Art direction", "text": "I love bringing experiences to life, whether it's a campaign, or event."},
+      {"type": "skill card", "heading": "Branding", "text": "The best part of an in-house team is watching the brand grow year-after-year."},
+      {"type": "skill card", "heading": "Web design", "text": "A connoisseur of fine tokens from the Token region of France."},
+      {"type": "skill card", "heading": "Motion", "text": "Ya'll remember ActionScript? I do."},
+      {"type": "skill card", "heading": "3d", "text": "Sure, I'm no Houdini, but I can think 3d."},
+      {"type": "skill card", "heading": "UI/UX", "text": "I used to design apps full-time and freelance. Now I do it very little of the time."},
+      {"type": "pull quote", "text": ["Creativity pays the bills.", "Curiosity keeps me living."]},
+      {"type": "body paragraph", "text": "We're in a new horizon of what design looks like. I'm taking the challenge to understand how we can utilize tools to make projects cooler, faster, and better performing."},
+      {"type": "body paragraph", "text": "I've carved out a career by working in in-house studio teams for successful SaaS companies."},
+      {"type": "logo/company list", "text": ["Quantum Metric", "Adobe Workfront", "Lucid Software"]},
+      {"type": "body paragraph", "text": "Just to name a few. I've also done some freelance work for some notable companies."},
+      {"type": "logo/company list", "text": ["CBS", "Snapchat"]},
+      {"type": "body paragraph", "text": "Plus a uncountable number of smaller projects."},
+      {"type": "list heading", "text": "You might catch me"},
+      {"type": "list", "text": ["Fly fishing", "Rockhounding", "Bird watching"]},
+      {"type": "caption", "text": "I've hit my old-man phase early."},
+      {"type": "contact form", "text": ["Don't leave me on read.", "Say hello.", "Name", "Email", "Your Message", "OR setup an appointment on Google Meet."]},
+      {"type": "footer", "text": ["© 2025 Fisher Creative. All Rights Reserved"]}
+    ],
+    "images": [
+      {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f7352279e869460db99121_sego.svg", "context": "site logo (nav)"},
+      {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ffcb6b3307ddeb5418a9fd_about-me_1.jpg", "context": "about photo 1"},
+      {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ffcb6bf9cc5278370886a7_about-me_2.jpg", "context": "about photo 2"},
+      {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ffcb6b749f17a340b58c5f_about-me_3.jpg", "context": "about photo 3"}
+    ],
+    "videos": []
+  },
+
+  "contact": {
+    "title": "Contact",
+    "metaDescription": null,
+    "sections": [
+      {"type": "hero headline", "text": "Want to chat?"},
+      {"type": "contact form", "text": ["Name", "Email", "Your Message", "OR setup an appointment on Google Meet.", "Book an appointment"]},
+      {"type": "footer", "text": ["© 2025 Fisher Creative. All Rights Reserved"]}
+    ],
+    "images": [
+      {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f7352279e869460db99121_sego.svg", "context": "site logo (nav)"},
+      {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff427d0462d228014b230c_image.jpg", "context": "contact page hero/side image"}
+    ],
+    "videos": []
+  },
+
+  "ai_musings_index": {
+    "title": "AI Musings",
+    "metaDescription": "Check out how I've been incorporating AI into my workflow.",
+    "sections": [
+      {"type": "section title", "text": "AI musings"}
+    ],
+    "posts": [
+      {"title": "howtobrandai.com", "href": "/ai-musings/how-to-brand-ai", "tags": ["Web design", "Vibe Coding", "Entertainment"]},
+      {"title": "Locksmith - After Effects plugin", "href": "/ai-musings/how-to-brand-ai", "tags": ["Vibe Coding", "Tools"], "note": "duplicate href, same slug as howtobrandai.com card - no distinct Locksmith page exists"}
+    ],
+    "images": [
+      {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f7352279e869460db99121_sego.svg", "context": "site logo (nav)"}
+    ],
+    "videos": []
+  },
+
+  "ai_musings_posts": {
+    "how-to-brand-ai": {
+      "title": "How to brand AI",
+      "metaDescription": null,
+      "sections": [
+        {"type": "heading", "text": "How to brand AI"},
+        {"type": "body paragraph", "text": "A very 'educational' website. Vibe coded using a mix of ChatGPT 5 and Google Gemini. I got it live after following steps from ChatGPT to get it hosted through GitHub and Vercel."},
+        {"type": "external link", "text": "howtobrandai.com", "href": "https://howtobrandai.com"},
+        {"type": "contact form", "text": ["Don't leave me on read.", "Say hello.", "Name", "Email", "Your Message", "OR setup an appointment on Google Meet.", "Book an appointment"]},
+        {"type": "footer", "text": ["© 2025 Fisher Creative. All Rights Reserved"]}
+      ],
+      "images": [
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f7352279e869460db99121_sego.svg", "context": "site logo (nav)"}
+      ],
+      "videos": []
+    }
+  },
+
+  "work_pages": {
+    "quantum-metric-leap-2025": {
+      "title": "Quantum Metric LEAP 2025",
+      "metaDescription": null,
+      "sections": [
+        {"type": "hero headline", "text": "Quantum LEAP Conference 2025"},
+        {"type": "hero body", "text": "In 2025, LEAP took place in Phoenix, Arizona. Surrounded by the desert landscape and guided by the theme \"Unleash Human Potential,\" we set out to create a visual identity that captured both the heat and energy of the region. As AI continues to grow in influence, we wanted to emphasize something deeper, that our focus remains on people, and on celebrating human success."},
+        {"type": "credits", "text": [
+          "Creative Director: Michael Moulton",
+          "Art Direction, Motion, Video: Steve Fisher",
+          "Illustration, Design: Steve Fisher, Michael Moulton, Maciej Krupa"
+        ]},
+        {"type": "section heading", "text": "Conference branding"},
+        {"type": "body paragraph", "text": "I built the 2025 brand system around elements that reflected the Phoenix setting. This year's identity was more vibrant, with dynamic, energetic shapes and a richer color palette. The inspiration came directly from the intense Arizona sun and the movement of desert heat, translated into design that felt bold, fresh, and alive."},
+        {"type": "sub-heading", "text": "LEAP 25 brand"},
+        {"type": "sub-heading", "text": "Key elements"},
+        {"type": "credit line", "text": "Art Direction - Steve Fisher | Illustration - Maciej Krupa"},
+        {"type": "section heading", "text": "Promotion"},
+        {"type": "credit line", "text": "Motion - Steve Fisher | Graphic - Maciej Krupa"},
+        {"type": "section heading", "text": "Web"},
+        {"type": "body paragraph", "text": "The landing page for LEAP 2025 was more intentional from the start. I designed the web experience to serve as the first introduction to the brand — a strong, immersive entry point. Big, expressive colors set the tone, echoing the energy and warmth attendees would experience at the live event."},
+        {"type": "section heading", "text": "Experience"},
+        {"type": "body paragraph", "text": "The LEAP 2025 experience was electric. Every touchpoint felt considered and consistent with the larger brand story. Once again, I led on-site video production and managed our event photographer. I also brought our keynote presentations to life, using motion design to elevate static mockups and make our product feel more tangible and real on stage."},
+        {"type": "credit line", "text": "LEAP Intro deliverable - motion - Steve Fisher | Script – Mads Herring"},
+        {"type": "more work", "projects": [
+          {"title": "Quantum Metric | LEAP 2023", "href": "/work/quantum-metric-leap-2023", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | LEAP 2024", "href": "/work/quantum-metric-leap-2024", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Adobe Workfront | LEAP 2020", "href": "/work/adobe-workfront-web-design", "tags": ["Motion", "Branding"], "note": "link text says LEAP 2020 but href points to adobe-workfront-web-design slug"}
+        ]}
+      ],
+      "images": [
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fde0e7de2f0884803c8b61_l25_cover.jpg", "context": "hero/cover image, alt: LEAP 25 cover"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc7281e081a2bf7a68a9fc_l25-orange.jpg", "context": "LEAP 25 brand palette - Orange"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc7280fe1d290a2ea34431_l25-pink.jpg", "context": "LEAP 25 brand palette - Pink"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc72800deaf0fe09738539_l25-indigo.jpg", "context": "LEAP 25 brand palette - Indigo"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc7280c982ff540bf39573_l25-black.jpg", "context": "LEAP 25 brand palette - Black"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc7280c982ff540bf39576_l25-white.jpg", "context": "LEAP 25 brand palette - White"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc772138d3b9d9df722115_l25_ident-1.jpg", "context": "Key elements - key art 1"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc77219aaaa36632c174c0_l25_ident-2.jpg", "context": "Key elements - key art 2"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc7721ef983d16598de27e_l25_ident-3.jpg", "context": "Key elements - key art 3"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc772101099aad48d1d3bc_l25_ident-4.jpg", "context": "Key elements - key art 4"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fddbe85c4c4949e68abb01_l25_social-post.jpg", "context": "Promotion - social post, alt: LEAP 25 social post"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdd97016bca62b3fb1052c_l25_united.jpg", "context": "Experience - LEAP 25 on stage"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdd9e4c1258cf3500fa8e1_l25_leap-board.jpg", "context": "Experience - LEAP attendees"}
+      ],
+      "videos": [
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fddb0fcb04b2f6b044a71e_l25_promo-video-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fddb0fcb04b2f6b044a71e_l25_promo-video-transcode.webm", "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fddb0fcb04b2f6b044a71e_l25_promo-video-poster-00001.jpg", "context": "hero/intro promo video, autoplay/loop/muted"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc7b23e9f4360ddcb144af_scroll-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc7b23e9f4360ddcb144af_scroll-transcode.webm", "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc7b23e9f4360ddcb144af_scroll-poster-00001.jpg", "context": "scroll-triggered brand system video"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdd8cd1cc633ed70bd8446_i25_i360-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdd8cd1cc633ed70bd8446_i25_i360-transcode.webm", "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdd8cd1cc633ed70bd8446_i25_i360-poster-00001.jpg", "context": "web section 360 video"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdd4c860a1feb28c43ae16_l25-on-stage-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdd4c860a1feb28c43ae16_l25-on-stage-transcode.webm", "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdd4c860a1feb28c43ae16_l25-on-stage-poster-00001.jpg", "context": "Experience section - on stage video"}
+      ]
+    },
+
+    "quantum-metric-leap-2024": {
+      "title": "Quantum Metric LEAP 2024",
+      "metaDescription": null,
+      "sections": [
+        {"type": "hero headline", "text": "Quantum LEAP Conference 2024"},
+        {"type": "hero body", "text": "In 2024, LEAP took place in New Orleans, LA. With the theme \"Simplicity Reimagined, Efficiency Redefined,\" we set out to blend the spirit of jazz with the precision of tech. Our goal was to transform an otherwise standard hotel conference room into an immersive and memorable experience. From the first impression to the final moment, the LEAP brand was present in every detail, creating a cohesive journey that felt both intentional and inspired."},
+        {"type": "credits", "text": [
+          "Creative Director: Michael Moulton",
+          "Art Direction, Motion, Video: Steve Fisher",
+          "Illustration: Steve Fisher, Michael Moulton, Maciej Krupa"
+        ]},
+        {"type": "credit line", "text": "LEAP Intro deliverable - motion - Steve Fisher | Script – Mads Herring"},
+        {"type": "section heading", "text": "Conference branding"},
+        {"type": "body paragraph", "text": "Building off the strong brand system we developed in 2023, we were able to move more efficiently and intentionally into the 2024 identity. Our goal was to create a visual experience that felt distinct from the previous year. We introduced a cinematic color palette using cyan and Quantum Metric magenta, setting a bold and modern tone. Repeating shapes and a frosted glass effect became key elements in our system, helping us build layered compositions that felt fresh and dimensional. Even though the designs were created in 2D, the layering approach added depth that translated seamlessly across both digital and physical spaces."},
+        {"type": "sub-heading", "text": "2024 Direction"},
+        {"type": "pull quote", "text": "Simplicity reimagined. Efficiency redefined."},
+        {"type": "credit line", "text": "Creative Direction - Michael Moulton | Art Direction, Motion Design - Steve Fisher"},
+        {"type": "section heading", "text": "Video"},
+        {"type": "body paragraph", "text": "Like the previous year, I led the design and production of on-stage graphics and videos, bringing our product visualizations to life in a dynamic, engaging way. I was also on-site to produce video content throughout the event, handling same-day edits to quickly capture and share the energy and key moments from each day. In addition to content creation, I oversaw our hired event photographer, ensuring the visual coverage aligned with our brand and marketing goals."},
+        {"type": "section heading", "text": "Experience"},
+        {"type": "body paragraph", "text": "Every moment of the event included a thoughtful brand touchpoint crafted by the Studio team. From the digital stage screens to product demos and even the award designs, each element was built to reflect the identity and energy of the event. The vibrant spirit of New Orleans came through in all of it, adding depth and authenticity to the experience."},
+        {"type": "caption", "text": "LEAP 2024 Recap"},
+        {"type": "more work", "projects": [
+          {"title": "Quantum Metric | LEAP 2023", "href": "/work/quantum-metric-leap-2023", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | LEAP 2025", "href": "/work/quantum-metric-leap-2025", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | Web Design", "href": "/work/quantum-metric-web-design", "tags": ["Web design", "Branding"]}
+        ]}
+      ],
+      "images": [
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdc4ecf5f69c2abf1c2fd0_leap-24_color-palette.jpg", "context": "Conference branding - color palette"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc52f1edf773ae2e0c4a37_leap-24_theme.jpg", "context": "2024 Direction theme image"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc52f124b709a2c899ab84_leap-24_stage.jpg", "context": "Video section - stage image"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc52f1ad9de418c1baa64d_leap-24_large-screen.jpg", "context": "Video section - large screen image"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5e561af666a7c4a1bfd1_leap-24_photos_1.jpg", "context": "Experience gallery, alt: LEAP 24 - Product Booth"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5e56102595e6653a87b9_leap-24_photos_2.jpg", "context": "Experience gallery, alt: LEAP 24 Bash"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5e5614442d00a75b788e_leap-24_photos_3.jpg", "context": "Experience gallery, alt: LEAP 24 - Mario Ciabarra"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5e5668ffd56cf1bbbabc_leap-24_photos_4.jpg", "context": "Experience gallery, alt: LEAP 24 - Booth"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5e56e081a2bf7a5b4f57_leap-24_photos_5.jpg", "context": "Experience gallery, alt: LEAP 24 - CPD Awards"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5e568351618564c04ce0_leap-24_photos_6.jpg", "context": "Experience gallery, alt: LEAP 24 - On stage"}
+      ],
+      "videos": [
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc55b1c982ff540be12b9a_LEAP-24_promo_nov-9_v1_1-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc55b1c982ff540be12b9a_LEAP-24_promo_nov-9_v1_1-transcode.webm", "context": "hero/intro promo video"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdc841b7e61a9cd69758c2_leap-24-sazerac-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdc841b7e61a9cd69758c2_leap-24-sazerac-transcode.webm", "context": "conference branding section video"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5a5cc982ff540be4653f_leap-24_parade-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5a5cc982ff540be4653f_leap-24_parade-transcode.webm", "context": "video section - parade footage"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5a968351618564bddbf1_leap-24_keynote-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5a968351618564bddbf1_leap-24_keynote-transcode.webm", "context": "video section - keynote footage"}
+      ]
+    },
+
+    "quantum-metric-leap-2023": {
+      "title": "Quantum Metric LEAP 2023",
+      "metaDescription": null,
+      "sections": [
+        {"type": "hero headline", "text": "Quantum LEAP Conference 2023"},
+        {"type": "hero body", "text": "In 2023, Quantum Metric brought its flagship conference, LEAP, fully in-house for the first time. This shift marked a pivotal moment for the brand, prompting a refreshed visual identity and greater creative ownership. I led the art direction for both the new LEAP logo and the design system for the 2023 conference."},
+        {"type": "credits", "text": [
+          "Creative Director: Michael Moulton",
+          "Art Direction, Motion, Video: Steve Fisher",
+          "Illustration: Jason McAloon / Maciej Krupa"
+        ]},
+        {"type": "credit line", "text": "LEAP Intro deliverable - motion - Steve Fisher | Script – Mads Herring"},
+        {"type": "section heading", "text": "Conference branding"},
+        {"type": "body paragraph", "text": "Since this was our first in-person conference after the pandemic, we wanted the experience to be beautiful, especially in such a well-known space. We had a clear direction from the start, and the brand was built around the theme: \"Guided Empathy, Endless Impact.\" How is empathy visualized? Being in a venue with such a deep musical history helped shape that answer. Sound waves felt like the perfect symbol. They bounce off one another, overlap, and build into something more. That idea became the foundation for the visual identity of the event."},
+        {"type": "sub-heading", "text": "2023 Direction"},
+        {"type": "pull quote", "text": "Guided empathy, endless impact."},
+        {"type": "body paragraph", "text": "Compassionate empathy goes beyond simply understanding others and sharing their feelings: it actually moves us to take action, to help however we can."},
+        {"type": "credit line", "text": "Event Photography, Motion – Steve Fisher | Graphic, Jason McAloon"},
+        {"type": "section heading", "text": "Brand strategy"},
+        {"type": "body paragraph", "text": "From the beginning, the goal for LEAP was to feel bigger than we were. One of the best ways to do that was by expanding the brand palette to create a more unique and immersive experience. We introduced purple and navy tones and used gradients that faded smoothly into each other, giving the visuals a polished and dynamic feel. For the LEAP logo, we moved away from the blocky, paper-inspired imagery used in earlier versions. We wanted a mark that could stand on its own but still feel like part of the Quantum Metric brand. It needed to be flexible enough to work in any location or context, while still being instantly recognizable."},
+        {"type": "section heading", "text": "Experience"},
+        {"type": "body paragraph", "text": "We had to lead our marketing efforts with a clear goal– convince people and companies that it was worth investing in sending their teams back to in-person events. Our last two conferences were virtual, so this was a big shift. To help bridge that gap, we pulled in footage from past events and combined it with more stylized, energetic slides. The goal was to build excitement and momentum. We wanted to show the best version of our brand for this first post-pandemic conference."},
+        {"type": "section heading", "text": "Photography"},
+        {"type": "body paragraph", "text": "I was on-site at LEAP to capture photography and video content that would power the marketing for the following year's event. My focus was on documenting the energy, emotion, and scale of the experience. Everything from the keynote moments to candid interactions between attendees. At the same time, I kept a clear eye on what kinds of visuals would be most valuable for future promotional use. That meant thinking ahead: capturing content with next year's campaigns, ads, and brand storytelling in mind, not just what looked good in the moment."},
+        {"type": "more work", "projects": [
+          {"title": "Quantum Metric | LEAP 2025", "href": "/work/quantum-metric-leap-2025", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | LEAP 2024", "href": "/work/quantum-metric-leap-2024", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | Web Design", "href": "/work/quantum-metric-web-design", "tags": ["Web design", "Branding"]}
+        ]}
+      ],
+      "images": [
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1bfc0deaf0fe093db088_iasf-leap-23_tops.jpg", "context": "Conference branding section"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc12f868ffd56cf18ba036_leap-23_atlas.jpg", "context": "2023 Direction section"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc131cefd51008ebed29d2_leap-23_jm.jpg", "context": "2023 Direction section"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1386eb596246122ec546_leap-23_color-white.png", "context": "Brand strategy - color/logo"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f74ae645060d76ef70db4b_iasf_leap-23_colors-logo_2.png", "context": "Brand strategy - color/logo variant 2"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f74ae6678311c85933c687_iasf_leap-23_colors-logo_4.png", "context": "Brand strategy - color/logo variant 4"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f74ae56224c678f042b6a0_iasf_leap-23_colors-logo_3.png", "context": "Brand strategy - color/logo variant 3"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f74ae5b6128e5e82842ba8_iasf_leap-23_colors-logo_5.png", "context": "Brand strategy - color/logo variant 5"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f74b36193b5ceff91d4ef8_iasf_leap-23_colors-logo_1-1.png", "context": "Brand strategy - color/logo variant 1"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2ff7ea94a5713112327a_iasf_leap-23_styles.jpg", "context": "Brand strategy - styles"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f74c2437a393a9c3103d64_iasf_leap-23_styles-2.jpg", "context": "Brand strategy - styles 2"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f74c2f13c2a47b5e2a7f41_iasf_leap-23_styles.jpg", "context": "Brand strategy - styles 3"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1725a99339ceb500d5e0_leap-23-acl.jpg", "context": "Experience section"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2f0d9382481782b8dc8f_leap-23_caitlin.jpg", "context": "Experience section"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1aa52e666b43696259d3_iasf-leap-23_01.jpg", "context": "Photography gallery, alt: LEAP party photography."},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1aa554dab4a7f81d8328_iasf-leap-23_02.jpg", "context": "Photography gallery, alt: LEAP party guests."},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1aa55b9520193783b55a_iasf-leap-23_03.jpg", "context": "Photography gallery, alt: LEAP brand element"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1aa524b709a2c876b25d_iasf-leap-23_04.jpg", "context": "Photography gallery, alt: Mario Ciabarra on stage."},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1aa565dab72bb0171f33_iasf-leap-23_06.jpg", "context": "Photography gallery, alt: Atlas booth."},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1574d30db22230fdd76c_leap-23_photo.jpg", "context": "Photography gallery, alt: On-stage panel"}
+      ],
+      "videos": [
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2958d30db222300b28d9_20s-LEAP-social-v6-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2958d30db222300b28d9_20s-LEAP-social-v6-transcode.webm", "context": "hero/intro social promo video"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2b8f3702277a30c1af04_LEAP23_zoom-bg_2-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2b8f3702277a30c1af04_LEAP23_zoom-bg_2-transcode.webm", "context": "Brand strategy - zoom background video"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2c692abda3933c3530a7_LEAP_23_recap_social_v1_1-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2c692abda3933c3530a7_LEAP_23_recap_social_v1_1-transcode.webm", "context": "Experience section - recap social video"}
+      ]
+    },
+
+    "quantum-metric-felix-ai-campaign": {
+      "title": "Quantum Metric | Felix AI Campaign",
+      "metaDescription": null,
+      "sections": [
+        {"type": "hero headline", "text": "Quantum Metric - Felix AI"},
+        {"type": "hero body", "text": "Our product team was figuring out how to incorporate first-to-market AI into our platform. Directed from our CEO, we worked on turning Felix into reality through our brand identity, product, and in many of our touch points."},
+        {"type": "credits", "text": [
+          "Creative Director: Michael Moulton",
+          "Art Direction, Motion, Video: Steve Fisher, Nick Ritter",
+          "Illustration, Design: Steve Fisher, Michael Moulton, Maciej Krupa",
+          "Copywriting: Zoe McCook, Mads Herring"
+        ]},
+        {"type": "section heading", "text": "Felix AI - Branding & Mascot"},
+        {"type": "body paragraph", "text": "Just like every SaaS offering, our product team was figuring out how to incorporate AI into our platform. Our CEO, who was inspired by a fox that visited his backyard frequently, was set on Felix.\nWe were given the task of turning Felix not only into a part of our brand, but also into a mascot that can be used as the face of our AI-powered features. I was in charge of designing the look of Felix. I sketched and concepted the first versions. We handed Felix off to a modeler for the final passes."},
+        {"type": "credit line", "text": "Art Direction - Steve Fisher"},
+        {"type": "section heading", "text": "Web"},
+        {"type": "body paragraph", "text": "Our first implementation for Felix was our webinar series. This series was our introduction into how we were going to release our AI offering. Because our product was first-to-industry, we set out to make our landing page to make a big splash. We implemented Spline for the Felix head on the landing page. He added a bit of wow-factor to our series. It was one of our top performing webinars to date."},
+        {"type": "credit line", "text": "Art Direction, Web Design - Steve Fisher | Development - Brad Douglas"},
+        {"type": "section heading", "text": "Explainer #1"},
+        {"type": "body paragraph", "text": "Our first implementation for Felix was our webinar series. This series was our introduction into how we were going to release our AI offering. Because our product was first-to-industry, we set out to make our landing page to make a big splash. We implemented Spline for the Felix head on the landing page. He added a bit of wow-factor to our series. It was one of our top performing webinars to date."},
+        {"type": "credit line", "text": "Art Direction, Motion – Steve Fisher | Script – Mads Herring"},
+        {"type": "section heading", "text": "Explainer #2"},
+        {"type": "body paragraph", "text": "Our first implementation for Felix was our webinar series. This series was our introduction into how we were going to release our AI offering. Because our product was first-to-industry, we set out to make our landing page to make a big splash. We implemented Spline for the Felix head on the landing page. He added a bit of wow-factor to our series. It was one of our top performing webinars to date."},
+        {"type": "credit line", "text": "Art Direction, 3d, Motion – Steve Fisher | 3d, Motion – Nick Ritter | Script – Mads Herring"},
+        {"type": "section heading", "text": "Out-of-home"},
+        {"type": "body paragraph", "text": "We used Felix to gain an audience for potential clients and partners through out-of-home advertising. That included billboards across tech hubs, digital placements around Adobe Summit and Google Next."},
+        {"type": "credit line", "text": "Digital Placements - Michael Moulton, Nick Ritter"},
+        {"type": "more work", "projects": [
+          {"title": "Quantum Metric | Peak Benchmark Report", "href": "/work/quantum-metric-peak-benchmark-report", "tags": ["3d", "Web Design", "Interactive"]},
+          {"title": "Quantum Metric | LEAP 2025", "href": "/work/quantum-metric-leap-2025", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | Web Design", "href": "/work/quantum-metric-web-design", "tags": ["Web design", "Branding"]}
+        ]}
+      ],
+      "images": [
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff0e58f8ee9dc30d0cd93b_004c27d96437738ecb45068b82081183_felix_front-image.jpg", "context": "hero image - Felix front"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff22e34768bfcf2dc3fefc_felix_angle_6.jpg", "context": "Branding & Mascot - Felix angle 6"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff22e2b1a6c242aa45570f_felix_angle_5.jpg", "context": "Branding & Mascot - Felix angle 5"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff22e2cc4887836c71047e_felix_angle_4.jpg", "context": "Branding & Mascot - Felix angle 4"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff22e248e223bb30b2adb8_felix_angle_3.jpg", "context": "Branding & Mascot - Felix angle 3"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff22e2b58ca8b239d2bbea_felix_angle_2.jpg", "context": "Branding & Mascot - Felix angle 2"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff22e29c0639b1e7ddf9f3_felix_angle_1.jpg", "context": "Branding & Mascot - Felix angle 1"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2b142e2cdc61152f8ff2_felix_explainer-1_04.jpg", "context": "Explainer #1 still 4"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2b150f3bacd2b65c05e8_felix_explainer-1_01.jpg", "context": "Explainer #1 still 1"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2b15c343ef076b59ec7b_bd8281a7c88ee91a578316c6e268ee60_felix_explainer-1_03.jpg", "context": "Explainer #1 still 3"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2b1548e223bb30b84a65_felix_explainer-1_02.jpg", "context": "Explainer #1 still 2"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2d211fcf6edc826fe5c0_felix_explainer_2_1.jpg", "context": "Explainer #2 still 1"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2d200039b96d46b7c126_felix_explainer_2_2.jpg", "context": "Explainer #2 still 2"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2d211fcf6edc826fe5e8_felix_explainer_2_3.jpg", "context": "Explainer #2 still 3"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2d2067d34ae075c9b81c_felix_explainer_2_4.jpg", "context": "Explainer #2 still 4"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2d204768bfcf2dcb4505_felix_explainer_2_5.jpg", "context": "Explainer #2 still 5"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2d211fcf6edc826fe5c4_felix_explainer_2_6.jpg", "context": "Explainer #2 still 6"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff24c11fcf6edc82698069_felix_out-of-home_2.jpg", "context": "Out-of-home advertising 2"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff24c14768bfcf2dc5753d_felix_out-of-home_1.jpg", "context": "Out-of-home advertising 1"}
+      ],
+      "videos": [
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff136cb47f03aab648a3c5_felix-webinar-scroll-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff136cb47f03aab648a3c5_felix-webinar-scroll-transcode.webm", "context": "Web section - webinar scroll video"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fddb0fcb04b2f6b044a71e_l25_promo-video-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fddb0fcb04b2f6b044a71e_l25_promo-video-transcode.webm", "context": "Explainer section video (reused LEAP 25 promo asset)"}
+      ]
+    },
+
+    "quantum-metric-peak-benchmark-report": {
+      "title": "Quantum Metric | Peak Benchmark Report",
+      "metaDescription": null,
+      "sections": [
+        {"type": "hero headline", "text": "Peak Benchmark Report"},
+        {"type": "hero body", "text": "Last year, our PR manager Lori Niquette began gathering industry data to support our thought leadership efforts. To help that content stand out, we elevated the visuals through an interactive landing page that brought the insights to life in a more engaging, memorable way."},
+        {"type": "external link", "text": "Find the live version here.", "href": "https://www.quantummetric.com/resources/peak-benchmark-2024"},
+        {"type": "credits", "text": [
+          "Creative Director: Michael Moulton",
+          "Art Direction, Motion, Design: Steve Fisher",
+          "Developer: Brad Douglas"
+        ]},
+        {"type": "section heading", "text": "Technology"},
+        {"type": "body paragraph", "text": "One of our key goals in 2024 was to bring new technology into our web experience. We incorporated Spline for interactive 3D elements and used SVG animations powered by GreenSock to create smooth, dynamic line animations. The result was a visually striking, data-driven story that not only elevated our design but also deeply resonated with our customers."},
+        {"type": "section heading", "text": "Stills"},
+        {"type": "more work", "projects": [
+          {"title": "Quantum Metric | LEAP 2023", "href": "/work/quantum-metric-leap-2023", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | LEAP 2024", "href": "/work/quantum-metric-leap-2024", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | Web Design", "href": "/work/quantum-metric-web-design", "tags": ["Web design", "Branding"]}
+        ]}
+      ],
+      "images": [
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b72ffc9220b02215ad8_peak_still_1.jpg", "context": "Stills gallery item 1"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b723e362e8fc3a5fc71_peak_still_2.jpg", "context": "Stills gallery item 2"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b7202f41aaeaaa6b071_peak_still_3.jpg", "context": "Stills gallery item 3"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b727c87ddf3f14a1780_peak_still_4.jpg", "context": "Stills gallery item 4"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b72dd20da3fe9eab476_peak_still_5.jpg", "context": "Stills gallery item 5"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b724186a4dd5cac16ba_peak_still_6.jpg", "context": "Stills gallery item 6"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b72b82921adae97c860_peak_still_7.jpg", "context": "Stills gallery item 7"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b7252d5d4eb77856ce6_peak_still_8.jpg", "context": "Stills gallery item 8"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b72bd6d747e3b5a32bf_peak_still_9.jpg", "context": "Stills gallery item 9"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b73108f03e44a5d8467_peak_still_10.jpg", "context": "Stills gallery item 10"}
+      ],
+      "videos": [
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe72163ba29b43fde0afd5_peak-recording-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe72163ba29b43fde0afd5_peak-recording-transcode.webm", "context": "hero screen recording of the interactive report"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe767c0172e3d736231cc6_step-1-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe767c0172e3d736231cc6_step-1-transcode.webm", "context": "Technology section step 1"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7768dfa8c90d651d6369_step-3-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7768dfa8c90d651d6369_step-3-transcode.webm", "context": "Technology section step 3"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe782d7856107a9a15017f_step-4-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe782d7856107a9a15017f_step-4-transcode.webm", "context": "Technology section step 4"}
+      ]
+    },
+
+    "quantum-metric-web-design": {
+      "title": "Quantum Metric | Web Design",
+      "metaDescription": null,
+      "sections": [
+        {"type": "hero headline", "text": "Quantum Metric | Web Refresh"},
+        {"type": "hero body", "text": "I refreshed Quantum Metric's site with a scalable, component-driven system. We incorporated Tailwind CSS for clean, reusable styling. We saw an increase overall in qualified leads as a result."},
+        {"type": "external link", "text": "Visit quantummetric.com", "href": "#", "note": "href is a broken placeholder link (#), not an actual URL to quantummetric.com"},
+        {"type": "credits", "text": [
+          "Creative Director: Michael Moulton",
+          "Web Design / Motion: Steve Fisher",
+          "Developer: Brad Douglas"
+        ]},
+        {"type": "section heading", "text": "Scalable design-thinking."},
+        {"type": "body paragraph", "text": "I took a design system that was clunky and hard to maintain and rebuilt it into something scalable. By standardizing components, creating clear tokens, and tightening up the rules around layout and styling, the system became flexible enough to support hundreds of pages without breaking consistency. What used to be a mess of one-off fixes is now a foundation that actually grows with the product."},
+        {"type": "section heading", "text": "Screens"},
+        {"type": "section heading", "text": "Benchmark Reports"},
+        {"type": "body paragraph", "text": "We've had the opportunity to create more experiential benchmark reports each quarter. This has allowed us to try new things and implement different types of technologies like GSAP, Spline, and AGcharts."},
+        {"type": "section heading", "text": "Explainers"},
+        {"type": "caption", "text": "Quantum Metric - Journeys Explainer's"},
+        {"type": "caption", "text": "Felix AI"},
+        {"type": "caption", "text": "Quantum Metric - Atlas Guide Overview"},
+        {"type": "more work", "projects": [
+          {"title": "Quantum Metric | LEAP 2023", "href": "/work/quantum-metric-leap-2023", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | LEAP 2024", "href": "/work/quantum-metric-leap-2024", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | Web Design", "href": "/work/quantum-metric-web-design", "tags": ["Web design", "Branding"]}
+        ]}
+      ],
+      "images": [
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b851b1c434bf565108946d_slider.png", "context": "Screens - slider component"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b859d6d6126e1ca14f96c4_traveel.png", "context": "Screens - traveel/travel screen"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85edde5fcf973e7076fa0_blog.png", "context": "Screens - blog screen"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85f24e80f2aef9f5f3513_packages.png", "context": "Screens - packages screen"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b858245e91607d8301e21c_benchmarks.png", "context": "Benchmark Reports section image"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b72dd20da3fe9eab476_peak_still_5.jpg", "context": "Benchmark Reports section (reused Peak still asset)"}
+      ],
+      "videos": [
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b84cda8fa1e4796132799b_main-video-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b84cda8fa1e4796132799b_main-video-transcode.webm", "context": "hero main video"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85bbc1ae22f52701a7d72_scaleable-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85bbc1ae22f52701a7d72_scaleable-transcode.webm", "context": "Scalable design-thinking section video"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b8547736c9d45ce421047b_stats-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b8547736c9d45ce421047b_stats-transcode.webm", "context": "Screens section stats video"},
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85d40ca943ebe62a4ea59_variables-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85d40ca943ebe62a4ea59_variables-transcode.webm", "context": "design token/variables demo video"}
+      ]
+    },
+
+    "adobe-workfront-web-design": {
+      "title": "Adobe Workfront | Web design",
+      "metaDescription": null,
+      "sections": [
+        {"type": "hero headline", "text": "Adobe Workfront | Web Refresh"},
+        {"type": "hero body", "text": "We were handed an agency special. At least 30 different hex codes for the same orange. Before we even started, our team did an audit of low-performing pages. We found countless pages we were serving up to be underperforming. From here we took on the challenge of building out our CMS with reusable components, a language that was clear to both design and development, and templates that were high-performing and looked good."},
+        {"type": "body paragraph", "text": "After Workfront was acquired the content was ported to Adobe's website."},
+        {"type": "external link", "text": "Visit the old Workfront website on the webarchive.", "href": "https://web.archive.org/web/20191210054855/https://www.workfront.com"},
+        {"type": "credits", "text": [
+          "Executive Creative Director: Ben Child",
+          "Web Design / Photography: Steve Fisher"
+        ]},
+        {"type": "section heading", "text": "Scalable design-thinking."},
+        {"type": "body paragraph", "text": "We were handed an agency special. At least 30 different hex codes for the same orange. Before we even started, our team did an audit of low-performing pages. We found countless pages we were serving up to be underperforming. From here we took on the challenge of building out our CMS with reusable components, a language that was clear to both design and development, and templates that were high-performing and looked good."},
+        {"type": "stat callout", "text": "After implementing the refreshed experience we saw a 13% increase in conversions YoY."},
+        {"type": "more work", "projects": [
+          {"title": "Quantum Metric | LEAP 2023", "href": "/work/quantum-metric-leap-2023", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | LEAP 2024", "href": "/work/quantum-metric-leap-2024", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | Web Design", "href": "/work/quantum-metric-web-design", "tags": ["Web design", "Branding"]}
+        ]}
+      ],
+      "images": [
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be338471def77c362f0830_hero.jpg", "context": "hero image"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be32832c4e69d5353a755d_Resources.jpg", "context": "Scalable design-thinking - Resources template screen"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be32831ad3961cee5fe21c_Component.jpg", "context": "Scalable design-thinking - Component library screen"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be32837c27775713f0f0d0_Quotes.jpg", "context": "Scalable design-thinking - Quotes component screen"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be3283e412cb3032135193_Work%20management.jpg", "context": "Scalable design-thinking - Work management screen"}
+      ],
+      "videos": [
+        {"type": "native html5 background video", "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be2c6d1023b7fed6471f25_wf3-transcode.mp4", "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be2c6d1023b7fed6471f25_wf3-transcode.webm", "context": "hero/why Workfront section video"}
+      ]
+    },
+
+    "adobe-workfront-leap-2020-opener": {
+      "title": "Adobe Workfront LEAP 2020 Opener",
+      "metaDescription": null,
+      "sections": [
+        {"type": "hero headline", "text": "Adobe Workfront | LEAP 2020 Opener"},
+        {"type": "hero body", "text": "Our goal was to illustrate how complicated work management is in an engaging way. Our usual in-person event went virtual, giving digital work a new meaning."},
+        {"type": "credits", "text": [
+          "Concept: Ryan Braman, Steve Fisher, Cameron Perry, Michael Moulton",
+          "Animation: Steve Fisher, Cameron Perry",
+          "Editing: Byron Gatt"
+        ]},
+        {"type": "section heading", "text": "Screens"},
+        {"type": "more work", "projects": [
+          {"title": "Quantum Metric | LEAP 2023", "href": "/work/quantum-metric-leap-2023", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | LEAP 2024", "href": "/work/quantum-metric-leap-2024", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | Web Design", "href": "/work/quantum-metric-web-design", "tags": ["Web design", "Branding"]}
+        ]}
+      ],
+      "images": [
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15fc51264623e50d6f30_ae8742111870185.600a23f7e01ee.webp", "context": "Screens gallery 1"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b7a66df3f56cf61530_cdd880111870185.600a23f6695d6.jpg", "context": "Screens gallery 2"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b76c658b3973ace0f0_3b4639111870185.600a23f668fd3.jpg", "context": "Screens gallery 3"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b78af42293b72ae6bf_cd241e111870185.600a23f7e0fbf.jpg", "context": "Screens gallery 4"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b78a46b1980ebb0b0a_6c53d4111870185.600a23f6bc68f.jpg", "context": "Screens gallery 5"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b70cc400a6b0b53c4f_48fad9111870185.600a23f7e084c.webp", "context": "Screens gallery 6 (also used as work index cover)"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b7bdd33abdc3b7e529_8d38da111870185.600a23f7e2337.jpg", "context": "Screens gallery 7"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b75d4fd1164914d5d2_c00eb8111870185.600a23f7133fa.jpg", "context": "Screens gallery 8"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b7f0fbf30a14a7cbdc_214929111870185.600a23f7e1e3e.webp", "context": "Screens gallery 9"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b73a685292d8763d91_5fbad3111870185.600a23f713ca7.jpg", "context": "Screens gallery 10"}
+      ],
+      "videos": [],
+      "note": "No embedded video player found on the page itself despite the 'Animation'/'Editing' credits - only a static screens gallery. Confirmed no wistia elements present."
+    },
+
+    "adobe-workfront-cko-2021": {
+      "title": "Adobe Workfront | CKO 2021",
+      "metaDescription": null,
+      "sections": [
+        {"type": "hero headline", "text": "Adobe Workfront | CKO 2021"},
+        {"type": "hero body", "text": "We were in the thralls of the pandemic, and had just gone remote, and the acquisition was just announced. Our CKO was still on, but virtually. This opener was a motivational piece for internal consumption."},
+        {"type": "credits", "text": [
+          "Concept, animation: Steve Fisher"
+        ]},
+        {"type": "caption", "text": "Adobe Workfront CKO 2021"},
+        {"type": "section heading", "text": "Screens"},
+        {"type": "more work", "projects": [
+          {"title": "Quantum Metric | LEAP 2023", "href": "/work/quantum-metric-leap-2023", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | LEAP 2024", "href": "/work/quantum-metric-leap-2024", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | Web Design", "href": "/work/quantum-metric-web-design", "tags": ["Web design", "Branding"]}
+        ]}
+      ],
+      "images": [
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e033f5b8f914367d203_a51640163916867.63edeb4d099d6.png", "context": "Screens gallery 1 (also used as work index cover)"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e03bfb7ddfd8f74ea2e_11bdef163916867.63edeb4d08bd0.png", "context": "Screens gallery 2"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e030aa894f0cc76dc7c_6d7d02163916867.63edeb4d024d0.png", "context": "Screens gallery 3"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e038fb03044e2d92e22_44e652163916867.63edeb4d035f2.png", "context": "Screens gallery 4"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e04a2ab927f47ef3a64_b810e2163916867.63edeb4d07efb.png", "context": "Screens gallery 5"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e032c4e69d53537bb7d_ef9407163916867.63edeb4d01725.png", "context": "Screens gallery 6"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e03f7ea085bf1a04b4d_d74820163916867.63edeb4d06523.png", "context": "Screens gallery 7"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e03752851d41ac6a874_509a34163916867.63edeb4d0726b.png", "context": "Screens gallery 8"},
+        {"url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e038f19164c1c64fa2c_ebb661163916867.63edeb4d047d3.png", "context": "Screens gallery 9"}
+      ],
+      "videos": [],
+      "note": "No embedded video player found on this page despite the caption 'Adobe Workfront CKO 2021' - only a static screens gallery. Confirmed no wistia elements present. (The two Vimeo embeds mislabeled with this same title actually live on the separate 'Adobe Experience Cloud | Workfront Digital Collaboration' page, see below.)"
+    },
+
+    "adobe-experience-cloud-workfront-digital-collaboration": {
+      "title": "Adobe Experience Cloud - Workfront Digital Collaboration",
+      "metaDescription": null,
+      "sections": [
+        {"type": "hero headline", "text": "Adobe Experience Cloud | Workfront Digital Collaboration"},
+        {"type": "hero body", "text": "Fresh after the acquisition, we were tasked to create some short explainers for the new Adobe audience."},
+        {"type": "credits", "text": [
+          "Animation: Steve Fisher, Bryon Gatt"
+        ]},
+        {"type": "more work", "projects": [
+          {"title": "Quantum Metric | LEAP 2023", "href": "/work/quantum-metric-leap-2023", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | LEAP 2024", "href": "/work/quantum-metric-leap-2024", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | Web Design", "href": "/work/quantum-metric-web-design", "tags": ["Web design", "Branding"]}
+        ]}
+      ],
+      "images": [],
+      "videos": [
+        {"type": "vimeo iframe embed", "vimeoId": "1058332675", "src": "https://player.vimeo.com/video/1058332675?badge=0&autopause=0&player_id=0&app_id=58479", "title": "Adobe Workfront CKO 2021", "note": "title attribute is mislabeled (leftover from another project's embed), context: first explainer video on the page"},
+        {"type": "vimeo iframe embed", "vimeoId": "1058333887", "src": "https://player.vimeo.com/video/1058333887?badge=0&autopause=0&player_id=0&app_id=58479", "title": "Adobe Workfront CKO 2021", "note": "title attribute is mislabeled (leftover from another project's embed), context: second explainer video on the page"}
+      ]
+    },
+
+    "cbs-ghosts---the-musical-lyric-video": {
+      "title": "CBS Ghosts - The Musical Lyric Video",
+      "metaDescription": null,
+      "sections": [
+        {"type": "hero headline", "text": "CBS | Ghosts - The Musical"},
+        {"type": "hero body", "text": "I worked with the agency Totally Legitimate to create a lyric video for CBS's Ghosts social."},
+        {"type": "credits", "text": [
+          "Animation: Steve Fisher, Eric Fisher"
+        ]},
+        {"type": "more work", "projects": [
+          {"title": "Quantum Metric | LEAP 2023", "href": "/work/quantum-metric-leap-2023", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | LEAP 2024", "href": "/work/quantum-metric-leap-2024", "tags": ["Conference", "Branding", "Motion"]},
+          {"title": "Quantum Metric | Web Design", "href": "/work/quantum-metric-web-design", "tags": ["Web design", "Branding"]}
+        ]}
+      ],
+      "images": [],
+      "videos": [
+        {"type": "youtube iframe embed", "youtubeId": "LWLM5fnmftk", "src": "https://www.youtube.com/embed/LWLM5fnmftk?rel=0&controls=1&autoplay=0&mute=0&start=0", "title": "Ghosts: The Musical", "context": "main lyric video embed"}
+      ]
+    }
+  }
+}

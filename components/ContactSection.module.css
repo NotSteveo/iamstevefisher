@@ -1,0 +1,104 @@
+.section {
+  background-color: var(--footer-bg);
+  border-top: 4px solid #73ffb3;
+  margin-top: 12rem;
+  padding-top: 4rem;
+}
+
+.compact {
+  margin-top: 40px;
+}
+
+.inner {
+  padding-top: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 4rem;
+}
+
+.textWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-align: center;
+}
+
+.headline {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(40px, 9vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: #191919;
+  text-align: center;
+  max-width: 1200px;
+}
+
+.subline {
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: #bcc5dd;
+}
+
+.formBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 460px;
+}
+
+.bookRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.bookText {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--black-800);
+}
+
+.bookButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #039be5;
+  color: var(--white);
+  font-family: "Google Sans Text", var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 10px 24px;
+  transition: background-color 0.15s ease;
+}
+
+.bookButton:hover {
+  background-color: #0287c9;
+}
+
+.hr {
+  background-color: var(--black-100);
+  height: 1px;
+  width: 100%;
+}
+
+.lower {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.copyright {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: -0.28px;
+  color: #808080;
+}

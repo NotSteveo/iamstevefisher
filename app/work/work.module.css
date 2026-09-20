@@ -1,0 +1,12 @@
+.hero {
+  padding: 40px 0 48px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(40px, 8vw, 80px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  color: var(--black-900);
+}

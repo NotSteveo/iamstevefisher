@@ -1,0 +1,76 @@
+.navbar {
+  background-color: var(--white);
+  position: relative;
+  z-index: 20;
+}
+
+.navWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.logoLink {
+  display: block;
+  width: 32px;
+}
+
+.navMenu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.menuWrapper {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+@media (max-width: 640px) {
+  .menuWrapper {
+    display: none;
+  }
+}
+
+.navBlock {
+  height: 20px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.navLinkText {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.14px;
+  color: var(--black-900);
+  white-space: nowrap;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.navBlock:hover .navLinkText {
+  transform: translateY(-1px);
+  opacity: 0.6;
+}
+
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 400;
+  background-image: var(--gradient-brand);
+  border-radius: 7px;
+  padding: 7px 14px;
+  text-decoration: none;
+  transition: background-image 0.15s ease;
+}
+
+.contactButton:hover {
+  background-image: var(--gradient-brand-hover);
+}
