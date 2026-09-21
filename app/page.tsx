@@ -2,7 +2,7 @@ import { home, type WorkCard as WorkCardType } from "@/lib/content";
 import WorkCard from "@/components/WorkCard";
 import LogoStrip from "@/components/LogoStrip";
 import ContactSection from "@/components/ContactSection";
-import RevealText from "@/components/RevealText";
+import HeroHeadline from "@/components/HeroHeadline";
 import styles from "./page.module.css";
 
 // Curated order for the homepage: strongest / most on-brand work first,
@@ -48,9 +48,7 @@ export default function Home() {
     <main>
       <section className={styles.hero}>
         <div className="wrap">
-          <RevealText as="h1" className={styles.headline}>
-            {headline}
-          </RevealText>
+          <HeroHeadline text={headline} className={styles.headline} />
 
           <div className={styles.heroBottom}>
             <p className={styles.roles}>
