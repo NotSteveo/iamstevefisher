@@ -1,4 +1,11 @@
+import { workIndex } from "./content";
 import type { ImageRef, Section, VideoRef, WorkCard, WorkPageContent } from "./content";
+
+const coverImageByHref = new Map(workIndex.projects.map((p) => [p.href, p.coverImage]));
+
+function withCoverImage(card: WorkCard): WorkCard {
+  return card.coverImage ? card : { ...card, coverImage: coverImageByHref.get(card.href) };
+}
 
 export type ContentBlock =
   | { kind: "heading"; text: string }
@@ -45,9 +52,10 @@ export function buildCaseStudy(page: WorkPageContent): CaseStudy {
     (sections.find((s) => s.type === "hero headline")?.text as string) ?? page.title;
   const body = (sections.find((s) => s.type === "hero body")?.text as string) ?? "";
   const credits = (sections.find((s) => s.type === "credits")?.text as string[]) ?? [];
-  const moreWork =
+  const moreWork = (
     (sections.find((s): s is Section & { projects: WorkCard[] } => s.type === "more work")
-      ?.projects as WorkCard[]) ?? [];
+      ?.projects as WorkCard[]) ?? []
+  ).map(withCoverImage);
 
   const images = [...page.images];
   const videos = [...page.videos];
