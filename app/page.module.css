@@ -2,41 +2,13 @@
   padding-top: 40px;
 }
 
-.heroTop {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.heroCopy {
-  max-width: 640px;
-}
-
-.kicker {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--black-600);
-  margin-bottom: 20px;
-}
-
 .headline {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(32px, 5vw, 56px);
-  line-height: 1.1;
-  letter-spacing: -1.5px;
+  font-size: clamp(48px, 9.5vw, 112px);
+  line-height: 1.02;
+  letter-spacing: -3px;
   color: var(--hero-ink);
-}
-
-@media (max-width: 900px) {
-  .heroTop {
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    gap: 24px;
-  }
 }
 
 .heroBottom {
