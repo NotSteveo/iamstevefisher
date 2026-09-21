@@ -35,14 +35,13 @@ export default function WorkCard({
       </Link>
 
       <div className={styles.tagWrap}>
-        {project.tags.map((tag) => (
-          <Link
-            key={tag}
-            href={`/work?category=${encodeURIComponent(tag)}`}
-            className={styles.tag}
-          >
-            {tag}
-          </Link>
+        {project.tags.map((tag, i) => (
+          <span key={tag} className={styles.tagItem}>
+            {i > 0 ? <span className={styles.divider} aria-hidden>|</span> : null}
+            <Link href={`/work?category=${encodeURIComponent(tag)}`} className={styles.tag}>
+              {tag}
+            </Link>
+          </span>
         ))}
       </div>
     </div>
