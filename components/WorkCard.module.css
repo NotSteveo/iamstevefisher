@@ -2,6 +2,12 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
@@ -22,7 +28,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.card:hover .image {
+.cardLink:hover .image {
   transform: scale(1.04);
 }
 
@@ -66,4 +72,12 @@
   font-size: 13px;
   letter-spacing: -0.14px;
   color: var(--black-700);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.tag:hover {
+  color: var(--black-900);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }

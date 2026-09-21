@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { workIndex } from "@/lib/content";
 import WorkFilter from "@/components/WorkFilter";
 import ContactSection from "@/components/ContactSection";
@@ -20,11 +21,13 @@ export default function WorkPage() {
 
       <section>
         <div className="wrap">
-          <WorkFilter
-            categories={workIndex.categories}
-            projects={workIndex.projects}
-            categoryMembership={workIndex.categoryMembership}
-          />
+          <Suspense fallback={null}>
+            <WorkFilter
+              categories={workIndex.categories}
+              projects={workIndex.projects}
+              categoryMembership={workIndex.categoryMembership}
+            />
+          </Suspense>
         </div>
       </section>
 
