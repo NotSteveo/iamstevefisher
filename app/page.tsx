@@ -2,7 +2,8 @@ import { home, type WorkCard as WorkCardType } from "@/lib/content";
 import WorkCard from "@/components/WorkCard";
 import LogoStrip from "@/components/LogoStrip";
 import ContactSection from "@/components/ContactSection";
-import RevealText from "@/components/RevealText";
+import HeroHeadline from "@/components/HeroHeadline";
+import HeroVisual from "@/components/HeroVisual";
 import styles from "./page.module.css";
 
 // Curated order for the homepage: strongest / most on-brand work first,
@@ -33,9 +34,13 @@ const CURATED_ORDER = [
   },
 ];
 
+// Draft positioning headline — ties directly to Felix AI, the project
+// featured right beside it. Swap freely; this is a placeholder pending sign-off.
+const HERO_HEADLINE = "I give AI products a personality they didn't ask for.";
+
 export default function Home() {
   const heroText = home.sections.find((s) => s.type === "hero")?.text as string[];
-  const [headline, role1, role2, role3, role4, bio, current] = heroText;
+  const [, role1, role2, role3, role4, bio, current] = heroText;
   const featured = home.sections.find((s) => s.type === "featured work");
   const projectsByHref = new Map((featured?.projects ?? []).map((p) => [p.href, p]));
 
@@ -48,9 +53,13 @@ export default function Home() {
     <main>
       <section className={styles.hero}>
         <div className="wrap">
-          <RevealText as="h1" className={styles.headline}>
-            {headline}
-          </RevealText>
+          <div className={styles.heroTop}>
+            <div className={styles.heroCopy}>
+              <p className={styles.kicker}>Steve Fisher — Creative Director</p>
+              <HeroHeadline text={HERO_HEADLINE} className={styles.headline} />
+            </div>
+            <HeroVisual />
+          </div>
 
           <div className={styles.heroBottom}>
             <p className={styles.roles}>

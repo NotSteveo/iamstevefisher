@@ -1,0 +1,19 @@
+.visual {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 642 / 300;
+  margin-left: auto;
+  overflow: hidden;
+}
+
+.frame {
+  position: absolute;
+  inset: 0;
+}
+
+.frame img {
+  object-fit: cover;
+  /* source renders crop out a caption label baked into the bottom of each image */
+  object-position: top;
+}
