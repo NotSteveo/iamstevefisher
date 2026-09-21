@@ -60,20 +60,23 @@ export function buildCaseStudy(page: WorkPageContent): CaseStudy {
   const images = [...page.images];
   const videos = [...page.videos];
 
-  // Hero image/video: first image/video whose context mentions "hero" or "cover",
-  // else just the first image on the page.
-  const heroImageIdx = images.findIndex((i) =>
-    /hero|cover/i.test(i.context ?? "")
-  );
-  const heroImage = images[heroImageIdx >= 0 ? heroImageIdx : 0];
-  if (heroImage) images.splice(images.indexOf(heroImage), 1);
-
+  // Hero video takes priority over a hero image (CaseStudyView only renders
+  // one or the other). Only pick/remove a hero image when there's no video —
+  // otherwise a wrongly-guessed "hero" image gets silently deleted from the
+  // page instead of showing up in its real section.
   const heroVideoIdx = videos.findIndex((v) => /hero|intro/i.test(v.context ?? ""));
   // A page with only one video (no keyword match needed) — treat it as the hero
   // rather than burying it in a half-width section grid cell.
   const heroVideo =
     heroVideoIdx >= 0 ? videos[heroVideoIdx] : videos.length === 1 ? videos[0] : undefined;
   if (heroVideo) videos.splice(videos.indexOf(heroVideo), 1);
+
+  let heroImage: ImageRef | undefined;
+  if (!heroVideo) {
+    const heroImageIdx = images.findIndex((i) => /hero|cover/i.test(i.context ?? ""));
+    heroImage = images[heroImageIdx >= 0 ? heroImageIdx : 0];
+    if (heroImage) images.splice(images.indexOf(heroImage), 1);
+  }
 
   const caseSections: CaseStudySection[] = [];
   let current: CaseStudySection | null = null;
