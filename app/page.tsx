@@ -33,6 +33,8 @@ const CURATED_ORDER = [
   },
 ];
 
+const HERO_SUBLINE = "I build brands AI can't fake.";
+
 export default function Home() {
   const heroText = home.sections.find((s) => s.type === "hero")?.text as string[];
   const [headline, role1, role2, role3, role4, bio, current] = heroText;
@@ -49,6 +51,7 @@ export default function Home() {
       <section className={styles.hero}>
         <div className="wrap">
           <HeroHeadline text={headline} className={styles.headline} />
+          <p className={styles.subline}>{HERO_SUBLINE}</p>
 
           <div className={styles.heroBottom}>
             <p className={styles.roles}>
