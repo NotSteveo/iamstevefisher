@@ -47,6 +47,13 @@
   color: var(--black-900);
 }
 
+.roleLine {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--black-700);
+}
+
 .tagWrap {
   display: flex;
   align-items: center;

@@ -89,10 +89,35 @@ function backfillFeaturedWorkImages(page: PageContent): PageContent {
   return { ...page, sections };
 }
 
-export const home = backfillFeaturedWorkImages(content.home);
+function slugFromHref(href: string): string {
+  return href.replace(/^\/work\//, "");
+}
+
+/**
+ * Last-resort fallback: if a card still has no coverImage after the context
+ * match above, borrow the first image from its own case study page (e.g.
+ * Peak Benchmark Report has no dedicated "cover" image, but its case study
+ * has a strong opening gallery shot we can reuse).
+ */
+function withCaseStudyCoverFallback(card: WorkCard): WorkCard {
+  if (card.coverImage) return card;
+  const page = content.work_pages[slugFromHref(card.href)];
+  const fallback = page?.images[0]?.url;
+  return fallback ? { ...card, coverImage: fallback } : card;
+}
+
+function backfillHomeFeatured(page: PageContent): PageContent {
+  const sections = page.sections.map((section) => {
+    if (section.type !== "featured work" || !section.projects) return section;
+    return { ...section, projects: section.projects.map(withCaseStudyCoverFallback) };
+  });
+  return { ...page, sections };
+}
+
+export const home = backfillHomeFeatured(backfillFeaturedWorkImages(content.home));
 export const workIndex: WorkIndexContent = {
   ...content.work_index,
-  projects: content.work_index.projects.map(withHref),
+  projects: content.work_index.projects.map(withHref).map(withCaseStudyCoverFallback),
 };
 export const about = content.about;
 export const contact = content.contact;

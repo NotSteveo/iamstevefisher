@@ -4,7 +4,13 @@ import { asset } from "@/lib/assets";
 import type { WorkCard as WorkCardType } from "@/lib/content";
 import styles from "./WorkCard.module.css";
 
-export default function WorkCard({ project }: { project: WorkCardType }) {
+export default function WorkCard({
+  project,
+  roleLine,
+}: {
+  project: WorkCardType;
+  roleLine?: string;
+}) {
   return (
     <Link href={project.href} className={styles.card}>
       {project.coverImage ? (
@@ -23,6 +29,7 @@ export default function WorkCard({ project }: { project: WorkCardType }) {
 
       <div className={styles.textWrap}>
         <div className={styles.headline}>{project.title.replace(/\|/g, " | ")}</div>
+        {roleLine ? <p className={styles.roleLine}>{roleLine}</p> : null}
       </div>
 
       <div className={styles.tagWrap}>
