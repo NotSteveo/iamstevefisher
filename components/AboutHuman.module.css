@@ -1,0 +1,77 @@
+.section {
+  background: var(--black-900);
+  padding: 40px 0 100px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Matches the live Webflow about page's own container width
+   (.global-wrapper) — see the same comment in AboutIntro.module.css. */
+.wrap {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Webflow sizes this the same as every other connecting line on the page
+   (.appraoch-text, 40px) — kept smaller and in mono here on purpose, as
+   the label introducing the giant hobbies list below. */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: clamp(20px, 2.4vw, 28px);
+  letter-spacing: 0.01em;
+  color: var(--black-300);
+  margin: 0 0 12px;
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(18px, 2vw, 24px);
+  color: var(--black-300);
+  margin: 20px 0 0;
+}
+
+/* Same 1 : 1 : 2.5 column ratio as the live site's own photo row — the
+   two portrait shots keep an even split, the wide landscape shot gets the
+   rest. Unlike the case-study grids, this one crops to a shared height
+   instead of sizing from any one image's natural aspect ratio. */
+.photoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2.5fr;
+  gap: 16px;
+  margin-top: 56px;
+  height: clamp(220px, 28vw, 380px);
+}
+
+.photoWrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #2a2a2a;
+}
+
+.photo {
+  object-fit: cover;
+  position: absolute !important;
+  inset: -1px !important;
+  width: calc(100% + 2px) !important;
+  max-width: none !important;
+  height: calc(100% + 2px) !important;
+}
+
+@media (max-width: 700px) {
+  .photoGrid {
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+  }
+
+  .photoWrap {
+    aspect-ratio: 4 / 5;
+  }
+
+  .photoWrap:last-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
+  }
+}

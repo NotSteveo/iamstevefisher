@@ -1,0 +1,8 @@
+/* This page is just DarkNav + PageContactSection — on a short viewport
+   that combination can be shorter than 100vh, exposing the white body
+   background below the footer bar. min-height + matching bg color closes
+   that gap regardless of viewport height. */
+.main {
+  min-height: 100vh;
+  background: #141414;
+}

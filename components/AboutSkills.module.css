@@ -1,0 +1,13 @@
+.section {
+  background: var(--black-900);
+  padding: 40px 0 100px;
+}
+
+/* Matches the live Webflow about page's own container width
+   (.global-wrapper) — see the same comment in AboutIntro.module.css. */
+.wrap {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}

@@ -1,5 +1,30 @@
 .hero {
-  padding-top: 40px;
+  background: var(--black-900);
+  padding: 140px 0 40px;
+}
+
+/* Wider than the site's shared .wrap (1200px) — matches the other dark
+   scroll-concept pages' own .wrap (about-scroll, work-scroll,
+   SelectedWorkScroll), so case-study content lines up with them instead
+   of running narrower. */
+.wrap {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Two columns, matching the live Webflow hero exactly: headline/body/link
+   on the left, credits stacked in their own column on the right — not a
+   single column with credits tacked on below the body. */
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 340px);
+  gap: 64px;
+}
+
+.heroMain {
+  min-width: 0;
 }
 
 .headline {
@@ -8,45 +33,102 @@
   font-size: clamp(32px, 5.5vw, 56px);
   line-height: 1.15;
   letter-spacing: -1.5px;
-  color: var(--black-900);
-  max-width: 900px;
+  color: var(--white);
 }
 
 .body {
   font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.6;
-  color: var(--black-700);
-  max-width: 720px;
+  color: var(--black-300);
   margin-top: 24px;
+}
+
+.heroLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: #40bf7f;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .credits {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin-top: 32px;
+  gap: 24px;
+}
+
+.creditEntry {
+  font-family: var(--font-display);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--black-300);
+  margin: 0;
+}
+
+.creditName {
+  color: var(--white);
+  font-weight: 700;
 }
 
 .creditLine {
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--black-600);
+  color: var(--black-300);
 }
 
-.heroMedia {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+@media (max-width: 700px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* Hero image and hero video both stay within the page's own max-width
+   column (.wrap) instead of a full-bleed 100vw treatment, so they line up
+   with the rest of the page's content edges instead of running to the
+   browser's own edges. */
+.heroVideoWrap {
   margin-top: 48px;
+}
+
+/* Device-mockup frame around the hero video — Steve's own design (built
+   in Webflow): a black bezel with generous rounded corners around a
+   smaller-radius video, staying within .wrap's own width rather than
+   running full-bleed. Reused for every case study's hero video. */
+.deviceFrame {
+  background: #2a2a2a;
+  border-radius: 32px;
+  padding: 20px;
+}
+
+.deviceFrameVideo {
+  border-radius: 14px;
+}
+
+@media (max-width: 700px) {
+  .deviceFrame {
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  .deviceFrameVideo {
+    border-radius: 8px;
+  }
 }
 
 .heroImageWrap {
   position: relative;
   width: 100%;
   aspect-ratio: 21 / 9;
+  border-radius: 12px;
   overflow: hidden;
-  background-color: var(--black-50);
+  background-color: #2a2a2a;
 }
 
 @media (max-width: 900px) {
@@ -55,11 +137,21 @@
   }
 }
 
+/* Bleeds 1px past .heroImageWrap on every edge (overriding next/image's
+   own inline fill inset/width/height) so .heroImageWrap's overflow:hidden
+   is always what clips it — .heroImageWrap's aspect-ratio height rarely
+   resolves to a whole pixel, and without this a hairline of its own
+   background shows through the fractional-pixel remainder. */
 .heroImage {
   object-fit: cover;
+  inset: -1px !important;
+  width: calc(100% + 2px) !important;
+  max-width: none !important;
+  height: calc(100% + 2px) !important;
 }
 
 .section {
+  background: var(--black-900);
   padding-top: 100px;
 }
 
@@ -69,7 +161,7 @@
   font-size: clamp(28px, 4vw, 40px);
   line-height: 1.15;
   letter-spacing: -1.2px;
-  color: var(--black-900);
+  color: var(--white);
   margin-bottom: 24px;
 }
 
@@ -84,29 +176,41 @@
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 24px;
-  color: var(--black-900);
+  color: var(--white);
   margin-top: 8px;
 }
 
+/* Two-column body copy, matching the live Webflow site's own
+   .work-content-p (a native CSS column-count:2 on the paragraph itself,
+   not a layout grid) — the browser balances/flows the text across both
+   columns on its own. */
 .paragraph {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
-  color: var(--black-700);
+  color: var(--black-300);
+  column-count: 2;
+  column-gap: 32px;
+}
+
+@media (max-width: 700px) {
+  .paragraph {
+    column-count: 1;
+  }
 }
 
 .caption {
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--black-600);
+  color: var(--black-300);
 }
 
 .pullQuote {
   font-family: var(--font-display);
   font-size: 28px;
   font-weight: 500;
-  color: var(--black-900);
-  border-left: 4px solid var(--black-900);
+  color: var(--white);
+  border-left: 4px solid #40bf7f;
   padding-left: 24px;
   margin: 8px 0;
 }
@@ -115,8 +219,8 @@
   font-family: var(--font-display);
   font-size: 22px;
   font-weight: 500;
-  color: var(--black-900);
-  background-color: var(--black-50);
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.06);
   border-radius: 12px;
   padding: 24px;
 }
@@ -128,15 +232,25 @@
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 600;
-  color: var(--black-900);
+  color: #40bf7f;
   text-decoration: underline;
   text-underline-offset: 3px;
   width: fit-content;
 }
 
+/* --cols is set per group (see MediaGrid in CaseStudyView.tsx) — each
+   group reproduces its own real column count from the live Webflow site
+   instead of a single fixed 2-column grid pooling every image/video in a
+   section together. min() caps it at each breakpoint without needing a
+   media query per column count (a 1-col group stays 1-col throughout).
+   --col-widths, when a group sets it, overrides the even repeat(cols,1fr)
+   split with Webflow's own bespoke per-item ratio (e.g. 1fr 1fr 1fr 1fr
+   1fr 6fr) — the breakpoints below still set grid-template-columns
+   directly, so a bespoke-ratio grid still collapses at narrow widths
+   instead of carrying its desktop ratio down with it. */
 .mediaGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: var(--col-widths, repeat(var(--cols, 2), 1fr));
   gap: 16px;
   margin-top: 32px;
 }
@@ -145,28 +259,114 @@
   width: 100%;
 }
 
+/* --anchor-aspect, when a group sets it (see MediaGrid in CaseStudyView.tsx),
+   is that group's narrowest column's own real natural aspect ratio,
+   reverse-engineered from Webflow — Webflow doesn't crop its grid images to
+   a fixed box at all, so a generic 4:3 guess here can crop a neighboring
+   stretched item too tight (see .imageWrapStretch below). Falls back to 4:3
+   for every ordinary grid where the real ratio hasn't been captured. */
+/* transform: translateZ(0) forces this element onto its own compositing
+   layer with its own stable border-radius clip — without it, RevealText's
+   translateY reveal transform on the parent recomposites this element's
+   rounded overflow:hidden mask at a slightly different sub-pixel offset
+   each frame, which can show as a thin white seam (the page's own white
+   body background, not this box's dark one) hugging the rounded corners
+   during/just after the reveal animation. */
 .imageWrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: var(--anchor-aspect, 4 / 3);
   border-radius: 12px;
   overflow: hidden;
-  background-color: var(--black-50);
+  background-color: #2a2a2a;
+  transform: translateZ(0);
 }
 
+/* Applied (alongside .imageWrap) to every non-narrowest column in a
+   bespoke-width group — see the comment in MediaGrid (CaseStudyView.tsx).
+   Drops the independent aspect-ratio and stretches to the row's height
+   instead, which Grid's default align-items: stretch resolves against the
+   narrowest column's own aspect-ratio height above. */
+.imageWrapStretch {
+  aspect-ratio: unset;
+  height: 100%;
+}
+
+/* Below 480px .mediaGrid always collapses to a single column (see the
+   media query below), so a stretch item no longer shares a row with its
+   aspect-ratio anchor and has nothing to stretch against — it would
+   collapse to 0 height. Give it back the same aspect ratio there instead. */
+@media (max-width: 480px) {
+  .imageWrapStretch {
+    aspect-ratio: var(--anchor-aspect, 4 / 3);
+    height: auto;
+  }
+}
+
+/* See .heroImage above — same fractional aspect-ratio-height fix. */
 .sectionImage {
+  object-fit: cover;
+  inset: -1px !important;
+  width: calc(100% + 2px) !important;
+  max-width: none !important;
+  height: calc(100% + 2px) !important;
+}
+
+/* CaseStudyVideo's own CSS sizes a grid video by its *native* aspect ratio
+   (e.g. 16:9), unlike .sectionImage above which next/image's `fill` locks
+   to .imageWrap's own 4:3 box — so an image cell and a video cell in the
+   same row landed at different heights, leaving a black gap under
+   whichever was shorter. Forcing the video (native <video> or the iframe
+   embed's own .embedWrap, both accept this via CaseStudyVideo's
+   `className` prop) to fill .imageWrap the same way closes that gap;
+   !important because it has to win over CaseStudyVideo.module.css's own
+   .video/.embedWrap rules regardless of CSS Modules' build-time class
+   order, which isn't something to rely on for two same-specificity rules. */
+.gridVideo {
+  position: absolute !important;
+  inset: -1px !important;
+  width: calc(100% + 2px) !important;
+  max-width: none !important;
+  height: calc(100% + 2px) !important;
   object-fit: cover;
 }
 
+@media (max-width: 900px) {
+  .mediaGrid {
+    grid-template-columns: repeat(min(var(--cols, 2), 3), 1fr);
+  }
+}
+
 @media (max-width: 700px) {
+  .mediaGrid {
+    grid-template-columns: repeat(min(var(--cols, 2), 2), 1fr);
+  }
+}
+
+@media (max-width: 480px) {
   .mediaGrid {
     grid-template-columns: 1fr;
   }
 }
 
+/* Reads as its own module (a navigational wrap-up), not another beat of
+   the case study narrative above it — the divider and eyebrow label below
+   are the same pattern the About components use to break up sections
+   (see AboutWork.module.css / AboutPath.module.css), reused here instead
+   of the in-page .heading style every content section above already uses. */
 .moreWork {
-  padding-top: 120px;
+  background: var(--black-900);
+  padding-top: 100px;
   padding-bottom: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.moreWorkLabel {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: #40bf7f;
+  margin: 0 0 32px;
 }
 
 .moreWorkGrid {

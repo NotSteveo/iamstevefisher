@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getWorkPage, workPageSlugs } from "@/lib/content";
 import { buildCaseStudy } from "@/lib/caseStudy";
+import DarkNav from "@/components/DarkNav";
 import CaseStudyView from "@/components/CaseStudyView";
-import ContactSection from "@/components/ContactSection";
+import PageContactSection from "@/components/PageContactSection";
 
 export function generateStaticParams() {
   return workPageSlugs().map((slug) => ({ slug }));
@@ -33,8 +34,9 @@ export default async function WorkCaseStudyPage({
 
   return (
     <>
+      <DarkNav />
       <CaseStudyView study={study} />
-      <ContactSection headline="Don't leave me on read." subline="Say hello." />
+      <PageContactSection />
     </>
   );
 }

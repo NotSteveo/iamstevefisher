@@ -23,9 +23,21 @@
   background-color: var(--black-50);
 }
 
+/* next/image's `fill` prop sets inset:0/width:100%/height:100% inline —
+   overridden here (!important) to bleed 1px past .imageWrap on every
+   edge. .imageWrap's own height comes from aspect-ratio, which rarely
+   resolves to a whole pixel number; at the fractional remainder, the
+   image (sized to exactly 100%) can leave a hairline of .imageWrap's own
+   background showing through as a thin line along one edge. Bleeding the
+   image past the edge means overflow:hidden is always the one doing the
+   clipping, not a sub-pixel rounding gap. */
 .image {
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
+  inset: -1px !important;
+  width: calc(100% + 2px) !important;
+  max-width: none !important;
+  height: calc(100% + 2px) !important;
 }
 
 .cardLink:hover .image {
@@ -91,4 +103,36 @@
   color: #0f5b57;
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+/* Used on the dark case-study/"-scroll" pages — same layout, just the
+   site's dark palette instead of the light one above. Scoped under
+   .dark rather than a separate component, since the homepage and the
+   light /work listing both render this same card unchanged. */
+.dark .imageWrap {
+  background-color: #2a2a2a;
+}
+
+.dark .imagePlaceholder {
+  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+}
+
+.dark .headline {
+  color: var(--white);
+}
+
+.dark .roleLine {
+  color: var(--black-300);
+}
+
+.dark .divider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.dark .tag {
+  color: #40bf7f;
+}
+
+.dark .tag:hover {
+  color: #6fd9a0;
 }

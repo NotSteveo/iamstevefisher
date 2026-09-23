@@ -1,0 +1,226 @@
+.section {
+  background: #141414;
+  /* No bottom padding — .footerBar is the true last thing in this section
+     (it's full-bleed but still document flow), so any padding here would
+     show as a strip of the dark background below the green bar. */
+  padding: 120px 0 0;
+}
+
+/* Opt-in, used only when this section IS the page (contact-scroll) rather
+   than a closing CTA after other content. Stacks nav-clearance, the
+   vertically-centered form, and the footer bar in a column that's always
+   at least one viewport tall, so .footerBar lands on the true bottom edge
+   instead of wherever the content happens to end. */
+.fullHeight {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 140px 0 0;
+}
+
+/* .contentWrap grows to fill the space between the nav-clearance padding
+   and .footerBar, then centers .grid within it — the same "wrap" width as
+   the non-fullHeight usage, just also a flex container now. */
+.contentWrap {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  /* Always full width of its wrap — matters now that .contentWrap (the
+     fullHeight variant) is itself a flex row, where a flex item no longer
+     stretches to fill it by default the way a plain block child would. */
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 80px;
+}
+
+.textWrap {
+  flex: 0 0 auto;
+  width: min(46%, 620px);
+  padding-top: 8px;
+}
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+/* Both lines share the same size as SelectedWorkScroll's own h2 ("Selected
+   work") on the homepage, so this reads as the same weight of statement. */
+.headlineLead {
+  font-family: var(--font-word-serif), var(--font-display), serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(40px, 4.5vw, 64px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #40bf7f;
+}
+
+.headlineWord {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(40px, 4.5vw, 64px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  /* Remounted on every rotation (see the `key` in PageContactSection.tsx)
+     so this replays each time instead of just swapping text in place. */
+  animation: wordIn 0.5s ease both;
+}
+
+@keyframes wordIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form,
+.message {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--black-300);
+  margin-bottom: 8px;
+}
+
+.input {
+  min-height: 48px;
+  color: var(--white);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0;
+  padding: 12px 2px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  transition: border-color 0.15s ease;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.input:focus {
+  outline: none;
+  border-color: #40bf7f;
+}
+
+.submit {
+  background: #40bf7f;
+  color: var(--black-900);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  padding: 14px 0;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.submit:hover {
+  opacity: 0.85;
+}
+
+.submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff6b6b;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  margin: 0;
+}
+
+.message {
+  justify-content: center;
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  text-align: center;
+  font-family: var(--font-mono);
+  color: var(--white);
+}
+
+/* Full-bleed regardless of the section's own .wrap — same
+   calc(50% - 50vw) trick as CaseStudyView's .heroMedia. */
+.footerBar {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #8effc4;
+  padding: 24px var(--gutter);
+}
+
+.footerName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: #141414;
+  margin: 0;
+}
+
+.footerLogo {
+  flex: 0 0 auto;
+}
+
+.footerCopyright {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: -0.02em;
+  color: #141414;
+  margin: 0;
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    flex-direction: column;
+  }
+
+  .textWrap {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .footerBar {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}

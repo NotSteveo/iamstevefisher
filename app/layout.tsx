@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Outfit, Overpass_Mono } from "next/font/google";
+import { Inter, Outfit, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -15,8 +14,8 @@ const outfit = Outfit({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const overpassMono = Overpass_Mono({
-  variable: "--font-overpass-mono",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -29,11 +28,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable} ${overpassMono.variable}`}>
-      <body>
-        <Navbar />
-        {children}
-      </body>
+    <html lang="en" className={`${inter.variable} ${outfit.variable} ${geistMono.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

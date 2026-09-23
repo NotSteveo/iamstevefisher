@@ -1,0 +1,88 @@
+.section {
+  background: var(--black-900);
+  padding: 40px 0 120px;
+  /* Closes most of the natural gap left below the hero's caption once it
+     settles (measured ~246px at the exact point the pin releases) without
+     eating into it — a margin any larger risks the two overlapping while
+     the hero is still pinned above it. */
+  margin-top: -166px;
+}
+
+/* Wider than the site's shared .wrap (1200px) — this section wants the
+   bio to run fewer, longer lines instead of stacking tall. */
+.wrap {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.column {
+  width: 100%;
+}
+
+.bio {
+  font-family: var(--font-mono);
+  font-size: clamp(32px, 7vw, 80px);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--white);
+}
+
+.bio + .bio {
+  margin-top: 20px;
+}
+
+/* The opening sentence — set apart from the rest of the bio as a lead-in
+   line, italic rather than just another line of body copy. Color starts
+   white and fades to var(--black-300) once the second paragraph takes
+   its turn — driven by the GSAP color tween in PortfolioIntro.tsx, this
+   is just the pre-JS/fallback state. */
+.lead {
+  font-family: var(--font-mono);
+  font-size: clamp(32px, 7vw, 80px);
+  font-style: italic;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--white);
+}
+
+.lead + .bio {
+  margin-top: 56px;
+}
+
+.highlight {
+  color: #40bf7f;
+}
+
+/* Each real rendered line gets its own mask, once bioLines2D is measured
+   — .bio no longer clips directly since it now holds several of these
+   stacked instead of one long block. */
+.lineMask {
+  display: block;
+  overflow: hidden;
+}
+
+.current {
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--black-300);
+  margin-top: 28px;
+}
+
+/* The mask each reveal line sits in — .lineMask/.current above give it
+   its size via overflow:hidden; this is the part that actually moves,
+   sliding up from below the clip edge exactly like the hero's letters. */
+.revealInner {
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 72px 0 80px;
+  }
+}

@@ -1,0 +1,41 @@
+.section {
+  background: var(--black-900);
+  padding: 180px 0 40px;
+}
+
+/* 1400px matches the live Webflow about page's own container width
+   (.global-wrapper), not the other dark scroll pages' 1500px .wrap — this
+   page follows its own source instead. */
+.wrap {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* 40px matches Webflow's own .appraoch-text size for this exact line —
+   kept modest on purpose: the contrast with the giant 144px list right
+   below it (AboutGiantList) is Webflow's own rhythm, not an oversight. */
+.lead {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: clamp(24px, 4vw, 40px);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--white);
+}
+
+.lineMask {
+  display: block;
+  overflow: hidden;
+}
+
+.revealInner {
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 140px 0 32px;
+  }
+}

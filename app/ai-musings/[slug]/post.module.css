@@ -1,5 +1,47 @@
 .hero {
-  padding: 60px 0 100px;
+  background: var(--black-900);
+  padding: 140px 0 120px;
+}
+
+/* Wider than the site's shared .wrap (1200px) — matches the other dark
+   scroll-concept pages' own .wrap (about-scroll, work-scroll,
+   CaseStudyView), so this page's content lines up with them instead of
+   running narrower. */
+.wrap {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Same treatment as a case study's hero video (CaseStudyView.module.css) —
+   stays within .wrap's own max-width instead of running full-bleed, with
+   CaseStudyVideo's own rounded corners. */
+.heroVideoWrap {
+  margin-top: 48px;
+}
+
+/* Device-mockup frame around the hero video — same treatment as case
+   studies' own hero video (CaseStudyView.module.css's .deviceFrame). */
+.deviceFrame {
+  background: #2a2a2a;
+  border-radius: 32px;
+  padding: 20px;
+}
+
+.deviceFrameVideo {
+  border-radius: 14px;
+}
+
+@media (max-width: 700px) {
+  .deviceFrame {
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  .deviceFrameVideo {
+    border-radius: 8px;
+  }
 }
 
 .headline {
@@ -8,7 +50,7 @@
   font-size: clamp(32px, 6vw, 56px);
   line-height: 1.15;
   letter-spacing: -1.5px;
-  color: var(--black-900);
+  color: var(--white);
   max-width: 800px;
 }
 
@@ -16,7 +58,7 @@
   font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.6;
-  color: var(--black-700);
+  color: var(--black-300);
   max-width: 640px;
   margin-top: 24px;
 }
@@ -29,7 +71,153 @@
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 600;
-  color: var(--black-900);
+  color: #40bf7f;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+/* A small mono meta line under the headline — e.g. what the thing is and
+   what it's for — same role as CaseStudyView's .creditLine, just shown in
+   the hero instead of only after it. */
+.dek {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--black-300);
+  margin-top: 16px;
+}
+
+/* ---------- Article body ---------- */
+.article {
+  background: var(--black-900);
+  /* Real top padding, not 0 — without it, .subheading's own margin-top
+     below collapses straight through this section's top edge (nothing
+     here stops it: no border, no padding), pushing the whole box down
+     and exposing the page's own white background in the gap instead of
+     the space landing inside this section's dark background. */
+  padding: 64px 0 120px;
+}
+
+.article .wrap {
+  max-width: 760px;
+}
+
+.subheading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(24px, 3vw, 30px);
+  letter-spacing: -0.8px;
+  color: var(--white);
+  margin: 56px 0 16px;
+}
+
+.subheading:first-child {
+  margin-top: 0;
+}
+
+.paragraph {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--black-300);
+  margin: 16px 0;
+}
+
+.creditLine {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--black-300);
+}
+
+.list,
+.steps {
+  margin: 16px 0;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list li,
+.steps li {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--black-300);
+  list-style: none;
+  padding-left: 28px;
+  position: relative;
+}
+
+.list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #40bf7f;
+}
+
+.steps {
+  counter-reset: step;
+}
+
+.steps li {
+  counter-increment: step;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pullQuote {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 4px solid #40bf7f;
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+.figure {
+  margin: 40px 0;
+}
+
+.figureFrame {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #111114;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.figureImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--black-300);
+  text-align: center;
+  margin-top: 12px;
 }

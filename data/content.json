@@ -13,7 +13,7 @@
   },
   "home": {
     "title": "I am Steve Fisher - Art Direction, Motion Design, Web Design, and more.",
-    "metaDescription": "I'm Steve Fisher \u2014 a senior art director working at the intersection of brand, motion, and product design. I've spent the last decade helping SaaS companies tell better stories, build stronger brands, and create smarter digital experiences.From full brand refreshes to conference visuals, video content, and web experience, I focus on work that's thoughtful, strategic, and built to last.",
+    "metaDescription": "I'm Steve Fisher — a senior art director working at the intersection of brand, motion, and product design. I've spent the last decade helping SaaS companies tell better stories, build stronger brands, and create smarter digital experiences.From full brand refreshes to conference visuals, video content, and web experience, I focus on work that's thoughtful, strategic, and built to last.",
     "nav": [
       {
         "label": "Work",
@@ -122,7 +122,7 @@
       {
         "type": "footer",
         "text": [
-          "\u00a9 2025 Fisher Creative. All Rights Reserved"
+          "© 2025 Fisher Creative. All Rights Reserved"
         ]
       }
     ],
@@ -180,7 +180,8 @@
           "Branding",
           "Motion"
         ],
-        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fde03b992ac97eb609593f_LEAP-25_cover.jpg"
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fde03b992ac97eb609593f_LEAP-25_cover.jpg",
+        "note": "Art direction, motion & video for a 3-day flagship conference in Phoenix."
       },
       {
         "slug": "quantum-metric-leap-2024",
@@ -190,7 +191,8 @@
           "Branding",
           "Motion"
         ],
-        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdea7276aa646e71a0e771_LEAP-24_cover.jpg"
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdea7276aa646e71a0e771_LEAP-24_cover.jpg",
+        "note": "Art direction & motion for LEAP 2024, blending jazz-inspired energy with a New Orleans conference experience."
       },
       {
         "slug": "quantum-metric-leap-2023",
@@ -198,9 +200,11 @@
         "tags": [
           "Conference",
           "Branding",
-          "Motion"
+          "Motion",
+          "3d"
         ],
-        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fde787ef02c0c15b3b018d_leap-23_hero.png"
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fde787ef02c0c15b3b018d_leap-23_hero.png",
+        "note": "Art direction for the first fully in-house LEAP, including a refreshed logo and conference design system."
       },
       {
         "slug": "quantum-metric-felix-ai-campaign",
@@ -209,35 +213,39 @@
           "Branding",
           "3d",
           "Web Design",
-          "Interactive"
+          "Motion"
         ],
-        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fee028b108162036a2cdaf_Felix-AI_cover.jpg"
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fee028b108162036a2cdaf_Felix-AI_cover.jpg",
+        "note": "Art direction, motion & illustration for Quantum Metric's first AI product launch."
       },
       {
         "slug": "quantum-metric-peak-benchmark-report",
         "title": "Quantum Metric | Peak Benchmark Report",
         "tags": [
           "Web Design",
-          "3d",
-          "Interactive"
+          "3d"
         ],
-        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b846f33eec1676153787a6_QM.png"
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b846f33eec1676153787a6_QM.png",
+        "note": "Art direction, motion & design for an interactive industry benchmark report."
       },
       {
         "slug": "quantum-metric-web-design",
         "title": "Quantum Metric | Web refresh",
         "tags": [
-          "Web Design"
+          "Web Design",
+          "Motion"
         ],
-        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be34a3a8b32acd6f7fb6f1_WF.png"
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be34a3a8b32acd6f7fb6f1_WF.png",
+        "note": "A component-driven site refresh built on Tailwind that lifted qualified leads."
       },
       {
         "slug": "adobe-workfront-web-design",
         "title": "Adobe Workfront | Web design",
         "tags": [
-          "Web design"
+          "Web Design"
         ],
-        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be35bdb510f4bbb7d571be_WF.png"
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be35bdb510f4bbb7d571be_WF.png",
+        "note": "An audit-driven CMS rebuild that replaced 30 shades of orange with one clear design system."
       },
       {
         "slug": "adobe-workfront-leap-2020-opener",
@@ -247,7 +255,8 @@
           "Motion",
           "3d"
         ],
-        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b70cc400a6b0b53c4f_48fad9111870185.600a23f7e084c.webp"
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b70cc400a6b0b53c4f_48fad9111870185.600a23f7e084c.webp",
+        "note": "Motion design that turned a virtual conference opener into a story about work management."
       },
       {
         "slug": "adobe-workfront-cko-2021",
@@ -256,7 +265,8 @@
           "Motion",
           "3d"
         ],
-        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e033f5b8f914367d203_a51640163916867.63edeb4d099d6.png"
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e033f5b8f914367d203_a51640163916867.63edeb4d099d6.png",
+        "note": "A motivational opener for Workfront's first all-remote CKO, made mid-acquisition."
       },
       {
         "slug": "adobe-experience-cloud-workfront-digital-collaboration",
@@ -264,7 +274,8 @@
         "tags": [
           "Motion"
         ],
-        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be34d75f740a290c232ed6_Adobe.png"
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be34d75f740a290c232ed6_Adobe.png",
+        "note": "Short explainer videos introducing Workfront to Adobe's audience after the acquisition."
       },
       {
         "slug": "cbs-ghosts---the-musical-lyric-video",
@@ -272,7 +283,8 @@
         "tags": [
           "Motion"
         ],
-        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be479706952eec7ab5d862_ghosts.jpg"
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be479706952eec7ab5d862_ghosts.jpg",
+        "note": "A lyric video for CBS's Ghosts, made with agency Totally Legitimate."
       }
     ],
     "categoryMembership": {
@@ -325,7 +337,7 @@
       },
       {
         "type": "skill card",
-        "heading": "Art direction",
+        "heading": "Creative direction",
         "text": "I love bringing experiences to life, whether it's a campaign, or event."
       },
       {
@@ -362,7 +374,7 @@
       },
       {
         "type": "body paragraph",
-        "text": "We're in a new horizon of what design looks like. I'm taking the challenge to understand how we can utilize tools to make projects cooler, faster, and better performing."
+        "text": "Design looks different than it did a few years ago. I like figuring out how new tools fit in, and how they make projects cooler, faster, and better."
       },
       {
         "type": "body paragraph",
@@ -389,7 +401,7 @@
       },
       {
         "type": "body paragraph",
-        "text": "Plus a uncountable number of smaller projects."
+        "text": "Plus an uncountable number of smaller projects."
       },
       {
         "type": "list heading",
@@ -421,7 +433,7 @@
       {
         "type": "footer",
         "text": [
-          "\u00a9 2025 Fisher Creative. All Rights Reserved"
+          "© 2025 Fisher Creative. All Rights Reserved"
         ]
       }
     ],
@@ -466,7 +478,7 @@
       {
         "type": "footer",
         "text": [
-          "\u00a9 2025 Fisher Creative. All Rights Reserved"
+          "© 2025 Fisher Creative. All Rights Reserved"
         ]
       }
     ],
@@ -499,16 +511,19 @@
           "Web design",
           "Vibe Coding",
           "Entertainment"
-        ]
+        ],
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be060df3b206294872ff2c_Comp%202_1-poster-00001.jpg",
+        "coverVideoMp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be060df3b206294872ff2c_Comp%202_1-transcode.mp4",
+        "coverVideoWebm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be060df3b206294872ff2c_Comp%202_1-transcode.webm"
       },
       {
-        "title": "Locksmith - After Effects plugin",
-        "href": "/ai-musings/how-to-brand-ai",
+        "title": "Locksmith",
+        "href": "/ai-musings/locksmith",
         "tags": [
           "Vibe Coding",
           "Tools"
         ],
-        "note": "duplicate href, same slug as howtobrandai.com card - no distinct Locksmith page exists"
+        "coverImage": "/images/locksmith-panel-wide.png"
       }
     ],
     "images": [
@@ -552,7 +567,7 @@
         {
           "type": "footer",
           "text": [
-            "\u00a9 2025 Fisher Creative. All Rights Reserved"
+            "© 2025 Fisher Creative. All Rights Reserved"
           ]
         }
       ],
@@ -560,6 +575,165 @@
         {
           "url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f7352279e869460db99121_sego.svg",
           "context": "site logo (nav)"
+        }
+      ],
+      "videos": [],
+      "heroVideo": {
+        "type": "native html5 background video",
+        "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be060df3b206294872ff2c_Comp%202_1-transcode.mp4",
+        "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be060df3b206294872ff2c_Comp%202_1-transcode.webm",
+        "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be060df3b206294872ff2c_Comp%202_1-poster-00001.jpg",
+        "context": "hero screen recording of howtobrandai.com, added to the live Webflow page after the initial crawl"
+      }
+    },
+    "locksmith": {
+      "title": "Locksmith",
+      "metaDescription": "An After Effects panel that turns a selection of keyframes into a reusable, adjustable Lock.",
+      "sections": [
+        {
+          "type": "heading",
+          "text": "Locksmith"
+        },
+        {
+          "type": "credit line",
+          "text": "After Effects panel (CEP), built for my own timeline"
+        },
+        {
+          "type": "body paragraph",
+          "text": "The same handful of moves keeps coming up in my timelines. A card settling into place, a title easing up and holding, a bounce on an icon. Every time, the keyframes lived in one composition and died there. Copy, paste, retime by hand, fix the easing, repeat. So I built the tool I actually wanted. Locksmith is an After Effects panel that turns a selection of keyframes into a reusable, adjustable unit I call a Lock."
+        },
+        {
+          "type": "sub-heading",
+          "text": "What a Lock holds"
+        },
+        {
+          "type": "body paragraph",
+          "text": "A Lock captures how the keyframes move, not the layer they're on. Select two or more keyframes on any combination of these properties, hit the header's +, and Locksmith stores the shape of that motion on its own:"
+        },
+        {
+          "type": "list",
+          "text": [
+            "Position: the path the layer travels",
+            "Scale: including independent X/Y when the proportion lock is off",
+            "Rotation: with direction preserved",
+            "Opacity: fades, flickers, holds",
+            "Effects: tracked so Locksmith can add the missing effect before pasting its keyframes",
+            "Expression: carried along when the property is expression-driven"
+          ]
+        },
+        {
+          "type": "body paragraph",
+          "text": "Every Lock in the list shows which of these six it contains, so you can tell at a glance whether \"Title Settle\" is a full transform-and-fade or just a rotation wobble."
+        },
+        {
+          "type": "figure",
+          "image": "/images/locksmith-panel-wide.png",
+          "imageWidth": 1032,
+          "imageHeight": 768,
+          "text": "The actual panel. CEP, docked, no different from Effects & Presets."
+        },
+        {
+          "type": "sub-heading",
+          "text": "Saving and applying"
+        },
+        {
+          "type": "body paragraph",
+          "text": "The workflow is short on purpose. If it isn't, I won't use it mid-edit."
+        },
+        {
+          "type": "steps",
+          "text": [
+            "Select the keyframes on the properties you want to save.",
+            "Click + in the header. Name the Lock, or don't. You can rename it later by double-clicking.",
+            "Select one or more destination layers back in the comp.",
+            "Select the Lock, check the apply options, hit Apply."
+          ]
+        },
+        {
+          "type": "body paragraph",
+          "text": "Locksmith applies every enabled property to every selected layer at once. \"Make these six title cards animate the same way\" goes from six manual paste jobs to one click."
+        },
+        {
+          "type": "sub-heading",
+          "text": "The part that took the longest: applying it differently"
+        },
+        {
+          "type": "body paragraph",
+          "text": "Saving the keyframes is the easy part. The apply options are why Locksmith exists at all, because the same saved motion almost never fits the new context exactly as recorded."
+        },
+        {
+          "type": "figure",
+          "image": "/images/locksmith-detail-apply.png",
+          "imageWidth": 2064,
+          "imageHeight": 340,
+          "text": "Timing, easing, and anchor, side by side."
+        },
+        {
+          "type": "body paragraph",
+          "text": "Timing switches between two ways of changing duration. Stretch nudges the length relative to the original. A 20-frame Lock stretched +50% becomes 30 frames. Retime sets an exact target instead, like 1s flat, no matter how long the original take was."
+        },
+        {
+          "type": "body paragraph",
+          "text": "In / CLI / Out decides where the motion anchors on the new layer. It can start at the layer's in-point, sit at the current time indicator, or back off from the out-point. Same Lock, but it's the difference between \"this plays as the layer enters\" and \"this plays as it exits.\""
+        },
+        {
+          "type": "body paragraph",
+          "text": "Flip and Easing (off, on, reversed) turn one saved motion into two. Same swoop, forward or backward, eased or not, without a second Lock cluttering the list."
+        },
+        {
+          "type": "pull quote",
+          "text": "Relative is the one I use the most. Each property offsets from wherever that layer already sits, instead of pasting the Lock's absolute values onto it. \"Slide in from the left and settle\" adapts to whatever \"settled\" means for that layer, rather than dragging it to the Lock's original coordinates."
+        },
+        {
+          "type": "sub-heading",
+          "text": "Layer tools"
+        },
+        {
+          "type": "body paragraph",
+          "text": "Above the Locks list is a row of blunter, one-shot tools for whatever's already on your timeline. No saved Lock required."
+        },
+        {
+          "type": "figure",
+          "image": "/images/locksmith-detail-toolbar.png",
+          "imageWidth": 2064,
+          "imageHeight": 180,
+          "text": "Quick edits that don't need a saved Lock at all."
+        },
+        {
+          "type": "list",
+          "text": [
+            "Clear: strips keyframes and expressions off the selected layers.",
+            "Trim: pulls a layer's in/out to its first and last keyframe.",
+            "Drop: deletes any keyframes hanging outside the layer's in/out points.",
+            "Flip ease: mirrors the easing direction on selected keys without moving the values.",
+            "Const: flattens the speed between two selected keys to constant, leaving the easing outside that span alone."
+          ]
+        },
+        {
+          "type": "sub-heading",
+          "text": "Built to disappear"
+        },
+        {
+          "type": "body paragraph",
+          "text": "It lives docked next to the timeline all day, so it follows After Effects' own visual rhythm. A 28 to 32px control height, 11 to 12px type, grayscale everywhere except where color means something, blue for selection, mint for Relative. Dense on purpose. A panel you keep open for eight hours shouldn't ask for more room than it needs."
+        },
+        {
+          "type": "body paragraph",
+          "text": "It ships as a plain CEP extension. Just an index.html, some plain JS driving a small state object, and a .jsx host script that's the only part allowed to touch the After Effects project. No framework, no build step to fight. It opens fast and gets out of the way."
+        }
+      ],
+      "images": [
+        {
+          "url": "/images/locksmith-panel-wide.png",
+          "context": "The Locksmith panel docked in After Effects, showing the layer tools row, the empty Locks list, and the apply options at the bottom."
+        },
+        {
+          "url": "/images/locksmith-detail-apply.png",
+          "context": "Close-up of the apply options row: Repeat, Const, Easing, Timing toggles, and the In / CLI / Out position switch."
+        },
+        {
+          "url": "/images/locksmith-detail-toolbar.png",
+          "context": "Close-up of the layer tools row: Clear, Trim, Drop, Flip ease, and Const buttons."
         }
       ],
       "videos": []
@@ -620,7 +794,7 @@
         },
         {
           "type": "body paragraph",
-          "text": "The landing page for LEAP 2025 was more intentional from the start. I designed the web experience to serve as the first introduction to the brand \u2014 a strong, immersive entry point. Big, expressive colors set the tone, echoing the energy and warmth attendees would experience at the live event."
+          "text": "The landing page for LEAP 2025 was more intentional from the start. I designed the web experience to serve as the first introduction to the brand — a strong, immersive entry point. Big, expressive colors set the tone, echoing the energy and warmth attendees would experience at the live event."
         },
         {
           "type": "section heading",
@@ -632,7 +806,7 @@
         },
         {
           "type": "credit line",
-          "text": "LEAP Intro deliverable - motion - Steve Fisher | Script \u2013 Mads Herring"
+          "text": "LEAP Intro deliverable - motion - Steve Fisher | Script – Mads Herring"
         },
         {
           "type": "more work",
@@ -643,7 +817,8 @@
               "tags": [
                 "Conference",
                 "Branding",
-                "Motion"
+                "Motion",
+                "3d"
               ]
             },
             {
@@ -657,12 +832,12 @@
             },
             {
               "title": "Adobe Workfront | LEAP 2020",
-              "href": "/work/adobe-workfront-web-design",
+              "href": "/work/adobe-workfront-leap-2020-opener",
               "tags": [
+                "Conference",
                 "Motion",
-                "Branding"
-              ],
-              "note": "link text says LEAP 2020 but href points to adobe-workfront-web-design slug"
+                "3d"
+              ]
             }
           ]
         }
@@ -756,7 +931,95 @@
           "title": "LEAP_intro-video",
           "context": "Experience section - opening keynote video, found via wistia-player custom element the initial crawl missed"
         }
-      ]
+      ],
+      "mediaLayout": {
+        "hero": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fde0e7de2f0884803c8b61_l25_cover.jpg",
+        "blocks": [
+          {
+            "after": "LEAP 25 brand",
+            "columns": 3,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc7281e081a2bf7a68a9fc_l25-orange.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc7280fe1d290a2ea34431_l25-pink.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc72800deaf0fe09738539_l25-indigo.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc7280c982ff540bf39573_l25-black.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc7280c982ff540bf39576_l25-white.jpg"
+            ],
+            "anchorAspect": [
+              560,
+              322
+            ]
+          },
+          {
+            "after": "Key elements",
+            "columns": 4,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc772138d3b9d9df722115_l25_ident-1.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc77219aaaa36632c174c0_l25_ident-2.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc7721ef983d16598de27e_l25_ident-3.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc772101099aad48d1d3bc_l25_ident-4.jpg"
+            ],
+            "anchorAspect": [
+              422,
+              363
+            ]
+          },
+          {
+            "after": "Promotion",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fddb0fcb04b2f6b044a71e_l25_promo-video-transcode.mp4",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fddbe85c4c4949e68abb01_l25_social-post.jpg"
+            ],
+            "anchorAspect": [
+              720,
+              720
+            ]
+          },
+          {
+            "after": "Web",
+            "columns": 1,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc7b23e9f4360ddcb144af_scroll-transcode.mp4"
+            ],
+            "anchorAspect": [
+              1280,
+              720
+            ]
+          },
+          {
+            "after": "Experience",
+            "columns": 1,
+            "items": [
+              "https://fast.wistia.net/embed/iframe/gcmwhaap9t"
+            ]
+          },
+          {
+            "after": "Experience",
+            "columns": 3,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdd8cd1cc633ed70bd8446_i25_i360-transcode.mp4",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdd97016bca62b3fb1052c_l25_united.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdd9e4c1258cf3500fa8e1_l25_leap-board.jpg"
+            ],
+            "anchorAspect": [
+              720,
+              720
+            ]
+          },
+          {
+            "after": "Experience",
+            "columns": 1,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdd4c860a1feb28c43ae16_l25-on-stage-transcode.mp4"
+            ],
+            "anchorAspect": [
+              1280,
+              422
+            ]
+          }
+        ]
+      }
     },
     "quantum-metric-leap-2024": {
       "title": "Quantum Metric LEAP 2024",
@@ -780,7 +1043,7 @@
         },
         {
           "type": "credit line",
-          "text": "LEAP Intro deliverable - motion - Steve Fisher | Script \u2013 Mads Herring"
+          "text": "LEAP Intro deliverable - motion - Steve Fisher | Script – Mads Herring"
         },
         {
           "type": "section heading",
@@ -831,7 +1094,8 @@
               "tags": [
                 "Conference",
                 "Branding",
-                "Motion"
+                "Motion",
+                "3d"
               ]
             },
             {
@@ -847,8 +1111,8 @@
               "title": "Quantum Metric | Web Design",
               "href": "/work/quantum-metric-web-design",
               "tags": [
-                "Web design",
-                "Branding"
+                "Web Design",
+                "Motion"
               ]
             }
           ]
@@ -907,27 +1171,118 @@
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc55b1c982ff540be12b9a_LEAP-24_promo_nov-9_v1_1-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc55b1c982ff540be12b9a_LEAP-24_promo_nov-9_v1_1-transcode.webm",
-          "context": "hero/intro promo video"
+          "context": "hero/intro promo video",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc55b1c982ff540be12b9a_LEAP-24_promo_nov-9_v1_1-poster-00001.jpg"
         },
         {
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdc841b7e61a9cd69758c2_leap-24-sazerac-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdc841b7e61a9cd69758c2_leap-24-sazerac-transcode.webm",
-          "context": "conference branding section video"
+          "context": "conference branding section video",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdc841b7e61a9cd69758c2_leap-24-sazerac-poster-00001.jpg"
         },
         {
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5a5cc982ff540be4653f_leap-24_parade-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5a5cc982ff540be4653f_leap-24_parade-transcode.webm",
-          "context": "video section - parade footage"
+          "context": "video section - parade footage",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5a5cc982ff540be4653f_leap-24_parade-poster-00001.jpg"
         },
         {
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5a968351618564bddbf1_leap-24_keynote-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5a968351618564bddbf1_leap-24_keynote-transcode.webm",
-          "context": "video section - keynote footage"
+          "context": "video section - keynote footage",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5a968351618564bddbf1_leap-24_keynote-poster-00001.jpg"
+        },
+        {
+          "type": "vimeo iframe embed",
+          "vimeoId": "923084658",
+          "src": "https://player.vimeo.com/video/923084658?badge=0&autopause=0&player_id=0&app_id=58479",
+          "title": "LEAP 2024 Recap",
+          "context": "Experience section recap video, missing from the initial crawl"
         }
-      ]
+      ],
+      "mediaLayout": {
+        "hero": "https://fast.wistia.net/embed/iframe/ny7saywy4m",
+        "blocks": [
+          {
+            "after": "Conference branding",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdc4ecf5f69c2abf1c2fd0_leap-24_color-palette.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc52f1edf773ae2e0c4a37_leap-24_theme.jpg"
+            ],
+            "widths": [
+              115.508,
+              1068.49
+            ],
+            "anchorAspect": [
+              139,
+              354
+            ]
+          },
+          {
+            "after": "Conference branding",
+            "columns": 1,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc55b1c982ff540be12b9a_LEAP-24_promo_nov-9_v1_1-transcode.mp4"
+            ],
+            "anchorAspect": [
+              1280,
+              720
+            ]
+          },
+          {
+            "after": "Video",
+            "columns": 3,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fdc841b7e61a9cd69758c2_leap-24-sazerac-transcode.mp4",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5a5cc982ff540be4653f_leap-24_parade-transcode.mp4",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5a968351618564bddbf1_leap-24_keynote-transcode.mp4"
+            ],
+            "anchorAspect": [
+              576,
+              720
+            ]
+          },
+          {
+            "after": "Video",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc52f124b709a2c899ab84_leap-24_stage.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc52f1ad9de418c1baa64d_leap-24_large-screen.jpg"
+            ],
+            "anchorAspect": [
+              644,
+              437
+            ]
+          },
+          {
+            "after": "Experience",
+            "columns": 3,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5e561af666a7c4a1bfd1_leap-24_photos_1.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5e56102595e6653a87b9_leap-24_photos_2.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5e5614442d00a75b788e_leap-24_photos_3.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5e5668ffd56cf1bbbabc_leap-24_photos_4.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5e56e081a2bf7a5b4f57_leap-24_photos_5.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc5e568351618564c04ce0_leap-24_photos_6.jpg"
+            ],
+            "anchorAspect": [
+              422,
+              363
+            ]
+          },
+          {
+            "after": "Experience",
+            "columns": 1,
+            "items": [
+              "https://player.vimeo.com/video/923084658?badge=0&autopause=0&player_id=0&app_id=58479"
+            ]
+          }
+        ]
+      }
     },
     "quantum-metric-leap-2023": {
       "title": "Quantum Metric LEAP 2023",
@@ -951,7 +1306,7 @@
         },
         {
           "type": "credit line",
-          "text": "LEAP Intro deliverable - motion - Steve Fisher | Script \u2013 Mads Herring"
+          "text": "LEAP Intro deliverable - motion - Steve Fisher | Script – Mads Herring"
         },
         {
           "type": "section heading",
@@ -975,7 +1330,7 @@
         },
         {
           "type": "credit line",
-          "text": "Event Photography, Motion \u2013 Steve Fisher | Graphic, Jason McAloon"
+          "text": "Event Photography, Motion – Steve Fisher | Graphic, Jason McAloon"
         },
         {
           "type": "section heading",
@@ -991,7 +1346,7 @@
         },
         {
           "type": "body paragraph",
-          "text": "We had to lead our marketing efforts with a clear goal\u2013 convince people and companies that it was worth investing in sending their teams back to in-person events. Our last two conferences were virtual, so this was a big shift. To help bridge that gap, we pulled in footage from past events and combined it with more stylized, energetic slides. The goal was to build excitement and momentum. We wanted to show the best version of our brand for this first post-pandemic conference."
+          "text": "We had to lead our marketing efforts with a clear goal– convince people and companies that it was worth investing in sending their teams back to in-person events. Our last two conferences were virtual, so this was a big shift. To help bridge that gap, we pulled in footage from past events and combined it with more stylized, energetic slides. The goal was to build excitement and momentum. We wanted to show the best version of our brand for this first post-pandemic conference."
         },
         {
           "type": "section heading",
@@ -1026,8 +1381,8 @@
               "title": "Quantum Metric | Web Design",
               "href": "/work/quantum-metric-web-design",
               "tags": [
-                "Web design",
-                "Branding"
+                "Web Design",
+                "Motion"
               ]
             }
           ]
@@ -1126,21 +1481,134 @@
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2958d30db222300b28d9_20s-LEAP-social-v6-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2958d30db222300b28d9_20s-LEAP-social-v6-transcode.webm",
-          "context": "hero/intro social promo video"
+          "context": "hero/intro social promo video",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2958d30db222300b28d9_20s-LEAP-social-v6-poster-00001.jpg"
         },
         {
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2b8f3702277a30c1af04_LEAP23_zoom-bg_2-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2b8f3702277a30c1af04_LEAP23_zoom-bg_2-transcode.webm",
-          "context": "Brand strategy - zoom background video"
+          "context": "Brand strategy - zoom background video",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2b8f3702277a30c1af04_LEAP23_zoom-bg_2-poster-00001.jpg"
         },
         {
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2c692abda3933c3530a7_LEAP_23_recap_social_v1_1-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2c692abda3933c3530a7_LEAP_23_recap_social_v1_1-transcode.webm",
-          "context": "Experience section - recap social video"
+          "context": "Experience section - recap social video",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2c692abda3933c3530a7_LEAP_23_recap_social_v1_1-poster-00001.jpg"
         }
-      ]
+      ],
+      "mediaLayout": {
+        "hero": "https://fast.wistia.net/embed/iframe/35nexrd6vq",
+        "blocks": [
+          {
+            "after": "Conference branding",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1bfc0deaf0fe093db088_iasf-leap-23_tops.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2958d30db222300b28d9_20s-LEAP-social-v6-transcode.mp4"
+            ],
+            "anchorAspect": [
+              590,
+              490
+            ]
+          },
+          {
+            "after": "Conference branding",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc12f868ffd56cf18ba036_leap-23_atlas.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc131cefd51008ebed29d2_leap-23_jm.jpg"
+            ],
+            "anchorAspect": [
+              590,
+              490
+            ]
+          },
+          {
+            "after": "Brand strategy",
+            "columns": 6,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1386eb596246122ec546_leap-23_color-white.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f74ae645060d76ef70db4b_iasf_leap-23_colors-logo_2.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f74ae6678311c85933c687_iasf_leap-23_colors-logo_4.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f74ae56224c678f042b6a0_iasf_leap-23_colors-logo_3.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f74ae5b6128e5e82842ba8_iasf_leap-23_colors-logo_5.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f74b36193b5ceff91d4ef8_iasf_leap-23_colors-logo_1-1.png"
+            ],
+            "widths": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              6
+            ],
+            "anchorAspect": [
+              107,
+              466
+            ]
+          },
+          {
+            "after": "Brand strategy",
+            "columns": 3,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2ff7ea94a5713112327a_iasf_leap-23_styles.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f74c2437a393a9c3103d64_iasf_leap-23_styles-2.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67f74c2f13c2a47b5e2a7f41_iasf_leap-23_styles.jpg"
+            ],
+            "anchorAspect": [
+              422,
+              363
+            ]
+          },
+          {
+            "after": "Experience",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1725a99339ceb500d5e0_leap-23-acl.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2b8f3702277a30c1af04_LEAP23_zoom-bg_2-transcode.mp4"
+            ],
+            "anchorAspect": [
+              644,
+              364
+            ]
+          },
+          {
+            "after": "Experience",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2f0d9382481782b8dc8f_leap-23_caitlin.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc2c692abda3933c3530a7_LEAP_23_recap_social_v1_1-transcode.mp4"
+            ],
+            "widths": [
+              1,
+              2
+            ],
+            "anchorAspect": [
+              380,
+              504
+            ]
+          },
+          {
+            "after": "Photography",
+            "columns": 3,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1aa52e666b43696259d3_iasf-leap-23_01.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1aa554dab4a7f81d8328_iasf-leap-23_02.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1aa55b9520193783b55a_iasf-leap-23_03.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1aa524b709a2c876b25d_iasf-leap-23_04.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1aa565dab72bb0171f33_iasf-leap-23_06.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fc1574d30db22230fdd76c_leap-23_photo.jpg"
+            ],
+            "anchorAspect": [
+              422,
+              363
+            ]
+          }
+        ]
+      }
     },
     "quantum-metric-felix-ai-campaign": {
       "title": "Quantum Metric | Felix AI Campaign",
@@ -1197,7 +1665,7 @@
         },
         {
           "type": "credit line",
-          "text": "Art Direction, Motion \u2013 Steve Fisher | Script \u2013 Mads Herring"
+          "text": "Art Direction, Motion – Steve Fisher | Script – Mads Herring"
         },
         {
           "type": "section heading",
@@ -1209,7 +1677,7 @@
         },
         {
           "type": "credit line",
-          "text": "Art Direction, 3d, Motion \u2013 Steve Fisher | 3d, Motion \u2013 Nick Ritter | Script \u2013 Mads Herring"
+          "text": "Art Direction, 3d, Motion – Steve Fisher | 3d, Motion – Nick Ritter | Script – Mads Herring"
         },
         {
           "type": "section heading",
@@ -1230,9 +1698,8 @@
               "title": "Quantum Metric | Peak Benchmark Report",
               "href": "/work/quantum-metric-peak-benchmark-report",
               "tags": [
-                "3d",
                 "Web Design",
-                "Interactive"
+                "3d"
               ]
             },
             {
@@ -1248,8 +1715,8 @@
               "title": "Quantum Metric | Web Design",
               "href": "/work/quantum-metric-web-design",
               "tags": [
-                "Web design",
-                "Branding"
+                "Web Design",
+                "Motion"
               ]
             }
           ]
@@ -1338,15 +1805,112 @@
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff136cb47f03aab648a3c5_felix-webinar-scroll-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff136cb47f03aab648a3c5_felix-webinar-scroll-transcode.webm",
-          "context": "Web section - webinar scroll video"
+          "context": "Web section - webinar scroll video",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff136cb47f03aab648a3c5_felix-webinar-scroll-poster-00001.jpg"
         },
         {
-          "type": "native html5 background video",
-          "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fddb0fcb04b2f6b044a71e_l25_promo-video-transcode.mp4",
-          "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fddb0fcb04b2f6b044a71e_l25_promo-video-transcode.webm",
-          "context": "Explainer section video (reused LEAP 25 promo asset)"
+          "type": "vimeo iframe embed",
+          "vimeoId": "929981777",
+          "src": "https://player.vimeo.com/video/929981777?badge=0&autopause=0&player_id=0&app_id=58479",
+          "title": "Quantum Metric Felix AI",
+          "context": "Web section product video, missing from the initial crawl"
+        },
+        {
+          "type": "vimeo iframe embed",
+          "vimeoId": "1075801569",
+          "src": "https://player.vimeo.com/video/1075801569?badge=0&autopause=0&player_id=0&app_id=58479",
+          "title": "Quantum Metric Felix AI",
+          "context": "Explainer #1 section video, missing from the initial crawl"
         }
-      ]
+      ],
+      "mediaLayout": {
+        "hero": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff0e58f8ee9dc30d0cd93b_004c27d96437738ecb45068b82081183_felix_front-image.jpg",
+        "blocks": [
+          {
+            "after": "Felix AI - Branding & Mascot",
+            "columns": 3,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff22e34768bfcf2dc3fefc_felix_angle_6.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff22e2b1a6c242aa45570f_felix_angle_5.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff22e2cc4887836c71047e_felix_angle_4.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff22e248e223bb30b2adb8_felix_angle_3.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff22e2b58ca8b239d2bbea_felix_angle_2.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff22e29c0639b1e7ddf9f3_felix_angle_1.jpg"
+            ],
+            "anchorAspect": [
+              645,
+              385
+            ]
+          },
+          {
+            "after": "Web",
+            "columns": 1,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff136cb47f03aab648a3c5_felix-webinar-scroll-transcode.mp4"
+            ],
+            "anchorAspect": [
+              1280,
+              720
+            ]
+          },
+          {
+            "after": "Web",
+            "columns": 1,
+            "items": [
+              "https://player.vimeo.com/video/929981777?badge=0&autopause=0&player_id=0&app_id=58479"
+            ]
+          },
+          {
+            "after": "Explainer #1",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2b142e2cdc61152f8ff2_felix_explainer-1_04.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2b150f3bacd2b65c05e8_felix_explainer-1_01.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2b15c343ef076b59ec7b_bd8281a7c88ee91a578316c6e268ee60_felix_explainer-1_03.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2b1548e223bb30b84a65_felix_explainer-1_02.jpg"
+            ],
+            "anchorAspect": [
+              644,
+              363
+            ]
+          },
+          {
+            "after": "Explainer #1",
+            "columns": 1,
+            "items": [
+              "https://player.vimeo.com/video/1075801569?badge=0&autopause=0&player_id=0&app_id=58479"
+            ]
+          },
+          {
+            "after": "Explainer #2",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2d211fcf6edc826fe5c0_felix_explainer_2_1.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2d200039b96d46b7c126_felix_explainer_2_2.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2d211fcf6edc826fe5e8_felix_explainer_2_3.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2d2067d34ae075c9b81c_felix_explainer_2_4.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2d204768bfcf2dcb4505_felix_explainer_2_5.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff2d211fcf6edc826fe5c4_felix_explainer_2_6.jpg"
+            ],
+            "anchorAspect": [
+              644,
+              361
+            ]
+          },
+          {
+            "after": "Out-of-home",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff24c11fcf6edc82698069_felix_out-of-home_2.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67ff24c14768bfcf2dc5753d_felix_out-of-home_1.jpg"
+            ],
+            "anchorAspect": [
+              644,
+              364
+            ]
+          }
+        ]
+      }
     },
     "quantum-metric-peak-benchmark-report": {
       "title": "Quantum Metric | Peak Benchmark Report",
@@ -1394,7 +1958,8 @@
               "tags": [
                 "Conference",
                 "Branding",
-                "Motion"
+                "Motion",
+                "3d"
               ]
             },
             {
@@ -1410,8 +1975,8 @@
               "title": "Quantum Metric | Web Design",
               "href": "/work/quantum-metric-web-design",
               "tags": [
-                "Web design",
-                "Branding"
+                "Web Design",
+                "Motion"
               ]
             }
           ]
@@ -1464,27 +2029,69 @@
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe72163ba29b43fde0afd5_peak-recording-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe72163ba29b43fde0afd5_peak-recording-transcode.webm",
-          "context": "hero screen recording of the interactive report"
+          "context": "hero screen recording of the interactive report",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe72163ba29b43fde0afd5_peak-recording-poster-00001.jpg"
         },
         {
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe767c0172e3d736231cc6_step-1-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe767c0172e3d736231cc6_step-1-transcode.webm",
-          "context": "Technology section step 1"
+          "context": "Technology section step 1",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe767c0172e3d736231cc6_step-1-poster-00001.jpg"
         },
         {
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7768dfa8c90d651d6369_step-3-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7768dfa8c90d651d6369_step-3-transcode.webm",
-          "context": "Technology section step 3"
+          "context": "Technology section step 3",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7768dfa8c90d651d6369_step-3-poster-00001.jpg"
         },
         {
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe782d7856107a9a15017f_step-4-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe782d7856107a9a15017f_step-4-transcode.webm",
-          "context": "Technology section step 4"
+          "context": "Technology section step 4",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe782d7856107a9a15017f_step-4-poster-00001.jpg"
         }
-      ]
+      ],
+      "mediaLayout": {
+        "hero": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe72163ba29b43fde0afd5_peak-recording-transcode.mp4",
+        "blocks": [
+          {
+            "after": "Technology",
+            "columns": 3,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe767c0172e3d736231cc6_step-1-transcode.mp4",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7768dfa8c90d651d6369_step-3-transcode.mp4",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe782d7856107a9a15017f_step-4-transcode.mp4"
+            ],
+            "anchorAspect": [
+              720,
+              720
+            ]
+          },
+          {
+            "after": "Stills",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b72ffc9220b02215ad8_peak_still_1.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b723e362e8fc3a5fc71_peak_still_2.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b7202f41aaeaaa6b071_peak_still_3.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b727c87ddf3f14a1780_peak_still_4.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b72dd20da3fe9eab476_peak_still_5.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b724186a4dd5cac16ba_peak_still_6.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b72b82921adae97c860_peak_still_7.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b7252d5d4eb77856ce6_peak_still_8.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b72bd6d747e3b5a32bf_peak_still_9.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b73108f03e44a5d8467_peak_still_10.jpg"
+            ],
+            "anchorAspect": [
+              644,
+              385
+            ]
+          }
+        ]
+      }
     },
     "quantum-metric-web-design": {
       "title": "Quantum Metric | Web Design",
@@ -1557,7 +2164,8 @@
               "tags": [
                 "Conference",
                 "Branding",
-                "Motion"
+                "Motion",
+                "3d"
               ]
             },
             {
@@ -1573,8 +2181,8 @@
               "title": "Quantum Metric | Web Design",
               "href": "/work/quantum-metric-web-design",
               "tags": [
-                "Web design",
-                "Branding"
+                "Web Design",
+                "Motion"
               ]
             }
           ]
@@ -1611,27 +2219,106 @@
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b84cda8fa1e4796132799b_main-video-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b84cda8fa1e4796132799b_main-video-transcode.webm",
-          "context": "hero main video"
+          "context": "hero main video",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b84cda8fa1e4796132799b_main-video-poster-00001.jpg"
         },
         {
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85bbc1ae22f52701a7d72_scaleable-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85bbc1ae22f52701a7d72_scaleable-transcode.webm",
-          "context": "Scalable design-thinking section video"
+          "context": "Scalable design-thinking section video",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85bbc1ae22f52701a7d72_scaleable-poster-00001.jpg"
         },
         {
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b8547736c9d45ce421047b_stats-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b8547736c9d45ce421047b_stats-transcode.webm",
-          "context": "Screens section stats video"
+          "context": "Screens section stats video",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b8547736c9d45ce421047b_stats-poster-00001.jpg"
         },
         {
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85d40ca943ebe62a4ea59_variables-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85d40ca943ebe62a4ea59_variables-transcode.webm",
-          "context": "design token/variables demo video"
+          "context": "design token/variables demo video",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85d40ca943ebe62a4ea59_variables-poster-00001.jpg"
+        },
+        {
+          "type": "vimeo iframe embed",
+          "vimeoId": "585042237",
+          "src": "https://player.vimeo.com/video/585042237?badge=0&autopause=0&player_id=0&app_id=58479",
+          "title": "Quantum Metric - Journeys Explainer's",
+          "context": "Explainers section, missing from the initial crawl"
+        },
+        {
+          "type": "vimeo iframe embed",
+          "vimeoId": "929981777",
+          "src": "https://player.vimeo.com/video/929981777?badge=0&autopause=0&player_id=0&app_id=58479",
+          "title": "Felix AI",
+          "context": "Explainers section (reused Felix AI campaign asset), missing from the initial crawl"
+        },
+        {
+          "type": "vimeo iframe embed",
+          "vimeoId": "837010998",
+          "src": "https://player.vimeo.com/video/837010998?badge=0&autopause=0&player_id=0&app_id=58479",
+          "title": "Quantum Metric - Atlas Guide Overview",
+          "context": "Explainers section, missing from the initial crawl"
         }
-      ]
+      ],
+      "mediaLayout": {
+        "hero": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b84cda8fa1e4796132799b_main-video-transcode.mp4",
+        "blocks": [
+          {
+            "after": "Scalable design-thinking.",
+            "columns": 3,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85bbc1ae22f52701a7d72_scaleable-transcode.mp4",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b8547736c9d45ce421047b_stats-transcode.mp4",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85d40ca943ebe62a4ea59_variables-transcode.mp4"
+            ],
+            "anchorAspect": [
+              1280,
+              720
+            ]
+          },
+          {
+            "after": "Screens",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b851b1c434bf565108946d_slider.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b859d6d6126e1ca14f96c4_traveel.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85edde5fcf973e7076fa0_blog.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b85f24e80f2aef9f5f3513_packages.png"
+            ],
+            "anchorAspect": [
+              1920,
+              1080
+            ],
+            "anchorIndex": 1
+          },
+          {
+            "after": "Benchmark Reports",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68b858245e91607d8301e21c_benchmarks.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fe7b72dd20da3fe9eab476_peak_still_5.jpg"
+            ],
+            "anchorAspect": [
+              1920,
+              1080
+            ]
+          },
+          {
+            "after": "Explainers",
+            "columns": 3,
+            "items": [
+              "https://player.vimeo.com/video/585042237?badge=0&autopause=0&player_id=0&app_id=58479",
+              "https://player.vimeo.com/video/929981777?badge=0&autopause=0&player_id=0&app_id=58479",
+              "https://player.vimeo.com/video/837010998?badge=0&autopause=0&player_id=0&app_id=58479"
+            ]
+          }
+        ]
+      }
     },
     "adobe-workfront-web-design": {
       "title": "Adobe Workfront | Web design",
@@ -1682,7 +2369,8 @@
               "tags": [
                 "Conference",
                 "Branding",
-                "Motion"
+                "Motion",
+                "3d"
               ]
             },
             {
@@ -1698,8 +2386,8 @@
               "title": "Quantum Metric | Web Design",
               "href": "/work/quantum-metric-web-design",
               "tags": [
-                "Web design",
-                "Branding"
+                "Web Design",
+                "Motion"
               ]
             }
           ]
@@ -1709,6 +2397,10 @@
         {
           "url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be338471def77c362f0830_hero.jpg",
           "context": "hero image"
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be328347ddddd365b2c6aa_Why%20Workfront.jpg",
+          "context": "Scalable design-thinking - Why Workfront screen, missing from the initial crawl"
         },
         {
           "url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be32832c4e69d5353a755d_Resources.jpg",
@@ -1732,9 +2424,31 @@
           "type": "native html5 background video",
           "mp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be2c6d1023b7fed6471f25_wf3-transcode.mp4",
           "webm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be2c6d1023b7fed6471f25_wf3-transcode.webm",
-          "context": "hero/why Workfront section video"
+          "context": "hero/why Workfront section video",
+          "poster": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be2c6d1023b7fed6471f25_wf3-poster-00001.jpg"
         }
-      ]
+      ],
+      "mediaLayout": {
+        "hero": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be2c6d1023b7fed6471f25_wf3-transcode.mp4",
+        "blocks": [
+          {
+            "after": "Scalable design-thinking.",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be338471def77c362f0830_hero.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be328347ddddd365b2c6aa_Why%20Workfront.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be32832c4e69d5353a755d_Resources.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be32831ad3961cee5fe21c_Component.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be32837c27775713f0f0d0_Quotes.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be3283e412cb3032135193_Work%20management.jpg"
+            ],
+            "anchorAspect": [
+              1383,
+              778
+            ]
+          }
+        ]
+      }
     },
     "adobe-workfront-leap-2020-opener": {
       "title": "Adobe Workfront LEAP 2020 Opener",
@@ -1769,7 +2483,8 @@
               "tags": [
                 "Conference",
                 "Branding",
-                "Motion"
+                "Motion",
+                "3d"
               ]
             },
             {
@@ -1785,8 +2500,8 @@
               "title": "Quantum Metric | Web Design",
               "href": "/work/quantum-metric-web-design",
               "tags": [
-                "Web design",
-                "Branding"
+                "Web Design",
+                "Motion"
               ]
             }
           ]
@@ -1842,7 +2557,62 @@
           "context": "hero/intro video, found via wistia-player custom element the initial crawl missed"
         }
       ],
-      "note": "No embedded video player found on the page itself despite the 'Animation'/'Editing' credits - only a static screens gallery. Confirmed no wistia elements present."
+      "note": "No embedded video player found on the page itself despite the 'Animation'/'Editing' credits - only a static screens gallery. Confirmed no wistia elements present.",
+      "mediaLayout": {
+        "hero": "https://fast.wistia.net/embed/iframe/1wmn42jgnb",
+        "blocks": [
+          {
+            "after": "Screens",
+            "columns": 1,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15fc51264623e50d6f30_ae8742111870185.600a23f7e01ee.webp"
+            ],
+            "anchorAspect": [
+              1200,
+              646
+            ]
+          },
+          {
+            "after": "Screens",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b7a66df3f56cf61530_cdd880111870185.600a23f6695d6.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b76c658b3973ace0f0_3b4639111870185.600a23f668fd3.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b78af42293b72ae6bf_cd241e111870185.600a23f7e0fbf.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b78a46b1980ebb0b0a_6c53d4111870185.600a23f6bc68f.jpg"
+            ],
+            "anchorAspect": [
+              1920,
+              1034
+            ]
+          },
+          {
+            "after": "Screens",
+            "columns": 1,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b70cc400a6b0b53c4f_48fad9111870185.600a23f7e084c.webp"
+            ],
+            "anchorAspect": [
+              1400,
+              754
+            ]
+          },
+          {
+            "after": "Screens",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b7bdd33abdc3b7e529_8d38da111870185.600a23f7e2337.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b75d4fd1164914d5d2_c00eb8111870185.600a23f7133fa.jpg",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b7f0fbf30a14a7cbdc_214929111870185.600a23f7e1e3e.webp",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be15b73a685292d8763d91_5fbad3111870185.600a23f713ca7.jpg"
+            ],
+            "anchorAspect": [
+              2496,
+              1344
+            ]
+          }
+        ]
+      }
     },
     "adobe-workfront-cko-2021": {
       "title": "Adobe Workfront | CKO 2021",
@@ -1879,7 +2649,8 @@
               "tags": [
                 "Conference",
                 "Branding",
-                "Motion"
+                "Motion",
+                "3d"
               ]
             },
             {
@@ -1895,8 +2666,8 @@
               "title": "Quantum Metric | Web Design",
               "href": "/work/quantum-metric-web-design",
               "tags": [
-                "Web design",
-                "Branding"
+                "Web Design",
+                "Motion"
               ]
             }
           ]
@@ -1940,8 +2711,50 @@
           "context": "Screens gallery 9"
         }
       ],
-      "videos": [],
-      "note": "No embedded video player found on this page despite the caption 'Adobe Workfront CKO 2021' - only a static screens gallery. Confirmed no wistia elements present. (The two Vimeo embeds mislabeled with this same title actually live on the separate 'Adobe Experience Cloud | Workfront Digital Collaboration' page, see below.)"
+      "videos": [
+        {
+          "type": "vimeo iframe embed",
+          "vimeoId": "799396082",
+          "src": "https://player.vimeo.com/video/799396082?badge=0&autopause=0&player_id=0&app_id=58479",
+          "title": "Adobe Workfront CKO 2021",
+          "context": "hero video, missing from the initial crawl"
+        }
+      ],
+      "note": "No embedded video player found on this page despite the caption 'Adobe Workfront CKO 2021' - only a static screens gallery. Confirmed no wistia elements present. (The two Vimeo embeds mislabeled with this same title actually live on the separate 'Adobe Experience Cloud | Workfront Digital Collaboration' page, see below.)",
+      "mediaLayout": {
+        "hero": "https://player.vimeo.com/video/799396082?badge=0&autopause=0&player_id=0&app_id=58479",
+        "blocks": [
+          {
+            "after": "Screens",
+            "columns": 1,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e033f5b8f914367d203_a51640163916867.63edeb4d099d6.png"
+            ],
+            "anchorAspect": [
+              2800,
+              1573
+            ]
+          },
+          {
+            "after": "Screens",
+            "columns": 2,
+            "items": [
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e03bfb7ddfd8f74ea2e_11bdef163916867.63edeb4d08bd0.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e030aa894f0cc76dc7c_6d7d02163916867.63edeb4d024d0.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e038fb03044e2d92e22_44e652163916867.63edeb4d035f2.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e04a2ab927f47ef3a64_b810e2163916867.63edeb4d07efb.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e032c4e69d53537bb7d_ef9407163916867.63edeb4d01725.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e03f7ea085bf1a04b4d_d74820163916867.63edeb4d06523.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e03752851d41ac6a874_509a34163916867.63edeb4d0726b.png",
+              "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be1e038f19164c1c64fa2c_ebb661163916867.63edeb4d047d3.png"
+            ],
+            "anchorAspect": [
+              2800,
+              1573
+            ]
+          }
+        ]
+      }
     },
     "adobe-experience-cloud-workfront-digital-collaboration": {
       "title": "Adobe Experience Cloud - Workfront Digital Collaboration",
@@ -1970,7 +2783,8 @@
               "tags": [
                 "Conference",
                 "Branding",
-                "Motion"
+                "Motion",
+                "3d"
               ]
             },
             {
@@ -1986,8 +2800,8 @@
               "title": "Quantum Metric | Web Design",
               "href": "/work/quantum-metric-web-design",
               "tags": [
-                "Web design",
-                "Branding"
+                "Web Design",
+                "Motion"
               ]
             }
           ]
@@ -2009,7 +2823,19 @@
           "title": "Adobe Workfront CKO 2021",
           "note": "title attribute is mislabeled (leftover from another project's embed), context: second explainer video on the page"
         }
-      ]
+      ],
+      "mediaLayout": {
+        "hero": "https://player.vimeo.com/video/1058332675?badge=0&autopause=0&player_id=0&app_id=58479",
+        "blocks": [
+          {
+            "after": null,
+            "columns": 1,
+            "items": [
+              "https://player.vimeo.com/video/1058333887?badge=0&autopause=0&player_id=0&app_id=58479"
+            ]
+          }
+        ]
+      }
     },
     "cbs-ghosts---the-musical-lyric-video": {
       "title": "CBS Ghosts - The Musical Lyric Video",
@@ -2038,7 +2864,8 @@
               "tags": [
                 "Conference",
                 "Branding",
-                "Motion"
+                "Motion",
+                "3d"
               ]
             },
             {
@@ -2054,8 +2881,8 @@
               "title": "Quantum Metric | Web Design",
               "href": "/work/quantum-metric-web-design",
               "tags": [
-                "Web design",
-                "Branding"
+                "Web Design",
+                "Motion"
               ]
             }
           ]
@@ -2070,7 +2897,11 @@
           "title": "Ghosts: The Musical",
           "context": "main lyric video embed"
         }
-      ]
+      ],
+      "mediaLayout": {
+        "hero": "https://www.youtube.com/embed/LWLM5fnmftk?rel=0&controls=1&autoplay=0&mute=0&start=0",
+        "blocks": []
+      }
     }
   }
 }

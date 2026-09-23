@@ -1,0 +1,61 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px var(--gutter);
+  background: rgba(12, 4, 7, 0.92);
+  backdrop-filter: blur(8px);
+}
+
+.logoLink {
+  flex: 0 0 auto;
+  display: block;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: #dcffbe;
+  transition: opacity 0.2s ease;
+}
+
+.link:hover {
+  opacity: 0.75;
+}
+
+.linkIcon {
+  flex: 0 0 auto;
+}
+
+/* MenuToggleButton is fixed-positioned (see its own CSS) and hidden here
+   by default — only shown under the same breakpoint where .links hides,
+   so exactly one of the two is ever visible. */
+.menuToggle {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .links {
+    display: none;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+}

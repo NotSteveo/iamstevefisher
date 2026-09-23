@@ -1,0 +1,64 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  background: #141414;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  padding: 16px var(--gutter);
+}
+
+.linksList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 var(--gutter);
+  /* Shrinks to its widest line ("AI Musings") and centers that block in
+     the overlay — the lines stay left-aligned to each other (ragged
+     right edge), only the group as a whole sits centered. */
+  align-self: center;
+  width: fit-content;
+}
+
+/* Same treatment as the "Work" page heading — same font, weight and size,
+   just stacked as a list instead of standing alone. */
+.link {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(40px, 9vw, 80px);
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  color: var(--white);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.06em;
+  height: 4px;
+  background: #40bf7f;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.link:hover {
+  color: #40bf7f;
+  transform: translateX(0.3em);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}

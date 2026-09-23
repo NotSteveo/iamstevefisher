@@ -1,45 +1,37 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { aiMusingsIndex } from "@/lib/content";
-import ContactSection from "@/components/ContactSection";
+import DarkNav from "@/components/DarkNav";
+import AiMusingsCard from "@/components/AiMusingsCard";
+import PageContactSection from "@/components/PageContactSection";
 import styles from "./ai-musings.module.css";
 
 export const metadata: Metadata = {
-  title: aiMusingsIndex.title,
+  title: "I am Steve Fisher - AI Musings",
   description: aiMusingsIndex.metaDescription ?? undefined,
 };
 
 export default function AiMusingsPage() {
   return (
     <main>
+      <DarkNav />
+
       <section className={styles.hero}>
-        <div className="wrap">
-          <h1 className={styles.title}>AI musings</h1>
+        <div className={styles.wrap}>
+          <h1 className={styles.title}>AI Musings</h1>
         </div>
       </section>
 
-      <section>
-        <div className={`wrap ${styles.grid}`}>
-          {aiMusingsIndex.posts.map((post) => (
-            <Link key={post.title} href={post.href} className={styles.card}>
-              <div className={styles.cardArt} aria-hidden>
-                <span className={styles.sparkleText}>Just add sparkles.</span>
-                <span className={styles.sparkleSubtext}>Click anywhere to be relevant.</span>
-              </div>
-              <div className={styles.cardTitle}>{post.title}</div>
-              <div className={styles.tagWrap}>
-                {post.tags.map((tag) => (
-                  <span key={tag} className={styles.tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </Link>
-          ))}
+      <section className={styles.listSection}>
+        <div className={styles.wrap}>
+          <div className={styles.grid}>
+            {aiMusingsIndex.posts.map((post) => (
+              <AiMusingsCard key={post.title} post={post} />
+            ))}
+          </div>
         </div>
       </section>
 
-      <ContactSection headline="Don't leave me on read." subline="Say hello." />
+      <PageContactSection />
     </main>
   );
 }

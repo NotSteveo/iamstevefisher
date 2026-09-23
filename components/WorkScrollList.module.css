@@ -1,0 +1,14 @@
+/* Same 2-column layout as the AI Musings grid
+   (app/ai-musings-scroll/ai-musings-scroll.module.css), rendering
+   WorkCard's dark variant instead of its default light one. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 24px;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

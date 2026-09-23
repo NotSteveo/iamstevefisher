@@ -7,10 +7,14 @@ export default function RevealText({
   children,
   as: Tag = "div",
   className = "",
+  from = "up",
 }: {
   children: ReactNode;
   as?: ElementType;
   className?: string;
+  /** Direction the element travels in from as it reveals. Defaults to
+   * "up" (translateY, the original treatment used by case-study grids). */
+  from?: "up" | "left";
 }) {
   const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
@@ -31,10 +35,12 @@ export default function RevealText({
     return () => observer.disconnect();
   }, []);
 
+  const fromClass = from === "left" ? styles.fromLeft : "";
+
   return (
     <Tag
       ref={ref}
-      className={`${styles.reveal} ${visible ? styles.visible : ""} ${className}`}
+      className={`${styles.reveal} ${fromClass} ${visible ? styles.visible : ""} ${className}`}
     >
       {children}
     </Tag>

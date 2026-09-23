@@ -1,0 +1,39 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  padding: 10px 0;
+}
+
+/* 144px / weight 700 matches the live Webflow about page's own
+   .about-text-large exactly — same font-display (Outfit) it already uses
+   there too. */
+.heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(48px, 10vw, 144px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+/* Matches Webflow's own .about_small-text_2: 14px / Outfit, one line —
+   no max-width, since that was wrapping these onto a second line despite
+   plenty of room in the page's own 1400px wrap. Forced nowrap only above
+   the mobile breakpoint, where there's no longer room for the longest
+   caption on one line without overflowing the viewport. */
+.caption {
+  font-family: var(--font-display);
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--black-300);
+  margin: 8px 0 0;
+}
+
+@media (min-width: 641px) {
+  .caption {
+    white-space: nowrap;
+  }
+}

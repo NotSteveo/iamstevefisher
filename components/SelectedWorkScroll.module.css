@@ -1,0 +1,229 @@
+.section {
+  position: relative;
+  height: 100vh;
+  background: var(--black-900);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  /* Clearance for the site's fixed sticky nav (54px tall), which is
+     visible throughout this section — without it, content flush against
+     the very top of the viewport sits underneath the nav instead of
+     below it. Comfortably more than the nav's own height, not just
+     matching it, so it stays clear even if the nav's height varies
+     (e.g. wrapping at a narrower width). */
+  padding-top: 110px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.wrapVisible {
+  opacity: 1;
+}
+
+.grid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.left {
+  flex: 0 0 auto;
+  width: min(46%, 760px);
+}
+
+.headingRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 64px;
+}
+
+.heading {
+  font-family: var(--font-word-serif), var(--font-display), serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(40px, 4.5vw, 64px);
+  /* Explicit, not inherited — the site's global 20px line-height is fine
+     when text can overflow it freely, but this heading now sits flush
+     against .section's own overflow:hidden top edge (since the media
+     stage became full-height), so glyphs rendering outside a too-short
+     line box get clipped instead of just spilling harmlessly. */
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #40bf7f;
+  margin: 0;
+}
+
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--black-300);
+  transition: opacity 0.2s ease;
+}
+
+.viewAllLink:hover {
+  opacity: 0.6;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  padding: 28px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+/* Overrides the scroll-driven inline opacity (set from JS) while
+   hovered — !important is required here since an inline style always
+   beats a plain class rule otherwise. */
+.item:hover {
+  opacity: 1 !important;
+}
+
+.item:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.itemTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: #40bf7f;
+}
+
+.viewLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--white);
+  transition: opacity 0.2s ease;
+}
+
+.viewLink:hover {
+  opacity: 0.7;
+}
+
+.title {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(28px, 3vw, 40px);
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.roleLine {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--black-300);
+  max-width: 46ch;
+}
+
+.mediaStage {
+  position: relative;
+  flex: 1 1 auto;
+  /* Matches .section's own available height (100vh minus its nav
+     clearance padding) so it still fills the space right down to the
+     bottom edge, just not up under the sticky nav. */
+  height: calc(100vh - 110px);
+  overflow: hidden;
+}
+
+/* Each column is a continuous vertical filmstrip, absolutely positioned
+   so it can be taller than the stage and scroll past it — translateY and
+   per-image opacity are both driven live from JS (SelectedWorkScroll.tsx),
+   not by anything here. */
+.parallaxCol {
+  position: absolute;
+  top: 0;
+  width: calc(50% - 12px);
+  display: flex;
+  flex-direction: column;
+  /* Generous on purpose — leaves each card enough breathing room as the
+     column scrolls past that it reads as its own beat, not a blur. */
+  gap: 160px;
+  will-change: transform;
+}
+
+.parallaxCol:not(.parallaxColOffset) {
+  left: 0;
+}
+
+/* Starts a little lower than the other column purely for the initial
+   brick-offset look — its own continuous scroll speed is set in JS. */
+.parallaxColOffset {
+  right: 0;
+  top: 14%;
+}
+
+/* transform: translateZ(0) forces this element onto its own compositing
+   layer with a stable border-radius clip — .parallaxCol above is
+   continuously translated by JS during scroll, which without this can
+   recomposite this box's rounded overflow:hidden mask at a shifting
+   sub-pixel offset each frame, showing as a thin white seam (the page's
+   own white body background) hugging the rounded corners while scrolling. */
+.mediaImage {
+  position: relative;
+  width: 100%;
+  flex: 0 0 auto;
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #2a2a2a;
+  transform: translateZ(0);
+}
+
+/* Bleeds 1px past .mediaImage on every edge (overriding next/image's own
+   inline fill inset/width/height) — .mediaImage's aspect-ratio height
+   rarely resolves to a whole pixel, and without this a hairline of its
+   own background shows through the fractional-pixel remainder. */
+.mediaImg {
+  object-fit: cover;
+  inset: -1px !important;
+  width: calc(100% + 2px) !important;
+  max-width: none !important;
+  height: calc(100% + 2px) !important;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    flex-direction: column;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .mediaStage {
+    width: 100%;
+    height: min(50vh, 480px);
+  }
+}

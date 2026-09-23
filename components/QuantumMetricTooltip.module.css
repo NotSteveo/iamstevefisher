@@ -1,0 +1,126 @@
+.root {
+  position: relative;
+  display: inline-flex;
+  vertical-align: baseline;
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: 600;
+  color: #73ffb3;
+  background: transparent;
+  border: 1px solid #73ffb3;
+  border-radius: 4px;
+  padding: 2px 10px;
+  cursor: pointer;
+}
+
+/* The 1s hold sweep — grows left to right while hovered, snaps back
+   quickly if released early, and simply stays once the hold is earned
+   (see .buttonPinned above for the border-side half of that state). */
+.fill {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: rgba(115, 255, 179, 0.35);
+  transition: width 0.25s ease-out;
+  pointer-events: none;
+}
+
+/* 1000ms — keep in sync with FILL_DURATION_MS in QuantumMetricTooltip.tsx */
+.fillGrown {
+  width: 100%;
+  transition: width 1000ms linear;
+}
+
+.buttonLabel {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.playIcon {
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid currentColor;
+}
+
+@keyframes qmtFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Rendered into <body> via a portal (escapes .current's overflow:hidden
+   reveal mask) — top/left come from the button's real getBoundingClientRect
+   in QuantumMetricTooltip.tsx, so positioning here is just the anchor math:
+   translateY(-100%) left-aligns it on that point and sits its bottom edge
+   there instead of its top. */
+.tooltip {
+  position: fixed;
+  transform: translateY(-100%);
+  width: min(720px, 90vw);
+  z-index: 200;
+  background: var(--black-900);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  animation: qmtFadeIn 0.2s ease-out;
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 8px auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--white);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.close:hover {
+  opacity: 0.7;
+}
+
+.media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #7a7a7a;
+  border-radius: 4px;
+}
+
+.caption {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--white);
+}
+
+@media (max-width: 640px) {
+  .tooltip {
+    /* Overrides the inline left (set from the button's own position in
+       QuantumMetricTooltip.tsx) — on a narrow screen there isn't room to
+       stay left-aligned with the button, so it centers on the viewport
+       instead. */
+    left: 50% !important;
+    transform: translate(-50%, -100%);
+    width: 100%;
+  }
+}

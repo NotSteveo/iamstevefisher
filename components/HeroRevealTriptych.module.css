@@ -1,0 +1,253 @@
+.section {
+  position: relative;
+  height: 100vh;
+  background: var(--black-900);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 64px var(--gutter) 40px;
+}
+
+.topNav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 24px var(--gutter);
+}
+
+.topLogo {
+  grid-column: 2;
+  justify-self: center;
+}
+
+/* Hidden and out of the way while the hero itself is on screen — its own
+   topNav covers that. Once the hero scrolls out of view (this route hides
+   the site's normal Navbar) this is the only way to navigate, so it
+   becomes a real fixed header instead. */
+.stickyNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px var(--gutter);
+  background: rgba(12, 4, 7, 0.92);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.stickyNavVisible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.stickyLogo {
+  flex: 0 0 auto;
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  max-width: min(1800px, 94vw);
+  height: min(70vh, 720px);
+}
+
+.panels {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.panel {
+  position: relative;
+  flex: 0 0 auto;
+  width: calc(33.3333% - 8px);
+  height: 100%;
+  /* Only matters once JS shrinks a panel's height below 100% for the final
+     "possible." frame — keeps it vertically centered instead of pinned to
+     the top of the row. */
+  align-self: center;
+}
+
+/* The video/scrim clip to a rounded box; the word (a sibling, not a
+   descendant, of this) deliberately does not — "possible." is meant to
+   spill past the frame's edges once it narrows, not be cropped by them. */
+.panelMedia {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #05070a;
+}
+
+.media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35));
+  pointer-events: none;
+}
+
+.panelLabel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.headlineGroup {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  pointer-events: none;
+}
+
+.headline {
+  white-space: nowrap;
+  line-height: 1;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(36px, 7vw, 96px);
+  letter-spacing: -0.03em;
+  color: var(--white);
+}
+
+/* No mask/clip here on purpose — the dramatic entrance scales letters up
+   past their own box, which a wipe-style overflow:hidden mask would clip
+   mid-animation. Hidden state is opacity, not geometry. */
+.headlineLetter {
+  display: inline-block;
+}
+
+.letterMask {
+  display: inline-block;
+  overflow: hidden;
+  /* clamp() guarantees the box is always wider than the glyph it holds
+     (was tight enough to clip a wide glyph like "e" at some sizes) —
+     the matching negative margin cancels the padding back out so
+     letters still sit exactly as tight together as before; only the
+     clipping headroom is new, not any visible spacing. */
+  min-width: clamp(20px, 0.65em, 44px);
+  padding: 0.05em 6px 0.08em;
+  margin: 0 -6px;
+  line-height: 1.1;
+}
+
+.letter {
+  display: inline-block;
+  transform: translateY(110%);
+}
+
+.sans,
+.serif,
+.mono {
+  font-size: clamp(52px, 10.5vw, 116.26px);
+  letter-spacing: -0.05em;
+}
+
+.sans {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--white);
+}
+
+.serif {
+  font-family: var(--font-word-serif), var(--font-display), serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--white);
+}
+
+.mono {
+  font-family: var(--font-word-mono), var(--font-mono), monospace;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.nameBlock {
+  text-align: center;
+}
+
+.role {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: var(--black-300);
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* .headlineGroup (the parent) is pointer-events:none so the headline
+     text itself stays non-interactive — this opts back in so the links
+     are still clickable. */
+  pointer-events: auto;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: #dcffbe;
+  transition: opacity 0.2s ease;
+}
+
+.link:hover {
+  opacity: 0.75;
+}
+
+.linkIcon {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 40px var(--gutter) 32px;
+  }
+
+  .stage {
+    height: min(58vh, 560px);
+  }
+
+  .panels {
+    gap: 6px;
+  }
+}

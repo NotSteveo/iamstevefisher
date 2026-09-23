@@ -7,12 +7,14 @@ import styles from "./WorkCard.module.css";
 export default function WorkCard({
   project,
   roleLine,
+  dark = false,
 }: {
   project: WorkCardType;
   roleLine?: string;
+  dark?: boolean;
 }) {
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${dark ? styles.dark : ""}`}>
       <Link href={project.href} className={styles.cardLink}>
         {project.coverImage ? (
           <div className={styles.imageWrap}>

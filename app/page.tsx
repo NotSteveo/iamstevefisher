@@ -1,94 +1,39 @@
-import { home, type WorkCard as WorkCardType } from "@/lib/content";
-import WorkCard from "@/components/WorkCard";
-import LogoStrip from "@/components/LogoStrip";
-import ContactSection from "@/components/ContactSection";
-import HeroHeadline from "@/components/HeroHeadline";
-import styles from "./page.module.css";
+import type { Metadata } from "next";
+import { Wittgenstein, Geist_Mono } from "next/font/google";
+import HeroRevealTriptych from "@/components/HeroRevealTriptych";
+import PortfolioIntro from "@/components/PortfolioIntro";
+import SelectedWorkScroll from "@/components/SelectedWorkScroll";
+import PageContactSection from "@/components/PageContactSection";
 
-// Curated order for the homepage: strongest / most on-brand work first,
-// role-framed to match what each project's own credits actually say (Steve
-// is Art Direction/Motion on the Quantum Metric team pieces, not the credited
-// Creative Director on them — see each case study's credits block).
-// LEAP 2026 is deliberately excluded: it has no dedicated case study page yet.
-const CURATED_ORDER = [
-  {
-    href: "/work/quantum-metric-felix-ai-campaign",
-    roleLine: "Art direction, motion & illustration for Quantum Metric's first AI product launch",
-  },
-  {
-    href: "/work/quantum-metric-leap-2025",
-    roleLine: "Art direction, motion & video for a 3-day flagship conference in Phoenix",
-  },
-  {
-    href: "/work/quantum-metric-peak-benchmark-report",
-    roleLine: "Art direction, motion & design for an interactive industry benchmark report",
-  },
-  {
-    href: "/work/quantum-metric-leap-2023",
-    roleLine: "Art direction & motion for Quantum Metric's first fully in-house flagship conference",
-  },
-  {
-    href: "/work/quantum-metric-web-design",
-    roleLine: "Web design & motion for a component-driven rebuild that lifted qualified leads",
-  },
-];
+const wittgenstein = Wittgenstein({
+  variable: "--font-word-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: "italic",
+});
 
-const HERO_SUBLINE = "I build brands AI can't fake.";
+const geistMono = Geist_Mono({
+  variable: "--font-word-mono",
+  subsets: ["latin"],
+  weight: "500",
+});
 
-export default function Home() {
-  const heroText = home.sections.find((s) => s.type === "hero")?.text as string[];
-  const [headline, role1, role2, role3, role4, bio, current] = heroText;
-  const featured = home.sections.find((s) => s.type === "featured work");
-  const projectsByHref = new Map((featured?.projects ?? []).map((p) => [p.href, p]));
+export const metadata: Metadata = {
+  title: "I am Steve Fisher - Art Direction, Motion Design, Web Design, and more.",
+  description:
+    "Steve Fisher is a creative director working at the intersection of brand and AI, helping SaaS companies tell better stories, build stronger brands, and create smarter digital experiences.",
+};
 
-  const curated = CURATED_ORDER.map(({ href, roleLine }) => {
-    const project = projectsByHref.get(href);
-    return project ? { project, roleLine } : null;
-  }).filter((c): c is { project: WorkCardType; roleLine: string } => c !== null);
-
+export default function HomePage() {
   return (
-    <main>
-      <section className={styles.hero}>
-        <div className="wrap">
-          <HeroHeadline text={headline} className={styles.headline} />
-          <p className={styles.subline}>{HERO_SUBLINE}</p>
+    <main className={`${wittgenstein.variable} ${geistMono.variable}`}>
+      <HeroRevealTriptych />
 
-          <div className={styles.heroBottom}>
-            <p className={styles.roles}>
-              {role1}
-              <br />
-              {role2}
-              <br />
-              {role3}
-              <br />
-              {role4}
-            </p>
-            <div className={styles.bio}>
-              <p>{bio}</p>
-              <p className={styles.current}>{current}</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PortfolioIntro />
 
-      <LogoStrip />
+      <SelectedWorkScroll />
 
-      <section className={styles.featured}>
-        <div className="wrap">
-          <h2 className={styles.featuredTitle}>{featured?.sectionTitle}</h2>
-          <div className={styles.grid}>
-            {curated.map(({ project, roleLine }) => (
-              <WorkCard
-                key={`${project.href}-${project.title}`}
-                project={project}
-                roleLine={roleLine}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <ContactSection headline="Don't leave me on read." subline="Say hello." />
+      <PageContactSection />
     </main>
   );
 }

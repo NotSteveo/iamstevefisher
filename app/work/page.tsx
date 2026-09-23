@@ -1,28 +1,51 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { Wittgenstein, Geist_Mono } from "next/font/google";
 import { workIndex } from "@/lib/content";
-import WorkFilter from "@/components/WorkFilter";
-import ContactSection from "@/components/ContactSection";
+import DarkNav from "@/components/DarkNav";
+import WorkTabs from "@/components/WorkTabs";
+import WorkScrollList from "@/components/WorkScrollList";
+import PageContactSection from "@/components/PageContactSection";
 import styles from "./work.module.css";
 
+const wittgenstein = Wittgenstein({
+  variable: "--font-word-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: "italic",
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-word-mono",
+  subsets: ["latin"],
+  weight: "500",
+});
+
 export const metadata: Metadata = {
-  title: workIndex.title,
+  title: "I am Steve Fisher - Work",
   description: workIndex.metaDescription ?? undefined,
 };
 
 export default function WorkPage() {
   return (
-    <main>
+    <main className={`${wittgenstein.variable} ${geistMono.variable}`}>
+      <DarkNav />
+
       <section className={styles.hero}>
-        <div className="wrap">
-          <h1 className={styles.title}>Work</h1>
+        <div className={styles.heroWrap}>
+          <div className={styles.headerRow}>
+            <h1 className={styles.title}>Work</h1>
+            <Suspense fallback={null}>
+              <WorkTabs categories={workIndex.categories} />
+            </Suspense>
+          </div>
         </div>
       </section>
 
-      <section>
-        <div className="wrap">
+      <section className={styles.listSection}>
+        <div className={styles.listWrap}>
           <Suspense fallback={null}>
-            <WorkFilter
+            <WorkScrollList
               categories={workIndex.categories}
               projects={workIndex.projects}
               categoryMembership={workIndex.categoryMembership}
@@ -31,7 +54,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <ContactSection headline="Don't leave me on read." subline="Say hello." />
+      <PageContactSection />
     </main>
   );
 }

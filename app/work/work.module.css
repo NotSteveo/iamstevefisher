@@ -1,12 +1,59 @@
 .hero {
-  padding: 40px 0 48px;
+  background: var(--black-900);
+  padding: 140px 0 40px;
+}
+
+/* Wider than the site's shared .wrap (1200px) — matches PortfolioIntro's
+   own .wrap on the homepage bio, which this page's heading is meant to
+   line up with. */
+.heroWrap {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Tabs sit inline with the heading, aligned to its text baseline — center
+   alignment lines up the two elements' line-box heights, not the actual
+   glyphs, which reads as visibly off between an 80px heading and 14px
+   tabs. */
+.headerRow {
+  display: flex;
+  align-items: baseline;
+  gap: 40px;
 }
 
 .title {
-  font-family: var(--font-display);
+  flex: 0 0 auto;
+  font-family: var(--font-mono);
   font-weight: 700;
-  font-size: clamp(40px, 8vw, 80px);
-  line-height: 1.1;
-  letter-spacing: -2px;
-  color: var(--black-900);
+  font-size: 80px;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--white);
+  margin: 0;
+}
+
+.listSection {
+  background: var(--black-900);
+  padding: 40px 0 120px;
+}
+
+/* Same 1500px cap as .heroWrap above, so each card's left/right edges
+   line up with "Work" and the tabs instead of running edge to edge. */
+.listWrap {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 100px 0 32px;
+  }
+
+  .headerRow {
+    flex-wrap: wrap;
+  }
 }
