@@ -183,7 +183,7 @@ export default function SelectedWorkScroll() {
       if (leftCol)
         leftCol.style.transform =
           eased > 0 ? `translateY(${eased * LEFT_LAG_PX}px)` : "";
-      stage.style.transform =
+      stage!.style.transform =
         eased > 0 ? `translateY(${eased * STAGE_LAG_PX}px)` : "";
       updateOpacities();
     }
