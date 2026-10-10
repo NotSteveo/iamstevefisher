@@ -19,12 +19,10 @@
   max-width: 1500px;
   margin: 0 auto;
   padding: 0 var(--gutter);
+  /* Driven by JS (SelectedWorkScroll.tsx's onApproachScroll), tied to
+     scroll progress rather than a CSS transition — this default is only
+     the pre-hydration/first-paint fallback. */
   opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
-.wrapVisible {
-  opacity: 1;
 }
 
 .grid {
@@ -36,15 +34,22 @@
 
 .left {
   flex: 0 0 auto;
-  width: min(46%, 760px);
+  /* 4/8 column split (was ~46/54) — a narrower text rail, a wider image
+     stage. */
+  width: min(33.3333%, 520px);
+  /* Driven by JS, same as .wrap above — starts revealing partway through
+     the approach (see LEFT_FADE_START) so the list still arrives a beat
+     after the image cards, not at the exact same instant. This is only
+     the pre-hydration fallback. */
+  opacity: 0;
 }
 
 .headingRow {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 16px;
-  margin: 0 0 64px;
+  margin: 0 0 32px;
 }
 
 .heading {
@@ -61,12 +66,17 @@
   letter-spacing: -0.02em;
   color: #40bf7f;
   margin: 0;
+  /* On one line now that .viewAllLink sits below it (see .headingRow)
+     instead of sharing the row and eating into its width. */
+  white-space: nowrap;
 }
 
 .viewAllLink {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  /* Right-aligned under the heading rather than sharing its row. */
+  align-self: flex-end;
   font-family: var(--font-mono);
   font-size: 14px;
   letter-spacing: 0.02em;
@@ -139,14 +149,6 @@
   margin-bottom: 8px;
 }
 
-.roleLine {
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.4;
-  color: var(--black-300);
-  max-width: 46ch;
-}
-
 .mediaStage {
   position: relative;
   flex: 1 1 auto;
@@ -157,48 +159,58 @@
   overflow: hidden;
 }
 
-/* Each column is a continuous vertical filmstrip, absolutely positioned
-   so it can be taller than the stage and scroll past it — translateY and
-   per-image opacity are both driven live from JS (SelectedWorkScroll.tsx),
-   not by anything here. */
-.parallaxCol {
+/* One continuous vertical filmstrip spanning the FULL stage width (not a
+   50/50 split into two lanes) — absolutely positioned so it can be taller
+   than the stage and scroll past it. translateY and per-image opacity are
+   both driven live from JS (SelectedWorkScroll.tsx), not by anything here.
+   Because every image lives in this one strip instead of two
+   independently-scrolling columns, they keep a fixed relative order and
+   spacing the whole time — two images can never occupy the same vertical
+   slice, so however large .mediaImage is and however far it reaches left
+   or right, there's nothing for it to overlap. */
+.filmstrip {
   position: absolute;
   top: 0;
-  width: calc(50% - 12px);
+  left: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  /* Generous on purpose — leaves each card enough breathing room as the
-     column scrolls past that it reads as its own beat, not a blur. */
-  gap: 160px;
+  /* Small on purpose — two images need to be visible in the stage at
+     once (see .mediaStage's own height), not just one at a time with the
+     next barely peeking in. */
+  gap: 40px;
   will-change: transform;
 }
 
-.parallaxCol:not(.parallaxColOffset) {
-  left: 0;
-}
-
-/* Starts a little lower than the other column purely for the initial
-   brick-offset look — its own continuous scroll speed is set in JS. */
-.parallaxColOffset {
-  right: 0;
-  top: 14%;
-}
-
 /* transform: translateZ(0) forces this element onto its own compositing
-   layer with a stable border-radius clip — .parallaxCol above is
+   layer with a stable border-radius clip — .filmstrip above is
    continuously translated by JS during scroll, which without this can
    recomposite this box's rounded overflow:hidden mask at a shifting
    sub-pixel offset each frame, showing as a thin white seam (the page's
    own white body background) hugging the rounded corners while scrolling. */
 .mediaImage {
   position: relative;
-  width: 100%;
+  /* Sized against the full stage now (not a half-width column), so this
+     is genuinely how big each card reads, not a fraction of a lane it
+     then has to be inset within. */
+  width: 66%;
   flex: 0 0 auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 9;
   border-radius: 4px;
   overflow: hidden;
   background: #2a2a2a;
   transform: translateZ(0);
+}
+
+/* Alternates images between hugging the stage's left edge and its right
+   edge — a zigzag down the filmstrip, rather than every image sitting
+   flush against the same side the whole way down. */
+.mediaImage:nth-child(odd) {
+  align-self: flex-start;
+}
+
+.mediaImage:nth-child(even) {
+  align-self: flex-end;
 }
 
 /* Bleeds 1px past .mediaImage on every edge (overriding next/image's own
@@ -220,6 +232,50 @@
 
   .left {
     width: 100%;
+  }
+
+  /* Stacked above .mediaStage here (see .grid above) — showing every
+     item's full text at once, the desktop treatment, ran taller than the
+     pinned section itself and pushed the media stage down out of the
+     viewport entirely. Only the item currently leading (see activeIndex
+     in the component) is visible, so this reads as one item's height
+     instead of three and the images stay visible alongside it.
+     All three still occupy the same grid cell (see .list/.item below)
+     rather than being toggled with display — switching which one is
+     "in" the layout via display:none/block was a real reflow each time,
+     and that reflow was tripping ScrollTrigger's own auto-refresh mid-pin,
+     which visibly snapped the pinned section up a couple hundred px for a
+     single frame right as the swap happened. Opacity alone never
+     triggers layout, so there's nothing left for that to react to. */
+  .list {
+    display: grid;
+  }
+
+  .item {
+    grid-column: 1;
+    grid-row: 1;
+    /* !important here too, not just on .itemActive below — GSAP's own
+       crossfade tween (see the component) keeps setting each item's
+       opacity inline as it scrubs regardless of which one is actually
+       active here, and inline styles otherwise beat an unqualified class
+       rule for the same property. Without it, a non-active item could
+       still flash in at whatever opacity that tween happened to leave it
+       at. */
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .itemActive {
+    /* The desktop dim/bright list treatment (JS sets this element's own
+       opacity inline, timed off a separate hold/transition schedule, not
+       off which images are actually in the stage) has no mobile
+       equivalent — here there's only ever one item shown at all, so it
+       should just always read as fully present. !important because an
+       inline style otherwise always wins over a class rule for the same
+       property. */
+    opacity: 1 !important;
+    pointer-events: auto;
   }
 
   .mediaStage {

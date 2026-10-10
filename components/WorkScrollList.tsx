@@ -6,9 +6,9 @@ import type { WorkCard as WorkCardType } from "@/lib/content";
 import WorkCard from "./WorkCard";
 import styles from "./WorkScrollList.module.css";
 
-// The card grid — WorkTabs (rendered separately, inline next to the
-// page's own "Work" heading) owns the category filter UI via its own
-// ?category= query param, which this reads.
+// The card grid — filtered by ?category=, set by a project card's own tag
+// links elsewhere on the site (see WorkCard). There's no on-page filter UI
+// anymore, just this deep link.
 export default function WorkScrollList({
   categories,
   projects,

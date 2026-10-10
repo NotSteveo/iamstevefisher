@@ -251,3 +251,20 @@
     gap: 6px;
   }
 }
+
+/* Always visible, at every width — MenuToggleButton is mounted the whole
+   time (both pre- and post-scroll), and unlike DarkNav's own .menuToggle
+   this one isn't gated to mobile: the hero's top portion specifically
+   wants it as a constant, consistent way to open the nav alongside its
+   own inline .links. */
+.menuToggle {
+  display: block;
+}
+
+/* Same breakpoint DarkNav hides its own inline links at. */
+@media (max-width: 700px) {
+  .headlineGroup .links,
+  .stickyNav .links {
+    display: none;
+  }
+}

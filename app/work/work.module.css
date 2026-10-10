@@ -34,6 +34,21 @@
   margin: 0;
 }
 
+/* Replaces the old category tabs — with only a handful of projects, most
+   sharing nearly every tag, a filter UI wasn't earning its keep. Same
+   "Currently @ [reel]" chip as the homepage bio instead. */
+.reelLine {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--black-300);
+}
+
 .listSection {
   background: var(--black-900);
   padding: 40px 0 120px;

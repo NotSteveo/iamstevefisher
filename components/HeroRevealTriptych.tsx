@@ -112,9 +112,22 @@ export default function HeroRevealTriptych() {
     // reads use fallback-font metrics and everything built on them (the
     // pin distance included) goes stale the moment the real font swaps in,
     // which is what was leaving the final "possible." box scrolled off.
+    // document.fonts.ready resolving only guarantees the fonts themselves
+    // are loaded, not that the browser has actually finished a layout pass
+    // reflecting them (or anything else still settling on a slow/cold
+    // load) — measuring in that same microtask can catch caption, say,
+    // mid-reflow and read a near-zero rect, which nothing here
+    // re-measures afterward, so it bakes in a collapsed layout for the
+    // rest of the session. Two rAFs guarantee at least one full
+    // layout+paint cycle has completed first.
     const setup = () => {
       if (cancelled) return;
-      buildTimelines();
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (cancelled) return;
+          buildTimelines();
+        });
+      });
     };
 
     if (typeof document !== "undefined" && document.fonts?.ready) {
@@ -150,9 +163,18 @@ export default function HeroRevealTriptych() {
       // start and end values, and a min()/vw expression has a different
       // token shape than the panel's calc(% - px) widths, so it can't
       // interpolate between them cleanly.
+      // Floored at 320px — a legitimate small viewport can still land
+      // here honestly, but a near-zero value only ever means caption
+      // hadn't settled into its real position yet when this measured
+      // (the rAF pair above should already prevent that; this is the
+      // last-resort backstop so a bad read degrades to "smaller than
+      // ideal" instead of "collapsed and invisible").
       const availableHeight =
         caption!.getBoundingClientRect().top - TOP_NAV_CLEARANCE;
-      const finalHeightPx = Math.round(Math.min(availableHeight * 0.96, 720));
+      const finalHeightPx = Math.max(
+        320,
+        Math.round(Math.min(availableHeight * 0.96, 720)),
+      );
       const finalWidthPx = Math.round(
         Math.min(finalHeightPx / 1.5, window.innerWidth * 0.85),
       );
@@ -531,16 +553,17 @@ export default function HeroRevealTriptych() {
           />
         </div>
 
-        {/* Fixed-positioned (see MenuToggleButton itself), so this only
-            needs to exist in the DOM while the hero is the relevant nav
-            context — once scrolled past, stickyNav's own inline links take
-            over navigation instead. */}
-        {!isPastHero ? (
-          <MenuToggleButton
-            open={menuOpen}
-            onToggle={() => setMenuOpen((o) => !o)}
-          />
-        ) : null}
+        {/* Fixed-positioned (see MenuToggleButton itself), so the same
+            instance sits correctly over either bar regardless of scroll
+            state — mounted the whole time (not just pre-scroll) since
+            stickyNav's own inline links are desktop-only (see .stickyNav
+            .links below); below that breakpoint this is the only way to
+            navigate once scrolled past the hero. */}
+        <MenuToggleButton
+          open={menuOpen}
+          onToggle={() => setMenuOpen((o) => !o)}
+          className={styles.menuToggle}
+        />
 
         <FullScreenNav
           open={menuOpen}

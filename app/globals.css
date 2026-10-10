@@ -47,7 +47,7 @@ body {
   display: flex;
   flex-direction: column;
   color: var(--black-800);
-  background: var(--white);
+  background: var(--black-900);
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 20px;

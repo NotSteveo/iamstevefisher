@@ -209,45 +209,65 @@ export default function PortfolioIntro() {
     const STAGGER = 0.5;
     const DURATION = 1;
 
-    gsap.set(lines, { yPercent: 60, opacity: 0 });
-    if (leadLines.length > 0) gsap.set(leadLines, { color: "#ffffff" });
+    let cancelled = false;
+    let tl: gsap.core.Timeline | null = null;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        // Starts as the section is still entering from the bottom of the
-        // viewport (not once it's already centered) so the reveal feels
-        // connected to the tail end of the hero above it, not like a
-        // separate beat that only starts once you've fully arrived — and
-        // runs across roughly a full viewport of scroll so each line's
-        // turn is long enough to actually read as its own beat.
-        start: "top bottom",
-        end: () => "+=" + window.innerHeight * 1.2,
-        scrub: 0.6,
-      },
+    // Two rAFs, not straight off bioLines2D landing — HeroRevealTriptych's
+    // own pinned ScrollTrigger (above this section) defers its own pin
+    // creation the same way, so its pin-spacer isn't in the document yet
+    // the instant this effect fires. Creating this section's ScrollTrigger
+    // before that spacer lands measures "top bottom" against the shorter,
+    // pre-pin page — short by however tall the spacer ends up — and a
+    // later ScrollTrigger.refresh() does not correct an already-created
+    // trigger's start/end here, so the fix has to be not measuring early
+    // in the first place.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (cancelled) return;
+
+        gsap.set(lines, { yPercent: 60, opacity: 0 });
+        if (leadLines.length > 0) gsap.set(leadLines, { color: "#ffffff" });
+
+        tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            // Starts as the section is still entering from the bottom of
+            // the viewport (not once it's already centered) so the reveal
+            // feels connected to the tail end of the hero above it, not
+            // like a separate beat that only starts once you've fully
+            // arrived — and runs across roughly a full viewport of scroll
+            // so each line's turn is long enough to actually read as its
+            // own beat.
+            start: "top bottom",
+            end: () => "+=" + window.innerHeight * 1.2,
+            scrub: 0.6,
+          },
+        });
+        tl.to(lines, {
+          yPercent: 0,
+          opacity: 1,
+          stagger: STAGGER,
+          duration: DURATION,
+          ease: "power2.out",
+        });
+        if (leadLines.length > 0) {
+          // Lands at the same timeline position the first line of the
+          // second paragraph starts at (index leadLines.length within the
+          // stagger above) — the handoff happens exactly as the next line
+          // arrives, not on some separate schedule.
+          tl.to(
+            leadLines,
+            { color: "#b3b3b3", duration: DURATION, ease: "power2.out" },
+            leadLines.length * STAGGER,
+          );
+        }
+      });
     });
-    tl.to(lines, {
-      yPercent: 0,
-      opacity: 1,
-      stagger: STAGGER,
-      duration: DURATION,
-      ease: "power2.out",
-    });
-    if (leadLines.length > 0) {
-      // Lands at the same timeline position the first line of the second
-      // paragraph starts at (index leadLines.length within the stagger
-      // above) — the handoff happens exactly as the next line arrives,
-      // not on some separate schedule.
-      tl.to(
-        leadLines,
-        { color: "#b3b3b3", duration: DURATION, ease: "power2.out" },
-        leadLines.length * STAGGER,
-      );
-    }
 
     return () => {
-      tl.scrollTrigger?.kill();
-      tl.kill();
+      cancelled = true;
+      tl?.scrollTrigger?.kill();
+      tl?.kill();
     };
   }, [bioLines2D]);
 

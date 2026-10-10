@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { Wittgenstein, Geist_Mono } from "next/font/google";
 import { workIndex } from "@/lib/content";
 import DarkNav from "@/components/DarkNav";
-import WorkTabs from "@/components/WorkTabs";
+import QuantumMetricTooltip from "@/components/QuantumMetricTooltip";
 import WorkScrollList from "@/components/WorkScrollList";
 import PageContactSection from "@/components/PageContactSection";
 import styles from "./work.module.css";
@@ -35,9 +35,10 @@ export default function WorkPage() {
         <div className={styles.heroWrap}>
           <div className={styles.headerRow}>
             <h1 className={styles.title}>Work</h1>
-            <Suspense fallback={null}>
-              <WorkTabs categories={workIndex.categories} />
-            </Suspense>
+            <p className={styles.reelLine}>
+              Currently Creative Director @{" "}
+              <QuantumMetricTooltip variant="modal" />
+            </p>
           </div>
         </div>
       </section>

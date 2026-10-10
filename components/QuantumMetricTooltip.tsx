@@ -7,7 +7,101 @@ import styles from "./QuantumMetricTooltip.module.css";
 const FILL_DURATION_MS = 1000;
 const GAP = 14;
 
-export default function QuantumMetricTooltip() {
+function Reel() {
+  return (
+    <>
+      <div className={styles.media}>
+        <iframe
+          className={styles.mediaFrame}
+          src="https://player.vimeo.com/video/1231341054?badge=0&autopause=0&player_id=0&app_id=58479"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          title="Steve Fisher - Quantum Metric Show Reel"
+        />
+      </div>
+      <div className={styles.caption}>Quantum Metric Showreel</div>
+    </>
+  );
+}
+
+// "modal" is for anywhere the button sits too close to the viewport's top
+// edge (the Work page header) for the anchored tooltip's translateY(-100%)
+// positioning to have room to open upward — a centered, click-only modal
+// sidesteps that instead of fighting with edge-of-viewport math. "tooltip"
+// (the default, used on the homepage bio) keeps the original hover-to-fill,
+// anchored-above-the-button behavior, which has plenty of clearance there.
+export default function QuantumMetricTooltip({
+  variant = "tooltip",
+}: {
+  variant?: "tooltip" | "modal";
+}) {
+  if (variant === "modal") return <ModalTrigger />;
+  return <TooltipTrigger />;
+}
+
+function ModalTrigger() {
+  const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  useEffect(() => {
+    if (!open) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
+  return (
+    <span className={styles.root}>
+      <button
+        type="button"
+        className={styles.button}
+        aria-haspopup="dialog"
+        aria-expanded={open}
+        onClick={() => setOpen(true)}
+      >
+        <span className={styles.buttonLabel}>
+          Quantum Metric
+          <span className={styles.playIcon} aria-hidden="true" />
+        </span>
+      </button>
+
+      {open &&
+        mounted &&
+        createPortal(
+          <div
+            className={styles.modalOverlay}
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setOpen(false);
+            }}
+          >
+            <div
+              className={styles.modalDialog}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Quantum Metric showreel"
+            >
+              <button
+                type="button"
+                className={styles.close}
+                onClick={() => setOpen(false)}
+              >
+                Close
+                <span aria-hidden="true">×</span>
+              </button>
+              <Reel />
+            </div>
+          </div>,
+          document.body,
+        )}
+    </span>
+  );
+}
+
+function TooltipTrigger() {
   const [hoverButton, setHoverButton] = useState(false);
   const [hoverTooltip, setHoverTooltip] = useState(false);
   const [filling, setFilling] = useState(false);
@@ -145,8 +239,7 @@ export default function QuantumMetricTooltip() {
               Close
               <span aria-hidden="true">×</span>
             </button>
-            <div className={styles.media} />
-            <div className={styles.caption}>Quantum Metric Showreel</div>
+            <Reel />
           </div>,
           document.body,
         )}
