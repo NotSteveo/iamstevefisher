@@ -16,7 +16,25 @@ export default function WorkCard({
   return (
     <div className={`${styles.card} ${dark ? styles.dark : ""}`}>
       <Link href={project.href} className={styles.cardLink}>
-        {project.coverImage ? (
+        {project.coverVideoMp4 ? (
+          <div className={styles.imageWrap}>
+            <video
+              className={styles.image}
+              src={asset(project.coverVideoMp4)}
+              poster={project.coverImage ? asset(project.coverImage) : undefined}
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls={false}
+              aria-hidden
+            >
+              {project.coverVideoWebm ? (
+                <source src={asset(project.coverVideoWebm)} type="video/webm" />
+              ) : null}
+            </video>
+          </div>
+        ) : project.coverImage ? (
           <div className={styles.imageWrap}>
             <Image
               src={asset(project.coverImage)}

@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import styles from "./ContactForm.module.css";
 
 type Status = "idle" | "sending" | "success" | "error";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const startedAt = useRef(Date.now());
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -17,6 +18,8 @@ export default function ContactForm() {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       message: (form.elements.namedItem("message") as HTMLInputElement).value,
+      website: (form.elements.namedItem("website") as HTMLInputElement).value,
+      startedAt: startedAt.current,
     };
 
     try {
@@ -83,6 +86,12 @@ export default function ContactForm() {
           className={styles.input}
           required
         />
+      </div>
+
+      {/* Honeypot: invisible to people, but bots fill every input they find. */}
+      <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", height: 0, overflow: "hidden" }}>
+        <label htmlFor="website">Leave this field empty</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
       <button type="submit" className={styles.submit} disabled={status === "sending"}>

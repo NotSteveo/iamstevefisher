@@ -14,6 +14,10 @@ export type Section = {
   image?: string;
   imageWidth?: number;
   imageHeight?: number;
+  // "ds-embed" sections only: which Tessera template to render live (text is the caption).
+  template?: string;
+  // "ds-embed" only: show a workbench tab (foundations, atoms, molecules, components) instead of a template.
+  view?: string;
 };
 
 export type WorkCard = {
@@ -53,6 +57,8 @@ export type PageContent = {
   // WorkPageContent's mediaLayout, there's no block system here yet, so
   // this is just the one VideoRef directly rather than a URL to look up.
   heroVideo?: VideoRef;
+  // Static alternative to heroVideo, same device-frame treatment.
+  heroImage?: { src: string; alt: string; width: number; height: number };
 };
 
 export type WorkIndexContent = PageContent & {

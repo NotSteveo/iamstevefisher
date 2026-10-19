@@ -6,6 +6,7 @@ import { aiMusingsSlugs, getAiMusingsPost, type Section } from "@/lib/content";
 import DarkNav from "@/components/DarkNav";
 import PageContactSection from "@/components/PageContactSection";
 import CaseStudyVideo from "@/components/CaseStudyVideo";
+import DsEmbed from "@/components/DsEmbed";
 import styles from "./post.module.css";
 
 export function generateStaticParams() {
@@ -54,6 +55,15 @@ function ArticleBlock({ section }: { section: Section }) {
           ))}
         </ol>
       );
+    case "ds-embed":
+      return (
+        <DsEmbed
+          template={section.template}
+          view={section.view}
+          title={section.heading ?? "Design system example"}
+          caption={section.text as string}
+        />
+      );
     case "figure":
       return (
         <figure className={styles.figure}>
@@ -75,11 +85,7 @@ function ArticleBlock({ section }: { section: Section }) {
   }
 }
 
-export default async function AiMusingsPostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function AiMusingsPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getAiMusingsPost(slug);
   if (!post) notFound();
@@ -96,7 +102,9 @@ export default async function AiMusingsPostPage({
     (s, i) => !(s.type === "heading" || s.type === "credit line" || i === leadIndex),
   );
   const hasArticle = articleSections.some((s) =>
-    ["sub-heading", "body paragraph", "list", "steps", "figure", "pull quote"].includes(s.type),
+    ["sub-heading", "body paragraph", "list", "steps", "figure", "pull quote", "ds-embed"].includes(
+      s.type,
+    ),
   );
 
   return (
@@ -104,19 +112,32 @@ export default async function AiMusingsPostPage({
       <DarkNav />
 
       <section className={styles.hero}>
-        <div className={styles.wrap}>
-          <h1 className={styles.headline}>{heading}</h1>
-          {dek ? <p className={styles.dek}>{dek}</p> : null}
-          <p className={styles.body}>{body}</p>
-          {link ? (
-            <Link
-              href={link.href ?? "#"}
-              className={styles.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {link.text as string} →
-            </Link>
+        <div className={`${styles.wrap} ${post.heroImage ? styles.split : ""}`}>
+          <div className={styles.copy}>
+            <h1 className={styles.headline}>{heading}</h1>
+            {dek ? <p className={styles.dek}>{dek}</p> : null}
+            <p className={styles.body}>{body}</p>
+            {link ? (
+              <Link
+                href={link.href ?? "#"}
+                className={styles.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.text as string} →
+              </Link>
+            ) : null}
+          </div>
+          {post.heroImage ? (
+            <Image
+              src={post.heroImage.src}
+              alt={post.heroImage.alt}
+              width={post.heroImage.width}
+              height={post.heroImage.height}
+              priority
+              className={styles.heroImage}
+              sizes="(max-width: 900px) 100vw, 800px"
+            />
           ) : null}
         </div>
 

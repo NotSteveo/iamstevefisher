@@ -8,10 +8,17 @@ import type {
   WorkPageContent,
 } from "./content";
 
-const coverImageByHref = new Map(workIndex.projects.map((p) => [p.href, p.coverImage]));
+const coverByHref = new Map(workIndex.projects.map((p) => [p.href, p]));
 
 function withCoverImage(card: WorkCard): WorkCard {
-  return card.coverImage ? card : { ...card, coverImage: coverImageByHref.get(card.href) };
+  if (card.coverImage) return card;
+  const cover = coverByHref.get(card.href);
+  return {
+    ...card,
+    coverImage: cover?.coverImage,
+    coverVideoMp4: cover?.coverVideoMp4,
+    coverVideoWebm: cover?.coverVideoWebm,
+  };
 }
 
 export type ContentBlock =

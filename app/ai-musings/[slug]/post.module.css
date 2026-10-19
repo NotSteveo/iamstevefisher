@@ -29,6 +29,27 @@
   padding: 20px;
 }
 
+/* Text left, image right on wide screens; stacked below 900px. */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
 .deviceFrameVideo {
   border-radius: 14px;
 }
