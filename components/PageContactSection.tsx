@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import Image from "next/image";
 import styles from "./PageContactSection.module.css";
 
@@ -24,6 +24,7 @@ const WORD_INTERVAL_MS = 2400;
 export default function PageContactSection({ fullHeight = false }: { fullHeight?: boolean } = {}) {
   const [status, setStatus] = useState<Status>("idle");
   const [wordIndex, setWordIndex] = useState(0);
+  const startedAt = useRef(Date.now());
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -41,6 +42,8 @@ export default function PageContactSection({ fullHeight = false }: { fullHeight?
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       message: (form.elements.namedItem("message") as HTMLInputElement).value,
+      website: (form.elements.namedItem("website") as HTMLInputElement).value,
+      startedAt: startedAt.current,
     };
 
     try {
@@ -118,6 +121,15 @@ export default function PageContactSection({ fullHeight = false }: { fullHeight?
                   className={styles.input}
                   required
                 />
+              </div>
+
+              {/* Honeypot: invisible to people, but bots fill every input they find. */}
+              <div
+                aria-hidden="true"
+                style={{ position: "absolute", left: "-9999px", height: 0, overflow: "hidden" }}
+              >
+                <label htmlFor="pc-website">Leave this field empty</label>
+                <input id="pc-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
               </div>
 
               <button
