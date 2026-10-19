@@ -20,17 +20,16 @@ const geistMono = Geist_Mono({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-// Absolute base for social images. Set NEXT_PUBLIC_SITE_URL to the real domain;
-// on Vercel the production domain is picked up automatically.
+// Absolute base for social images and canonical URLs. NEXT_PUBLIC_SITE_URL
+// overrides it (e.g. for a staging domain); local dev stays on localhost.
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
+  (process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://iamstevefisher.com");
 
 export const metadata: Metadata = {
   title: { default: "Steve Fisher — Creative Director", template: "%s | Steve Fisher" },
   metadataBase: new URL(siteUrl),
+  alternates: { canonical: "./" },
   openGraph: { siteName: "Steve Fisher", type: "website" },
   twitter: { card: "summary_large_image" },
   description:
