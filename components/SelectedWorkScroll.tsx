@@ -86,6 +86,9 @@ function toRows(count: number, pattern: number[]): number[][] {
 const MAX_BLUR = 16;
 // How much of the tile's journey (0-1) each side of a swap point it spends dissolving.
 const SWAP_HALF_WIDTH = 0.1;
+// Share of the pinned scroll (0-1) over which the image swaps/blur ease in from
+// the sharp opening frame.
+const SETTLE_RANGE = 0.12;
 
 // Opacity the non-active list items settle at — dim, not gone, so the
 // whole list still reads as one set while one item leads.
@@ -157,8 +160,11 @@ export default function SelectedWorkScroll() {
     // stage (see FADE_MARGIN above). Self-contained (measures the stage fresh
     // each call) so it can run both before and during the pin, not just from
     // the pinned timeline's own onUpdate.
+    let progressNow = 0;
     function updateOpacities() {
       const stageRect = stage!.getBoundingClientRect();
+      const sx = Math.min(1, progressNow / SETTLE_RANGE);
+      const settle = sx * sx * (3 - 2 * sx);
       filmstripImages.forEach((img) => {
         // Measure the row, not the tile: the tile itself is scaled below, and
         // reading its own scaled rect would feed back into this fade.
@@ -189,8 +195,12 @@ export default function SelectedWorkScroll() {
           variants.forEach((v, i) => {
             const inT = i > 0 ? ts[i - 1] : 1;
             const outT = i < n - 1 ? ts[i] : 0;
-            v.style.opacity = String(Math.max(0, inT - outT));
-            const blur = MAX_BLUR * Math.max(outT, i > 0 ? 1 - inT : 0);
+            // Until the pin has scrolled SETTLE_RANGE in, tiles rest on their
+            // first image with no blur, so the opening frame is sharp; the
+            // swaps then ease in as scrolling starts.
+            const rest = i === 0 ? 1 : 0;
+            v.style.opacity = String(rest + (Math.max(0, inT - outT) - rest) * settle);
+            const blur = settle * MAX_BLUR * Math.max(outT, i > 0 ? 1 - inT : 0);
             v.style.filter = blur > 0.1 ? `blur(${blur.toFixed(1)}px)` : "";
           });
         }
@@ -276,6 +286,7 @@ export default function SelectedWorkScroll() {
       const travel = Math.max(0, filmstrip.scrollHeight - stageH);
 
       function applyProgress(rawP: number) {
+        progressNow = rawP;
         // The text list stays completely put once pinned — only the
         // images carry the motion from here on.
         gsap.set(filmstrip, { y: -rawP * travel });
