@@ -108,7 +108,7 @@ export default async function AiMusingsPostPage({ params }: { params: Promise<{ 
   );
 
   return (
-    <main>
+    <main id="main-content" tabIndex={-1}>
       <DarkNav />
 
       <section className={styles.hero}>

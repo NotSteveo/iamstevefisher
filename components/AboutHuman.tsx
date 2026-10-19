@@ -26,11 +26,11 @@ export default function AboutHuman() {
         <div className={styles.photoGrid}>
           {about.images
             .filter((img) => img.context?.startsWith("about photo"))
-            .map((img) => (
+            .map((img, i) => (
               <RevealText className={styles.photoWrap} from="left" key={img.url}>
                 <Image
                   src={asset(img.url)}
-                  alt=""
+                  alt={`Photo ${i + 1} of Steve Fisher's life outside work`}
                   fill
                   sizes="(max-width: 767px) 100vw, 33vw"
                   className={styles.photo}

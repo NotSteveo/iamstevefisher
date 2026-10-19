@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className={`${wittgenstein.variable} ${geistMono.variable}`}>
+    <main id="main-content" tabIndex={-1} className={`${wittgenstein.variable} ${geistMono.variable}`}>
       <HeroRevealTriptych />
 
       <PortfolioIntro />

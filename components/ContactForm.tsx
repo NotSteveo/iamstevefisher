@@ -38,7 +38,7 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className={styles.message}>
+      <div className={styles.message} role="status">
         <p>Thank you! Your submission has been received!</p>
       </div>
     );
@@ -99,7 +99,7 @@ export default function ContactForm() {
       </button>
 
       {status === "error" ? (
-        <p className={styles.error}>Oops! Something went wrong while submitting the form.</p>
+        <p className={styles.error} role="alert">Oops! Something went wrong while submitting the form.</p>
       ) : null}
     </form>
   );

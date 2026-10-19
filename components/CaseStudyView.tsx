@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { asset } from "@/lib/assets";
+import { altFor, asset } from "@/lib/assets";
 import type { CaseStudy, ContentBlock, MediaGroup } from "@/lib/caseStudy";
 import WorkCard from "./WorkCard";
 import CaseStudyVideo from "./CaseStudyVideo";
@@ -63,7 +63,7 @@ function MediaGrid({ group }: { group: MediaGroup }) {
             {item.kind === "image" ? (
               <Image
                 src={asset(item.ref.url)}
-                alt={item.ref.context ?? ""}
+                alt={altFor(item.ref)}
                 fill
                 sizes="(max-width: 767px) 100vw, 50vw"
                 className={styles.sectionImage}
@@ -129,7 +129,7 @@ function MediaGrid({ group }: { group: MediaGroup }) {
             <div className={wrapClassName}>
               <Image
                 src={asset(item.ref.url)}
-                alt={item.ref.context ?? ""}
+                alt={altFor(item.ref)}
                 fill
                 sizes="(max-width: 767px) 100vw, 50vw"
                 className={styles.sectionImage}
@@ -162,7 +162,7 @@ function toRuns(items: CaseStudy["sections"][number]["items"]): Run[] {
 
 export default function CaseStudyView({ study }: { study: CaseStudy }) {
   return (
-    <main>
+    <main id="main-content" tabIndex={-1}>
       <section className={styles.hero}>
         <div className={styles.wrap}>
           <div className={styles.heroGrid}>
@@ -219,7 +219,7 @@ export default function CaseStudyView({ study }: { study: CaseStudy }) {
             <div className={styles.heroImageWrap}>
               <Image
                 src={asset(study.heroImage.url)}
-                alt={study.heroImage.context ?? study.headline}
+                alt={altFor(study.heroImage) || study.headline}
                 fill
                 sizes="(max-width: 1500px) 100vw, 1500px"
                 className={styles.heroImage}

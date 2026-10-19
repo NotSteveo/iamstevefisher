@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FullScreenNav from "./FullScreenNav";
 import MenuToggleButton from "./MenuToggleButton";
 import styles from "./HeroRevealTriptych.module.css";
+import MotionVideo from "./MotionVideo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -520,7 +521,7 @@ export default function HeroRevealTriptych() {
       >
         <Image
           src="/images/logo.svg"
-          alt="Logo"
+          alt="Steve Fisher"
           width={24}
           height={22}
           className={styles.stickyLogo}
@@ -545,7 +546,7 @@ export default function HeroRevealTriptych() {
         <div className={styles.topNav}>
           <Image
             src="/images/logo.svg"
-            alt="Logo"
+            alt="Steve Fisher"
             width={28}
             height={26}
             className={styles.topLogo}
@@ -582,13 +583,14 @@ export default function HeroRevealTriptych() {
                 }}
               >
                 <div className={styles.panelMedia}>
-                  <video
+                  <MotionVideo
                     className={styles.media}
                     src={panel.src}
                     muted
                     autoPlay
                     loop
                     playsInline
+                    aria-hidden
                   />
                   <div className={styles.scrim} />
                 </div>

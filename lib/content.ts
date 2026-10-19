@@ -35,7 +35,9 @@ export type WorkCard = {
   note?: string;
 };
 
-export type ImageRef = { url: string; context?: string };
+// `alt` is the real description; `context` is a crawl-time note that is only a
+// fallback (see altFor in lib/assets.ts).
+export type ImageRef = { url: string; context?: string; alt?: string };
 export type VideoRef = {
   type: string;
   mp4?: string;
@@ -44,6 +46,8 @@ export type VideoRef = {
   context?: string;
   src?: string;
   title?: string;
+  // Accessible description; videos without one are treated as decorative.
+  alt?: string;
   // Wrap the video in the dark device frame (see .deviceFrame in CaseStudyView.module.css).
   framed?: boolean;
 };

@@ -96,3 +96,47 @@ h4 {
   text-transform: uppercase;
   color: var(--black-600);
 }
+
+/* Accessibility */
+
+/* Visible keyboard focus everywhere; mouse clicks don't show it. */
+:focus-visible {
+  outline: 2px solid #40bf7f;
+  outline-offset: 3px;
+}
+
+main:focus {
+  outline: none;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 10000;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #fff;
+  color: #0c0407;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -23,6 +23,7 @@ export default function MenuToggleButton({
       type="button"
       className={`${styles.button} ${open ? styles.open : ""} ${className ?? ""}`}
       aria-label={open ? "Close menu" : "Menu"}
+      aria-expanded={open}
       onClick={onToggle}
     >
       <span className={styles.line} />

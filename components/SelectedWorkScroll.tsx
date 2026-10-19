@@ -508,7 +508,7 @@ export default function SelectedWorkScroll() {
                                 >
                                   <Image
                                     src={img.src}
-                                    alt=""
+                                    alt={v === 0 ? `${item.eyebrow} ${item.title}: ${item.tiles[j].caption}` : ""}
                                     fill
                                     sizes="(max-width: 900px) 60vw, 45vw"
                                     className={styles.mediaImg}

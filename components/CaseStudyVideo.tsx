@@ -1,5 +1,6 @@
 import { asset } from "@/lib/assets";
 import type { VideoRef } from "@/lib/content";
+import MotionVideo from "./MotionVideo";
 import styles from "./CaseStudyVideo.module.css";
 
 export default function CaseStudyVideo({
@@ -39,7 +40,7 @@ export default function CaseStudyVideo({
   if (!video.mp4) return null;
 
   return (
-    <video
+    <MotionVideo
       className={`${styles.video} ${rounded ? styles.rounded : ""} ${className ?? ""}`}
       src={asset(video.mp4)}
       poster={video.poster ? asset(video.poster) : undefined}
@@ -48,6 +49,8 @@ export default function CaseStudyVideo({
       muted
       playsInline
       controls={false}
+      aria-label={video.alt}
+      aria-hidden={video.alt ? undefined : true}
     />
   );
 }

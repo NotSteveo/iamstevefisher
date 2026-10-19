@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className={styles.main}>
+    <main id="main-content" tabIndex={-1} className={styles.main}>
       <DarkNav />
       <PageContactSection fullHeight />
     </main>

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function AiMusingsPage() {
   return (
-    <main>
+    <main id="main-content" tabIndex={-1}>
       <DarkNav />
 
       <section className={styles.hero}>

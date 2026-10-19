@@ -23,8 +23,8 @@ export default function DarkNav() {
   return (
     <>
       <div className={styles.nav}>
-        <Link href="/" aria-label="home" className={styles.logoLink}>
-          <Image src="/images/logo.svg" alt="Logo" width={24} height={22} />
+        <Link href="/" aria-label="Steve Fisher, home" className={styles.logoLink}>
+          <Image src="/images/logo.svg" alt="" width={24} height={22} />
         </Link>
 
         {/* Desktop: the inline link row. Mobile: a hamburger opening the

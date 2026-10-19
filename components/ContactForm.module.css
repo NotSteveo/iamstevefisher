@@ -37,12 +37,17 @@
 }
 
 .input::placeholder {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .input:focus {
   outline: none;
   border-color: var(--black-900);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--black-900);
+  outline-offset: 4px;
 }
 
 .submit {

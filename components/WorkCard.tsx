@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { asset } from "@/lib/assets";
 import type { WorkCard as WorkCardType } from "@/lib/content";
+import MotionVideo from "./MotionVideo";
 import styles from "./WorkCard.module.css";
 
 export default function WorkCard({
@@ -18,7 +19,7 @@ export default function WorkCard({
       <Link href={project.href} className={styles.cardLink}>
         {project.coverVideoMp4 ? (
           <div className={styles.imageWrap}>
-            <video
+            <MotionVideo
               className={styles.image}
               src={asset(project.coverVideoMp4)}
               poster={project.coverImage ? asset(project.coverImage) : undefined}
@@ -32,13 +33,13 @@ export default function WorkCard({
               {project.coverVideoWebm ? (
                 <source src={asset(project.coverVideoWebm)} type="video/webm" />
               ) : null}
-            </video>
+            </MotionVideo>
           </div>
         ) : project.coverImage ? (
           <div className={styles.imageWrap}>
             <Image
               src={asset(project.coverImage)}
-              alt={project.title}
+              alt=""
               fill
               sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 33vw"
               className={styles.image}

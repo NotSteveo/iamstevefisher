@@ -76,7 +76,7 @@ export default function PageContactSection({ fullHeight = false }: { fullHeight?
           </div>
 
           {status === "success" ? (
-            <div className={styles.message}>
+            <div className={styles.message} role="status">
               <p>Thank you! Your submission has been received!</p>
             </div>
           ) : (
@@ -141,7 +141,7 @@ export default function PageContactSection({ fullHeight = false }: { fullHeight?
               </button>
 
               {status === "error" ? (
-                <p className={styles.error}>
+                <p className={styles.error} role="alert">
                   Oops! Something went wrong while submitting the form.
                 </p>
               ) : null}
@@ -154,7 +154,7 @@ export default function PageContactSection({ fullHeight = false }: { fullHeight?
         <p className={styles.footerName}>I am Steve Fisher.</p>
         <Image
           src="/images/logo-dark.svg"
-          alt="Logo"
+          alt="Steve Fisher"
           width={24}
           height={28}
           className={styles.footerLogo}

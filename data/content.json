@@ -1129,79 +1129,98 @@
       "images": [
         {
           "url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/69b46e7c5762c78ae2c8c798_LEAP-26_cover.jpg",
-          "context": "hero/cover image, alt: LEAP 26 cover"
+          "context": "hero/cover image, alt: LEAP 26 cover",
+          "alt": "LEAP 26 key art: the LEAP 26 logo over a purple, peach and pink gradient beside a halftone longhorn"
         },
         {
           "url": "/images/leap26-swatch-pink.jpg",
-          "context": "LEAP 26 brand palette - pink"
+          "context": "LEAP 26 brand palette - pink",
+          "alt": "Pink, #FF417A, primary color"
         },
         {
           "url": "/images/leap26-swatch-peach.jpg",
-          "context": "LEAP 26 brand palette - peach"
+          "context": "LEAP 26 brand palette - peach",
+          "alt": "Peach, #FFA57E, primary color"
         },
         {
           "url": "/images/leap26-swatch-purple.jpg",
-          "context": "LEAP 26 brand palette - purple"
+          "context": "LEAP 26 brand palette - purple",
+          "alt": "Purple, #52149F, primary color"
         },
         {
           "url": "/images/leap26-swatch-n800.jpg",
-          "context": "LEAP 26 brand palette - n800"
+          "context": "LEAP 26 brand palette - n800",
+          "alt": "N800, #1C2431, dark neutral"
         },
         {
           "url": "/images/leap26-swatch-p50.jpg",
-          "context": "LEAP 26 brand palette - p50"
+          "context": "LEAP 26 brand palette - p50",
+          "alt": "P50, #FFF4F6, light tint"
         },
         {
           "url": "/images/leap26-swatch-p75.jpg",
-          "context": "LEAP 26 brand palette - p75"
+          "context": "LEAP 26 brand palette - p75",
+          "alt": "P75, #FFDDE4, light tint"
         },
         {
           "url": "/images/leap26-pin.jpg",
-          "context": "Key elements - enamel pin"
+          "context": "Key elements - enamel pin",
+          "alt": "Enamel pin of a cowboy-hat cat with the LEAP 26 logo"
         },
         {
           "url": "/images/leap26-sign.jpg",
-          "context": "Key elements - Digital Frontier sign"
+          "context": "Key elements - Digital Frontier sign",
+          "alt": "Greetings From The Digital Frontier sign with a large LEAP letter sculpture"
         },
         {
           "url": "/images/leap26-boot-cling.jpg",
-          "context": "Key elements - boot floor cling"
+          "context": "Key elements - boot floor cling",
+          "alt": "Floor cling of two cowboy boot prints reading Two-step this way"
         },
         {
           "url": "/images/leap26-bar.jpg",
-          "context": "Key elements - LEAP 26 signage"
+          "context": "Key elements - LEAP 26 signage",
+          "alt": "Two attendees chatting at a bar beneath a LEAP 26 sign"
         },
         {
           "url": "/images/leap26-stage-scale.jpg",
-          "context": "Experience - stage-scale"
+          "context": "Experience - stage-scale",
+          "alt": "A speaker on the main stage in front of a Chapter 3, The Scale Barrier slide"
         },
         {
           "url": "/images/leap26-attendees.jpg",
-          "context": "Experience - attendees"
+          "context": "Experience - attendees",
+          "alt": "Three attendees posing in front of the Digital Frontier sign and LEAP letters"
         },
         {
           "url": "/images/leap26-trophy.jpg",
-          "context": "Experience - trophy"
+          "context": "Experience - trophy",
+          "alt": "CPD Signal Awards trophy, a clear acrylic ring, in front of a pink LEAP 26 screen"
         },
         {
           "url": "/images/leap26-stage-wide.jpg",
-          "context": "Experience - stage-wide"
+          "context": "Experience - stage-wide",
+          "alt": "Wide view of the LEAP main stage and audience in the Fort Worth ballroom"
         },
         {
           "url": "/images/leap26-video-set.jpg",
-          "context": "Experience - video-set"
+          "context": "Experience - video-set",
+          "alt": "On-site video crew filming an interview on a pink backdrop"
         },
         {
           "url": "/images/leap26-london-logo.jpg",
-          "context": "LEAP London - london-logo"
+          "context": "LEAP London - london-logo",
+          "alt": "Quantum LEAP London 26 logo lockup"
         },
         {
           "url": "/images/leap26-london-signage.jpg",
-          "context": "LEAP London - london-signage"
+          "context": "LEAP London - london-signage",
+          "alt": "LEAP London signage with the tagline Without barriers"
         },
         {
           "url": "/images/leap26-london-demo.jpg",
-          "context": "LEAP London - london-demo"
+          "context": "LEAP London - london-demo",
+          "alt": "Quantum Metric demo station at LEAP London with attendees"
         }
       ],
       "videos": [
@@ -1222,7 +1241,8 @@
           "mp4": "/videos/leap26-web-scroll.mp4",
           "poster": "/images/leap26-web-scroll-poster.jpg",
           "context": "Web - Fort Worth registration site scroll",
-          "framed": true
+          "framed": true,
+          "alt": "Scrolling capture of the LEAP 26 registration website"
         }
       ],
       "mediaLayout": {

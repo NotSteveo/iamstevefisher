@@ -40,7 +40,7 @@ export default function FullScreenNav({
   return (
     <div className={styles.overlay}>
       <div className={styles.topRow}>
-        <Image src="/images/logo.svg" alt="Logo" width={28} height={26} />
+        <Image src="/images/logo.svg" alt="Steve Fisher" width={28} height={26} />
       </div>
 
       <nav className={styles.linksList} aria-label="primary">

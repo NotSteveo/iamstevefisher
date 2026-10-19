@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className={`${wittgenstein.variable} ${geistMono.variable}`}>
+    <main id="main-content" tabIndex={-1} className={`${wittgenstein.variable} ${geistMono.variable}`}>
       <DarkNav />
 
       <AboutIntro />
