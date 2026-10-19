@@ -114,7 +114,23 @@ export type MediaLayoutBlock = {
 };
 export type MediaLayout = { hero?: string; blocks: MediaLayoutBlock[] };
 
-export type WorkPageContent = PageContent & { mediaLayout?: MediaLayout };
+export type SelectedTile = {
+  caption: string;
+  images: (string | { src: string; pos?: string })[];
+};
+
+export type WorkPageContent = PageContent & {
+  mediaLayout?: MediaLayout;
+  // Homepage Selected Work: a one-line description and the hand-picked tiles
+  // for the filmstrip. Each tile crossfades through its images (a bare string
+  // or {src, pos} where pos is an object-position focal point) under one
+  // caption.
+  selectedBlurb?: string;
+  selectedTiles?: SelectedTile[];
+  // Row sizes for the tiles, repeated in order (default 2, 1, 2: a pair of
+  // squares, a wide frame, a pair of squares). [1] makes every tile a wide 16:9.
+  selectedRowPattern?: number[];
+};
 
 type ContentRoot = {
   home: PageContent;

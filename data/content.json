@@ -108,6 +108,15 @@
             "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fede2f5c9511db2a0fc7ff_Peak_cover-poster-00001.jpg",
             "coverVideoMp4": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fede2f5c9511db2a0fc7ff_Peak_cover-transcode.mp4",
             "coverVideoWebm": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/67fede2f5c9511db2a0fc7ff_Peak_cover-transcode.webm"
+          },
+          {
+            "title": "Adobe Workfront | Web refresh",
+            "href": "/work/adobe-workfront-web-design",
+            "tags": [
+              "Web Design",
+              "Branding"
+            ],
+            "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/68be35bdb510f4bbb7d571be_WF.png"
           }
         ]
       },
@@ -1300,7 +1309,48 @@
             ]
           }
         ]
-      }
+      },
+      "selectedBlurb": "Creative direction for Quantum's flagship conference, in Fort Worth and London.",
+      "selectedTiles": [
+        {
+          "caption": "Identity, from lanyard to venue",
+          "images": [
+            "/images/leap26-pin.jpg",
+            "/images/leap26-boot-cling.jpg",
+            "/images/leap26-sign.jpg"
+          ]
+        },
+        {
+          "caption": "Main stage, Fort Worth",
+          "images": [
+            "/images/leap26-stage-wide.jpg",
+            "/images/leap26-stage-scale.jpg"
+          ]
+        },
+        {
+          "caption": "Key art and event site",
+          "images": [
+            "/images/69b46e7c5762c78ae2c8c798_LEAP-26_cover.jpg",
+            "/images/leap26-web-scroll-poster.jpg",
+            "/images/leap26-attendees.jpg"
+          ]
+        },
+        {
+          "caption": "LEAP London",
+          "images": [
+            "/images/leap26-london-signage.jpg",
+            "/images/leap26-london-demo.jpg",
+            "/images/leap26-london-logo-square.jpg"
+          ]
+        },
+        {
+          "caption": "On site: awards and video",
+          "images": [
+            "/images/leap26-trophy.jpg",
+            "/images/leap26-video-set.jpg"
+          ]
+        }
+      ]
     },
     "quantum-metric-leap-2025": {
       "title": "Quantum Metric LEAP 2025",
@@ -2880,7 +2930,42 @@
             ]
           }
         ]
-      }
+      },
+      "selectedBlurb": "A scalable, component-driven site system that increased qualified leads.",
+      "selectedTiles": [
+        {
+          "caption": "Brand-led visuals",
+          "images": [
+            "/images/68b846f33eec1676153787a6_QM.png"
+          ]
+        },
+        {
+          "caption": "Component-driven pages",
+          "images": [
+            {
+              "src": "/images/68b85f24e80f2aef9f5f3513_packages.png",
+              "pos": "18% 50%"
+            },
+            {
+              "src": "/images/68b851b1c434bf565108946d_slider.png",
+              "pos": "88% 50%"
+            }
+          ]
+        },
+        {
+          "caption": "Product and industry pages",
+          "images": [
+            "/images/68b859d6d6126e1ca14f96c4_traveel.png",
+            "/images/68b85edde5fcf973e7076fa0_blog.png"
+          ]
+        },
+        {
+          "caption": "Benchmark reports",
+          "images": [
+            "/images/68b858245e91607d8301e21c_benchmarks.png"
+          ]
+        }
+      ]
     },
     "adobe-workfront-web-design": {
       "title": "Adobe Workfront | Web design",
@@ -3010,7 +3095,52 @@
             ]
           }
         ]
-      }
+      },
+      "selectedBlurb": "An audit-driven CMS rebuild that replaced 30 shades of orange with one clear design system.",
+      "selectedTiles": [
+        {
+          "caption": "Enterprise homepage",
+          "images": [
+            {
+              "src": "/images/68be338471def77c362f0830_hero.jpg",
+              "pos": "85% 50%"
+            },
+            {
+              "src": "/images/68be328347ddddd365b2c6aa_Why-20Workfront.jpg",
+              "pos": "70% 50%"
+            }
+          ]
+        },
+        {
+          "caption": "Proof points and people",
+          "images": [
+            {
+              "src": "/images/68be32837c27775713f0f0d0_Quotes.jpg",
+              "pos": "50% 50%"
+            },
+            {
+              "src": "/images/68be32831ad3961cee5fe21c_Component.jpg",
+              "pos": "65% 50%"
+            }
+          ]
+        },
+        {
+          "caption": "Product tour and resources",
+          "images": [
+            "/images/68be328347ddddd365b2c6aa_Why-20Workfront.jpg",
+            "/images/68be32832c4e69d5353a755d_Resources.jpg"
+          ]
+        },
+        {
+          "caption": "Plans and integrations",
+          "images": [
+            "/images/68be3283e412cb3032135193_Work-20management.jpg"
+          ]
+        }
+      ],
+      "selectedRowPattern": [
+        1
+      ]
     },
     "adobe-workfront-leap-2020-opener": {
       "title": "Adobe Workfront LEAP 2020 Opener",

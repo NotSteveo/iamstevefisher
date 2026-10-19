@@ -11,19 +11,28 @@ import styles from "./SelectedWorkScroll.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Same three leads as the homepage's own curated order — Steve's actual
+// Same leads as the homepage's own curated order — Steve's actual
 // credited role on each, not just "Creative Director" by default.
 const SELECTED_WORK = [
-  { href: "/work/quantum-metric-felix-ai-campaign" },
-  { href: "/work/quantum-metric-leap-2025" },
-  { href: "/work/quantum-metric-peak-benchmark-report" },
+  { href: "/work/quantum-metric-leap-2026" },
+  { href: "/work/quantum-metric-web-design" },
+  { href: "/work/adobe-workfront-web-design" },
 ];
+
+type Tile = {
+  caption: string;
+  // Crossfaded through, in order, as the tile travels up the stage (see
+  // updateOpacities).
+  images: { src: string; pos?: string }[];
+};
 
 type WorkItem = {
   href: string;
   eyebrow: string;
   title: string;
-  images: string[];
+  blurb?: string;
+  tiles: Tile[];
+  rowPattern: number[];
 };
 
 function buildWorkItems(): WorkItem[] {
@@ -32,32 +41,64 @@ function buildWorkItems(): WorkItem[] {
     (featured?.projects ?? []).map((p) => [p.href, p]),
   );
 
-  return SELECTED_WORK.map(({ href }) => {
+  return SELECTED_WORK.map(({ href }): WorkItem | null => {
     const project = projectsByHref.get(href);
     if (!project) return null;
     const [eyebrow, title] = project.title.includes(" | ")
       ? project.title.split(" | ")
       : ["Quantum Metric", project.title];
     const slug = href.replace(/^\/work\//, "");
-    const gallery = getWorkPage(slug)?.images ?? [];
-    const images = gallery.slice(0, 4).map((img) => asset(img.url));
-    if (images.length < 4) return null;
-    return { href, eyebrow, title, images };
+    const page = getWorkPage(slug);
+    const tiles = (page?.selectedTiles ?? []).map((t) => ({
+      caption: t.caption,
+      images: t.images.map((img) =>
+        typeof img === "string" ? { src: asset(img) } : { src: asset(img.src), pos: img.pos },
+      ),
+    }));
+    if (tiles.length === 0) return null;
+    return {
+      href,
+      eyebrow,
+      title,
+      blurb: page?.selectedBlurb,
+      tiles,
+      rowPattern: page?.selectedRowPattern ?? ROW_PATTERN,
+    };
   }).filter((w): w is WorkItem => w !== null);
 }
+
+// Tiles are laid out in rows, in order: a pair of squares, one wide frame,
+// then another pair, repeating. A row's shape (width, aspect ratio) comes
+// from how many tiles it holds.
+const ROW_PATTERN = [2, 1, 2];
+
+function toRows(count: number, pattern: number[]): number[][] {
+  const rows: number[][] = [];
+  let next = 0;
+  for (let r = 0; next < count; r++) {
+    const size = Math.min(pattern[r % pattern.length], count - next);
+    rows.push(Array.from({ length: size }, (_, k) => next + k));
+    next += size;
+  }
+  return rows;
+}
+// Peak blur (px) a variant passes through as it dissolves into the next.
+const MAX_BLUR = 16;
+// How much of the tile's journey (0-1) each side of a swap point it spends dissolving.
+const SWAP_HALF_WIDTH = 0.1;
 
 // Opacity the non-active list items settle at — dim, not gone, so the
 // whole list still reads as one set while one item leads.
 const DIM_OPACITY = 0.32;
 const HOLD = 1;
 const TRANSITION = 0.9;
-// How much of the stage's height, at each edge, an image spends fading
-// rather than sitting at full opacity — this is what makes entry/exit
-// read as a soft fade right at the boundary instead of a hard cut. Kept
-// tight on purpose: a card should read as fully there for nearly all of
-// its time in the stage, only dipping toward 0 right as it's about to be
-// clipped, not for a long stretch beforehand.
-const FADE_ZONE_FRACTION = 0.14;
+// A tile's opacity and scale follow an upside-down U across the stage: 0 and
+// SCALE_MIN as its center enters at the bottom, full at the stage's vertical
+// middle, back to 0 and SCALE_MIN leaving through the top. FADE_MARGIN pushes
+// the zero points slightly past the stage edges (as a share of its height)
+// so a tile is already invisible by the time its center reaches an edge.
+const SCALE_MIN = 0.75;
+const FADE_MARGIN = 0.05;
 
 export default function SelectedWorkScroll() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -112,44 +153,47 @@ export default function SelectedWorkScroll() {
     let tl: gsap.core.Timeline | null = null;
     let itemClickCleanups: (() => void)[] = [];
 
-    // Per-image opacity, faded by whichever edge is nearer the stage's own
-    // top/bottom boundary rather than the image's center — a center-based
-    // fade can still read as fully opaque while its near edge has already
-    // crossed into overflow:hidden territory, which shows up as a hard,
-    // unfaded crop instead of a soft exit. Self-contained (measures the
-    // stage fresh each call) so it can run both before and during the pin,
-    // not just from the pinned timeline's own onUpdate.
+    // Per-tile opacity and scale, driven by where the tile's center sits in the
+    // stage (see FADE_MARGIN above). Self-contained (measures the stage fresh
+    // each call) so it can run both before and during the pin, not just from
+    // the pinned timeline's own onUpdate.
     function updateOpacities() {
       const stageRect = stage!.getBoundingClientRect();
-      const fadeZone = stageRect.height * FADE_ZONE_FRACTION;
       filmstripImages.forEach((img) => {
-        const r = img.getBoundingClientRect();
+        // Measure the row, not the tile: the tile itself is scaled below, and
+        // reading its own scaled rect would feed back into this fade.
+        const r = (img.parentElement ?? img).getBoundingClientRect();
         const top = r.top - stageRect.top;
         const bottom = r.bottom - stageRect.top;
-        let o = 1;
-        // Each fade is keyed on whichever edge determines how much of the
-        // image is ACTUALLY left to reveal or hide — not on the edge
-        // that's nearer a boundary, which sounds like the same thing but
-        // isn't once an image is taller than the fade zone (every image
-        // here is). Exiting through the top: what's left to show is
-        // whatever remains below the top edge, i.e. this image's own
-        // bottom — using top instead let opacity snap back to 0 the
-        // instant top went negative even while most of the image's body
-        // was still genuinely visible below it (read as the image
-        // vanishing outright on the first bit of upward scroll, not
-        // fading out as it actually left). Entering from the bottom is
-        // the mirror image of that same mistake: what's left to reveal is
-        // however far the TOP edge still has to travel before the whole
-        // image has cleared the stage's bottom boundary — keying this off
-        // bottom instead means an image whose bottom just happens to land
-        // near that boundary reads as "still entering" and gets faded
-        // down, even once its top is already comfortably inside and the
-        // whole image is genuinely 100% visible.
-        if (bottom < fadeZone) o = Math.min(o, Math.max(0, bottom) / fadeZone);
-        const enterDistance = stageRect.height - top;
-        if (enterDistance < fadeZone)
-          o = Math.min(o, Math.max(0, enterDistance) / fadeZone);
-        img.style.opacity = String(Math.min(1, Math.max(0, o)));
+        const center = (top + bottom) / 2;
+        const u = (1 - center / stageRect.height + FADE_MARGIN) / (1 + 2 * FADE_MARGIN);
+        const o = Math.sin(Math.PI * Math.min(1, Math.max(0, u)));
+        const fade = Math.min(1, Math.max(0, o));
+        img.style.opacity = String(fade);
+        // Scale rides the same curve: SCALE_MIN at the ends, 1 in the middle.
+        img.style.transform = `translateZ(0) scale(${(SCALE_MIN + (1 - SCALE_MIN) * fade).toFixed(4)})`;
+
+        // Content swap: as the tile travels up the stage (u: 0 entering, 1
+        // leaving) it dissolves through its variants with a blur between
+        // them. Swaps are placed in the entering/leaving thirds, never at the
+        // middle, so a tile is always sharp and settled while it's at full
+        // size.
+        const variants = img.querySelectorAll<HTMLElement>("[data-variant]");
+        const n = variants.length;
+        if (n > 1) {
+          const centers = n === 2 ? [0.76] : n === 3 ? [0.3, 0.7] : Array.from({ length: n - 1 }, (_, k) => 0.22 + (0.56 * k) / (n - 2));
+          const ts = centers.map((c) => {
+            const x = Math.min(1, Math.max(0, (u - (c - SWAP_HALF_WIDTH)) / (SWAP_HALF_WIDTH * 2)));
+            return x * x * (3 - 2 * x);
+          });
+          variants.forEach((v, i) => {
+            const inT = i > 0 ? ts[i - 1] : 1;
+            const outT = i < n - 1 ? ts[i] : 0;
+            v.style.opacity = String(Math.max(0, inT - outT));
+            const blur = MAX_BLUR * Math.max(outT, i > 0 ? 1 - inT : 0);
+            v.style.filter = blur > 0.1 ? `blur(${blur.toFixed(1)}px)` : "";
+          });
+        }
       });
     }
 
@@ -417,6 +461,7 @@ export default function SelectedWorkScroll() {
                     <Link href={item.href} className={styles.title}>
                       {item.title}
                     </Link>
+                    {item.blurb ? <p className={styles.blurb}>{item.blurb}</p> : null}
                   </div>
                 ))}
               </div>
@@ -424,24 +469,52 @@ export default function SelectedWorkScroll() {
 
             <div className={styles.mediaStage} data-media-stage>
               <div className={styles.filmstrip} data-parallax="filmstrip">
-                {items.flatMap((item, itemIndex) =>
-                  item.images.map((src, j) => (
-                    <div
-                      className={styles.mediaImage}
-                      data-parallax-image
-                      data-item-index={itemIndex}
-                      key={`${item.href}-${j}`}
-                    >
-                      <Image
-                        src={src}
-                        alt=""
-                        fill
-                        sizes="(max-width: 900px) 60vw, 45vw"
-                        className={styles.mediaImg}
-                      />
-                    </div>
-                  )),
-                )}
+                {items.reduce<{ rows: React.ReactNode[]; rowCount: number }>(
+                  (acc, item, itemIndex) => {
+                    toRows(item.tiles.length, item.rowPattern).forEach((row, r) => {
+                      const rowIndex = acc.rowCount++;
+                      const pair = row.length > 1;
+                      acc.rows.push(
+                        <div
+                          key={`${item.href}-row-${r}`}
+                          className={`${styles.row} ${pair ? styles.rowPair : styles.rowSingle} ${
+                            rowIndex % 2 === 0 ? styles.rowLeft : styles.rowRight
+                          } ${r === 0 && itemIndex > 0 ? styles.projectStart : ""}`}
+                        >
+                          {row.map((j) => (
+                            <div
+                              className={styles.mediaImage}
+                              data-parallax-image
+                              data-item-index={itemIndex}
+                              key={`${item.href}-${j}`}
+                            >
+                              {item.tiles[j].images.map((img, v) => (
+                                <div
+                                  className={styles.variant}
+                                  data-variant
+                                  key={v}
+                                  style={{ opacity: v === 0 ? 1 : 0 }}
+                                >
+                                  <Image
+                                    src={img.src}
+                                    alt=""
+                                    fill
+                                    sizes="(max-width: 900px) 60vw, 45vw"
+                                    className={styles.mediaImg}
+                                    style={img.pos ? { objectPosition: img.pos } : undefined}
+                                  />
+                                </div>
+                              ))}
+                              <span className={styles.caption}>{item.tiles[j].caption}</span>
+                            </div>
+                          ))}
+                        </div>,
+                      );
+                    });
+                    return acc;
+                  },
+                  { rows: [], rowCount: 0 },
+                ).rows}
               </div>
             </div>
           </div>

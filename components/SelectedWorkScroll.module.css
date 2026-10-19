@@ -155,7 +155,12 @@
   /* Matches .section's own available height (100vh minus its nav
      clearance padding) so it still fills the space right down to the
      bottom edge, just not up under the sticky nav. */
-  height: calc(100vh - 110px);
+  height: 100vh;
+  /* Pulls the stage up through .section's nav-clearance padding so it spans
+     the full browser height — images fade out at the viewport's own edges
+     instead of being clipped mid-frame. .filmstrip's own padding keeps the
+     first/last images clear of the nav and the contact section. */
+  margin-top: -110px;
   overflow: hidden;
 }
 
@@ -179,6 +184,7 @@
      once (see .mediaStage's own height), not just one at a time with the
      next barely peeking in. */
   gap: 40px;
+  padding: 110px 0 160px;
   will-change: transform;
 }
 
@@ -190,26 +196,41 @@
    own white body background) hugging the rounded corners while scrolling. */
 .mediaImage {
   position: relative;
-  /* Sized against the full stage now (not a half-width column), so this
-     is genuinely how big each card reads, not a fraction of a lane it
-     then has to be inset within. */
-  width: 66%;
-  flex: 0 0 auto;
-  aspect-ratio: 16 / 9;
-  border-radius: 4px;
+  /* Sized by its row (see .row), which is sized against the full stage. */
+  flex: 1 1 0;
+  min-width: 0;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
   overflow: hidden;
   background: #2a2a2a;
   transform: translateZ(0);
 }
 
-/* Alternates images between hugging the stage's left edge and its right
-   edge — a zigzag down the filmstrip, rather than every image sitting
-   flush against the same side the whole way down. */
-.mediaImage:nth-child(odd) {
+/* A row is one beat in the filmstrip: a pair of squares, or a single wide
+   frame. Rows alternate between hugging the stage's left and right edge. */
+.row {
+  display: flex;
+  gap: 40px;
+  flex: 0 0 auto;
+}
+
+.rowPair {
+  width: 84%;
+}
+
+.rowSingle {
+  width: 66%;
+}
+
+.rowSingle .mediaImage {
+  aspect-ratio: 16 / 9;
+}
+
+.rowLeft {
   align-self: flex-start;
 }
 
-.mediaImage:nth-child(even) {
+.rowRight {
   align-self: flex-end;
 }
 
@@ -281,5 +302,50 @@
   .mediaStage {
     width: 100%;
     height: min(50vh, 480px);
+    margin-top: 0;
   }
+
+  .filmstrip {
+    padding: 0;
+  }
+}
+
+/* One layer per variant image inside a .mediaImage tile; opacity and blur are
+   driven live from JS (see updateOpacities). */
+.variant {
+  position: absolute;
+  inset: 0;
+  will-change: opacity, filter;
+}
+
+/* The first tile of every project after the first sits further down the
+   strip, so a new project reads as its own beat. */
+.projectStart {
+  margin-top: 200px;
+}
+
+/* One-line description under a project's title in the list. */
+.blurb {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--black-300);
+  max-width: 44ch;
+}
+
+/* Tile label, bottom-left over a soft scrim. Sits above the crossfading
+   variant layers, so it stays put while the images change underneath. */
+.caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 36px 16px 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  pointer-events: none;
 }
