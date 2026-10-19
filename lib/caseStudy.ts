@@ -36,6 +36,8 @@ export type MediaGroup = {
   widths?: number[];
   anchorAspect?: [number, number];
   anchorIndex?: number;
+  bento?: boolean | "hero";
+  side?: boolean;
   items: MediaItem[];
 };
 
@@ -152,6 +154,8 @@ export function buildCaseStudy(page: WorkPageContent): CaseStudy {
         widths: lb.widths,
         anchorAspect: lb.anchorAspect,
         anchorIndex: lb.anchorIndex,
+        bento: lb.bento,
+        side: lb.side,
         items,
       },
     });

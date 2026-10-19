@@ -44,6 +44,8 @@ export type VideoRef = {
   context?: string;
   src?: string;
   title?: string;
+  // Wrap the video in the dark device frame (see .deviceFrame in CaseStudyView.module.css).
+  framed?: boolean;
 };
 
 export type PageContent = {
@@ -104,6 +106,10 @@ export type MediaLayoutBlock = {
   widths?: number[];
   anchorAspect?: [number, number];
   anchorIndex?: number;
+  // Renders as a bento grid (see .bento in CaseStudyView.module.css) instead of an even grid.
+  bento?: boolean | "hero";
+  // Renders beside the text run just above it (text left, media right) instead of below it.
+  side?: boolean;
   items: string[];
 };
 export type MediaLayout = { hero?: string; blocks: MediaLayoutBlock[] };

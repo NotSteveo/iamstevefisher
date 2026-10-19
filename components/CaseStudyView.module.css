@@ -357,7 +357,7 @@
 .moreWork {
   background: var(--black-900);
   padding-top: 100px;
-  padding-bottom: 40px;
+  padding-bottom: 120px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -385,4 +385,99 @@
   .moreWorkGrid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Bento grid for a 5-item group: two wide tiles, one tall tile, two squarer
+   tiles on a 4-column, 2-row grid (--bento-row sets each row's height). */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, var(--bento-row, 17vw));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.bentoCell {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #2a2a2a;
+  transform: translateZ(0);
+}
+
+.bento0 { grid-column: 1 / span 2; grid-row: 1; }
+.bento1 { grid-column: 3; grid-row: 1; }
+.bento2 { grid-column: 4; grid-row: 1 / span 2; }
+.bento3 { grid-column: 1; grid-row: 2; }
+.bento4 { grid-column: 2 / span 2; grid-row: 2; }
+
+@media (min-width: 1500px) {
+  .bento { --bento-row: 255px; }
+}
+
+@media (max-width: 700px) {
+  .bento {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: none;
+    grid-auto-rows: 42vw;
+  }
+  .bento0 { grid-column: 1 / span 2; grid-row: auto; }
+  .bento1, .bento3 { grid-column: auto; grid-row: auto; }
+  .bento2 { grid-column: auto; grid-row: span 2; }
+  .bento4 { grid-column: 1 / span 2; grid-row: auto; }
+}
+
+/* Text on the left, media on the right (a media group with `side` set). */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.split .mediaGrid {
+  margin-top: 0;
+}
+
+.textColumnSplit {
+  max-width: none;
+}
+
+.textColumnSplit .paragraph {
+  column-count: 1;
+}
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* Bento with a 2x2 hero tile (first item, e.g. a square video) beside a
+   2x2 block of four smaller tiles. */
+.bentoHero {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  aspect-ratio: 2 / 1;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.bentoHero0 { grid-column: 1 / span 2; grid-row: 1 / span 2; }
+.bentoHero1 { grid-column: 3; grid-row: 1; }
+.bentoHero2 { grid-column: 4; grid-row: 1; }
+.bentoHero3 { grid-column: 3; grid-row: 2; }
+.bentoHero4 { grid-column: 4; grid-row: 2; }
+
+@media (max-width: 700px) {
+  .bentoHero {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: none;
+    grid-auto-rows: 42vw;
+    aspect-ratio: auto;
+  }
+  .bentoHero0 { grid-column: 1 / span 2; grid-row: auto; aspect-ratio: 1; }
+  .bentoHero1, .bentoHero2, .bentoHero3, .bentoHero4 { grid-column: auto; grid-row: auto; }
 }

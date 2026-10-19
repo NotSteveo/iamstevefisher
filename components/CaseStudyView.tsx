@@ -52,6 +52,31 @@ function Block({ block }: { block: ContentBlock }) {
 function MediaGrid({ group }: { group: MediaGroup }) {
   if (group.items.length === 0) return null;
 
+  if (group.bento) {
+    return (
+      <div className={group.bento === "hero" ? styles.bentoHero : styles.bento}>
+        {group.items.map((item, i) => (
+          <RevealText
+            key={i}
+            className={`${styles.bentoCell} ${styles[`${group.bento === "hero" ? "bentoHero" : "bento"}${i}`] ?? ""}`}
+          >
+            {item.kind === "image" ? (
+              <Image
+                src={asset(item.ref.url)}
+                alt={item.ref.context ?? ""}
+                fill
+                sizes="(max-width: 767px) 100vw, 50vw"
+                className={styles.sectionImage}
+              />
+            ) : (
+              <CaseStudyVideo video={item.ref} rounded={false} className={styles.gridVideo} />
+            )}
+          </RevealText>
+        ))}
+      </div>
+    );
+  }
+
   const style: CSSProperties = { "--cols": group.columns } as CSSProperties;
   const widths = group.widths;
   if (widths) {
@@ -87,9 +112,17 @@ function MediaGrid({ group }: { group: MediaGroup }) {
 
         return item.kind === "video" ? (
           <RevealText key={i} className={styles.mediaItem}>
-            <div className={wrapClassName}>
-              <CaseStudyVideo video={item.ref} className={styles.gridVideo} />
-            </div>
+            {item.ref.framed ? (
+              <div className={styles.deviceFrame}>
+                <div className={wrapClassName}>
+                  <CaseStudyVideo video={item.ref} className={styles.gridVideo} />
+                </div>
+              </div>
+            ) : (
+              <div className={wrapClassName}>
+                <CaseStudyVideo video={item.ref} className={styles.gridVideo} />
+              </div>
+            )}
           </RevealText>
         ) : (
           <RevealText key={i} className={styles.mediaItem}>
@@ -202,8 +235,24 @@ export default function CaseStudyView({ study }: { study: CaseStudy }) {
           <div className={styles.wrap}>
             {section.heading ? <h2 className={styles.heading}>{section.heading}</h2> : null}
 
-            {toRuns(section.items).map((run, j) =>
-              run.kind === "blocks" ? (
+            {toRuns(section.items).map((run, j, runs) => {
+              const next = runs[j + 1];
+              if (run.kind === "blocks" && next?.kind === "media" && next.group.side) {
+                return (
+                  <div key={j} className={styles.split}>
+                    <div className={`${styles.textColumn} ${styles.textColumnSplit}`}>
+                      {run.blocks.map((block, k) => (
+                        <Block key={k} block={block} />
+                      ))}
+                    </div>
+                    <MediaGrid group={{ ...next.group, columns: 1 }} />
+                  </div>
+                );
+              }
+              if (run.kind === "media" && run.group.side && runs[j - 1]?.kind === "blocks") {
+                return null;
+              }
+              return run.kind === "blocks" ? (
                 <div key={j} className={styles.textColumn}>
                   {run.blocks.map((block, k) => (
                     <Block key={k} block={block} />
@@ -211,8 +260,8 @@ export default function CaseStudyView({ study }: { study: CaseStudy }) {
                 </div>
               ) : (
                 <MediaGrid key={j} group={run.group} />
-              ),
-            )}
+              );
+            })}
           </div>
         </section>
       ))}

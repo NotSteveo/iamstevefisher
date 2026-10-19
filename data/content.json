@@ -51,13 +51,12 @@
         "projects": [
           {
             "title": "Quantum Metric | LEAP 2026",
-            "href": "/work/quantum-metric-web-design",
+            "href": "/work/quantum-metric-leap-2026",
             "tags": [
               "Conference",
               "Branding",
               "Motion"
             ],
-            "note": "links to quantum-metric-web-design slug, no dedicated LEAP 2026 page exists",
             "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/69b46e7c5762c78ae2c8c798_LEAP-26_cover.jpg"
           },
           {
@@ -177,6 +176,17 @@
       "3d"
     ],
     "projects": [
+      {
+        "slug": "quantum-metric-leap-2026",
+        "title": "Quantum Metric | LEAP 2026",
+        "tags": [
+          "Conference",
+          "Branding",
+          "Motion"
+        ],
+        "coverImage": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/69b46e7c5762c78ae2c8c798_LEAP-26_cover.jpg",
+        "note": "Creative direction for LEAP 2026 in Fort Worth and LEAP London, a brand built to operate without barriers."
+      },
       {
         "slug": "quantum-metric-leap-2025",
         "title": "Quantum Metric | LEAP 2025",
@@ -301,6 +311,7 @@
         "adobe-workfront-web-design"
       ],
       "Motion": [
+        "quantum-metric-leap-2026",
         "quantum-metric-leap-2025",
         "quantum-metric-leap-2024",
         "quantum-metric-leap-2023",
@@ -312,12 +323,14 @@
         "cbs-ghosts---the-musical-lyric-video"
       ],
       "Branding": [
+        "quantum-metric-leap-2026",
         "quantum-metric-leap-2025",
         "quantum-metric-leap-2024",
         "quantum-metric-leap-2023",
         "quantum-metric-felix-ai-campaign"
       ],
       "Conference": [
+        "quantum-metric-leap-2026",
         "quantum-metric-leap-2025",
         "quantum-metric-leap-2024",
         "quantum-metric-leap-2023",
@@ -987,6 +1000,308 @@
     }
   },
   "work_pages": {
+    "quantum-metric-leap-2026": {
+      "title": "Quantum Metric LEAP 2026",
+      "metaDescription": "Creative direction for Quantum LEAP 2026 in Fort Worth and LEAP London: brand system, promotion, web and on-site experience.",
+      "sections": [
+        {
+          "type": "hero headline",
+          "text": "Quantum LEAP Conference 2026"
+        },
+        {
+          "type": "hero body",
+          "text": "In 2026, LEAP took place in Fort Worth, Texas. Agentic AI is changing how teams work, and I wanted the brand to feel like what that promises: operating without barriers. As creative director, I set the direction for the entire experience, a confident, open and unmistakably Texan identity that had to hold together from the first email to the last piece of signage."
+        },
+        {
+          "type": "credits",
+          "text": [
+            "Creative Director: Steve Fisher",
+            "Art Direction, Motion, Video: Steve Fisher",
+            "Illustration, Design: Maciej Krupa, Steve Fisher"
+          ]
+        },
+        {
+          "type": "section heading",
+          "text": "Conference branding"
+        },
+        {
+          "type": "body paragraph",
+          "text": "I set the visual direction around a pink, peach and purple palette over a deep navy neutral, and Maciej Krupa developed the core design and illustration under that direction. My focus was building a system rather than a look: something that could shrink to a lanyard or scale to the venue itself, with Texas showing up as attitude in the details, like the cowboy boot floor clings underfoot."
+        },
+        {
+          "type": "sub-heading",
+          "text": "LEAP 26 brand"
+        },
+        {
+          "type": "body paragraph",
+          "text": "Two signature gradients complete the palette: Peach Ring, from pink to peach, and Neon Lights, from pink to purple."
+        },
+        {
+          "type": "section heading",
+          "text": "Promotion"
+        },
+        {
+          "type": "credit line",
+          "text": "Creative Direction, Art Direction, Motion - Steve Fisher | Illustration, Graphic - Maciej Krupa"
+        },
+        {
+          "type": "body paragraph",
+          "text": "Promotion began in September 2025, and I directed it to feel like the event itself: Fort Worth scenery, as much networking as possible, a breakout highlight and main stage moments, in standard and 1:1 cuts. The same visual language carried into the sales launch graphics, and for London we reformatted the video into a short, to-the-point intro."
+        },
+        {
+          "type": "section heading",
+          "text": "Web"
+        },
+        {
+          "type": "body paragraph",
+          "text": "For LEAP London, I led the design and build of the full event site, which launched in January 2026."
+        },
+        {
+          "type": "section heading",
+          "text": "Experience"
+        },
+        {
+          "type": "body paragraph",
+          "text": "I treated Fort Worth as one continuous creative canvas, and my job was to make sure every touchpoint felt like part of the same story, from the swag and photo booth to the evening at Billy Bob's. The Texas setting showed up most in the small details, like the bandana and the boot clings. I carried that direction into the event app and the CPD Signal Awards, including the trophy and ceremony video, so the brand felt as considered on attendees' phones as it did on stage. I partnered with Unbridled on the production graphics, managed our event photographer, and edited the keynote recording so the whole company could see the moment."
+        },
+        {
+          "type": "credit line",
+          "text": "LEAP Intro deliverable - motion - Steve Fisher"
+        },
+        {
+          "type": "section heading",
+          "text": "LEAP London 2026"
+        },
+        {
+          "type": "body paragraph",
+          "text": "LEAP London followed in May 2026, and the challenge was making the Fort Worth brand feel right at home in a different city. I gave London its own logo lockup inside the same system, so the two events read as one program without feeling like a copy."
+        },
+        {
+          "type": "body paragraph",
+          "text": "I led the design and build of the event site, which launched in January, and carried the brand across the app, badges, lanyards, napkins and coasters, wayfinding and a 360 photo booth. The program had new moments too, including a welcome drinks reception in Kings Cross the night before and the first breakout sessions on the main day, and the brand followed attendees through each of them."
+        },
+        {
+          "type": "body paragraph",
+          "text": "On the video side, I cut a short intro from the promo video and sent motion graphics to Unbridled for the stage."
+        },
+        {
+          "type": "more work",
+          "projects": [
+            {
+              "title": "Quantum Metric | LEAP 2025",
+              "href": "/work/quantum-metric-leap-2025",
+              "tags": [
+                "Conference",
+                "Branding",
+                "Motion"
+              ]
+            },
+            {
+              "title": "Quantum Metric | LEAP 2024",
+              "href": "/work/quantum-metric-leap-2024",
+              "tags": [
+                "Conference",
+                "Branding",
+                "Motion"
+              ]
+            },
+            {
+              "title": "Quantum Metric | LEAP 2023",
+              "href": "/work/quantum-metric-leap-2023",
+              "tags": [
+                "Conference",
+                "Branding",
+                "Motion"
+              ]
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/69b46e7c5762c78ae2c8c798_LEAP-26_cover.jpg",
+          "context": "hero/cover image, alt: LEAP 26 cover"
+        },
+        {
+          "url": "/images/leap26-swatch-pink.jpg",
+          "context": "LEAP 26 brand palette - pink"
+        },
+        {
+          "url": "/images/leap26-swatch-peach.jpg",
+          "context": "LEAP 26 brand palette - peach"
+        },
+        {
+          "url": "/images/leap26-swatch-purple.jpg",
+          "context": "LEAP 26 brand palette - purple"
+        },
+        {
+          "url": "/images/leap26-swatch-n800.jpg",
+          "context": "LEAP 26 brand palette - n800"
+        },
+        {
+          "url": "/images/leap26-swatch-p50.jpg",
+          "context": "LEAP 26 brand palette - p50"
+        },
+        {
+          "url": "/images/leap26-swatch-p75.jpg",
+          "context": "LEAP 26 brand palette - p75"
+        },
+        {
+          "url": "/images/leap26-pin.jpg",
+          "context": "Key elements - enamel pin"
+        },
+        {
+          "url": "/images/leap26-sign.jpg",
+          "context": "Key elements - Digital Frontier sign"
+        },
+        {
+          "url": "/images/leap26-boot-cling.jpg",
+          "context": "Key elements - boot floor cling"
+        },
+        {
+          "url": "/images/leap26-bar.jpg",
+          "context": "Key elements - LEAP 26 signage"
+        },
+        {
+          "url": "/images/leap26-stage-scale.jpg",
+          "context": "Experience - stage-scale"
+        },
+        {
+          "url": "/images/leap26-attendees.jpg",
+          "context": "Experience - attendees"
+        },
+        {
+          "url": "/images/leap26-trophy.jpg",
+          "context": "Experience - trophy"
+        },
+        {
+          "url": "/images/leap26-stage-wide.jpg",
+          "context": "Experience - stage-wide"
+        },
+        {
+          "url": "/images/leap26-video-set.jpg",
+          "context": "Experience - video-set"
+        },
+        {
+          "url": "/images/leap26-london-logo.jpg",
+          "context": "LEAP London - london-logo"
+        },
+        {
+          "url": "/images/leap26-london-signage.jpg",
+          "context": "LEAP London - london-signage"
+        },
+        {
+          "url": "/images/leap26-london-demo.jpg",
+          "context": "LEAP London - london-demo"
+        }
+      ],
+      "videos": [
+        {
+          "type": "vimeo iframe embed",
+          "src": "https://player.vimeo.com/video/1237324209?badge=0&autopause=0&player_id=0&app_id=58479",
+          "title": "LEAP 2026 Promo Video",
+          "context": "LEAP 2026 Promo Video"
+        },
+        {
+          "type": "vimeo iframe embed",
+          "src": "https://player.vimeo.com/video/1237324210?badge=0&autopause=0&player_id=0&app_id=58479",
+          "title": "LEAP 2026 Recap Ft Worth",
+          "context": "LEAP 2026 Recap Ft Worth"
+        },
+        {
+          "type": "native html5 background video",
+          "mp4": "/videos/leap26-web-scroll.mp4",
+          "poster": "/images/leap26-web-scroll-poster.jpg",
+          "context": "Web - Fort Worth registration site scroll",
+          "framed": true
+        }
+      ],
+      "mediaLayout": {
+        "hero": "https://cdn.prod.website-files.com/67f733c8c6d6130ce0a21ac5/69b46e7c5762c78ae2c8c798_LEAP-26_cover.jpg",
+        "blocks": [
+          {
+            "after": "LEAP 26 brand",
+            "columns": 3,
+            "items": [
+              "/images/leap26-swatch-pink.jpg",
+              "/images/leap26-swatch-peach.jpg",
+              "/images/leap26-swatch-purple.jpg",
+              "/images/leap26-swatch-n800.jpg",
+              "/images/leap26-swatch-p50.jpg",
+              "/images/leap26-swatch-p75.jpg"
+            ],
+            "anchorAspect": [
+              1120,
+              644
+            ]
+          },
+          {
+            "after": "Promotion",
+            "columns": 4,
+            "items": [
+              "https://player.vimeo.com/video/1237324209?badge=0&autopause=0&player_id=0&app_id=58479",
+              "/images/leap26-pin.jpg",
+              "/images/leap26-sign.jpg",
+              "/images/leap26-boot-cling.jpg",
+              "/images/leap26-bar.jpg"
+            ],
+            "bento": "hero"
+          },
+          {
+            "after": "Web",
+            "columns": 1,
+            "items": [
+              "/videos/leap26-web-scroll.mp4"
+            ],
+            "anchorAspect": [
+              1280,
+              720
+            ]
+          },
+          {
+            "after": "Experience",
+            "columns": 1,
+            "items": [
+              "https://player.vimeo.com/video/1237324210?badge=0&autopause=0&player_id=0&app_id=58479"
+            ],
+            "anchorAspect": [
+              1280,
+              720
+            ],
+            "side": true
+          },
+          {
+            "after": "Experience",
+            "columns": 3,
+            "items": [
+              "/images/leap26-stage-scale.jpg",
+              "/images/leap26-attendees.jpg",
+              "/images/leap26-trophy.jpg",
+              "/images/leap26-stage-wide.jpg",
+              "/images/leap26-video-set.jpg"
+            ],
+            "anchorAspect": [
+              2000,
+              1334
+            ],
+            "bento": true
+          },
+          {
+            "after": "LEAP London 2026",
+            "columns": 3,
+            "items": [
+              "/images/leap26-london-logo.jpg",
+              "/images/leap26-london-signage.jpg",
+              "/images/leap26-london-demo.jpg"
+            ],
+            "anchorAspect": [
+              1600,
+              900
+            ]
+          }
+        ]
+      }
+    },
     "quantum-metric-leap-2025": {
       "title": "Quantum Metric LEAP 2025",
       "metaDescription": null,

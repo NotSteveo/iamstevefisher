@@ -11,6 +11,17 @@ export default function CaseStudyVideo({
   rounded?: boolean;
   className?: string;
 }) {
+  // Stand-in until the real Vimeo URL exists: swap the entry's type to
+  // "vimeo iframe embed" and set src to the player URL.
+  if (video.type === "placeholder") {
+    return (
+      <div className={`${styles.embedWrap} ${styles.placeholder} ${rounded ? styles.rounded : ""} ${className ?? ""}`}>
+        <span>{video.title ?? "Video"}</span>
+        <span className={styles.placeholderNote}>Video coming soon</span>
+      </div>
+    );
+  }
+
   if (video.type.includes("iframe embed") && video.src) {
     return (
       <div className={`${styles.embedWrap} ${rounded ? styles.rounded : ""} ${className ?? ""}`}>
