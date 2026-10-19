@@ -20,8 +20,19 @@ const geistMono = Geist_Mono({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+// Absolute base for social images. Set NEXT_PUBLIC_SITE_URL to the real domain;
+// on Vercel the production domain is picked up automatically.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
+
 export const metadata: Metadata = {
-  title: "I am Steve Fisher - Art Direction, Motion Design, Web Design, and more.",
+  title: { default: "Steve Fisher — Creative Director", template: "%s | Steve Fisher" },
+  metadataBase: new URL(siteUrl),
+  openGraph: { siteName: "Steve Fisher", type: "website" },
+  twitter: { card: "summary_large_image" },
   description:
     "Steve Fisher is a creative director working at the intersection of brand and AI, helping SaaS companies tell better stories, build stronger brands, and create smarter digital experiences.",
 };

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { asset } from "@/lib/assets";
+import { asset, posterFor } from "@/lib/assets";
 import type { WorkCard as WorkCardType } from "@/lib/content";
 import MotionVideo from "./MotionVideo";
 import styles from "./WorkCard.module.css";
@@ -22,7 +22,7 @@ export default function WorkCard({
             <MotionVideo
               className={styles.image}
               src={asset(project.coverVideoMp4)}
-              poster={project.coverImage ? asset(project.coverImage) : undefined}
+              poster={project.coverImage ? asset(project.coverImage) : posterFor(asset(project.coverVideoMp4))}
               autoPlay
               loop
               muted

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { asset } from "@/lib/assets";
+import { asset, posterFor } from "@/lib/assets";
 import type { WorkCard } from "@/lib/content";
 import MotionVideo from "./MotionVideo";
 import styles from "./AiMusingsCard.module.css";
@@ -13,7 +13,7 @@ export default function AiMusingsCard({ post }: { post: WorkCard }) {
           <MotionVideo
             className={styles.thumb}
             src={asset(post.coverVideoMp4)}
-            poster={post.coverImage ? asset(post.coverImage) : undefined}
+            poster={post.coverImage ? asset(post.coverImage) : posterFor(asset(post.coverVideoMp4))}
             autoPlay
             loop
             muted

@@ -9,6 +9,7 @@ import FullScreenNav from "./FullScreenNav";
 import MenuToggleButton from "./MenuToggleButton";
 import styles from "./HeroRevealTriptych.module.css";
 import MotionVideo from "./MotionVideo";
+import { posterFor } from "@/lib/assets";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -586,6 +587,7 @@ export default function HeroRevealTriptych() {
                   <MotionVideo
                     className={styles.media}
                     src={panel.src}
+                    poster={posterFor(panel.src)}
                     muted
                     autoPlay
                     loop

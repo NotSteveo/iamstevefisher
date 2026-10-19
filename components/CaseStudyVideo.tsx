@@ -1,4 +1,4 @@
-import { asset } from "@/lib/assets";
+import { asset, posterFor } from "@/lib/assets";
 import type { VideoRef } from "@/lib/content";
 import MotionVideo from "./MotionVideo";
 import styles from "./CaseStudyVideo.module.css";
@@ -43,7 +43,7 @@ export default function CaseStudyVideo({
     <MotionVideo
       className={`${styles.video} ${rounded ? styles.rounded : ""} ${className ?? ""}`}
       src={asset(video.mp4)}
-      poster={video.poster ? asset(video.poster) : undefined}
+      poster={video.poster ? asset(video.poster) : posterFor(asset(video.mp4))}
       autoPlay
       loop
       muted

@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "I am Steve Fisher - Work",
+  title: "Work",
   description: workIndex.metaDescription ?? undefined,
 };
 

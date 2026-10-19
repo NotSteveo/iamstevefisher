@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "I am Steve Fisher - About",
+  title: "About",
   description: "About Steve Fisher",
 };
 

@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "I am Steve Fisher - Art Direction, Motion Design, Web Design, and more.",
+  title: { absolute: "Steve Fisher — Creative Director" },
   description:
     "Steve Fisher is a creative director working at the intersection of brand and AI, helping SaaS companies tell better stories, build stronger brands, and create smarter digital experiences.",
 };

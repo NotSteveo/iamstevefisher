@@ -5,7 +5,7 @@ import PageContactSection from "@/components/PageContactSection";
 import styles from "./contact.module.css";
 
 export const metadata: Metadata = {
-  title: "I am Steve Fisher - Contact",
+  title: "Contact",
   description: contact.metaDescription ?? undefined,
 };
 

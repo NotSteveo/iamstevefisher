@@ -6,7 +6,7 @@ import PageContactSection from "@/components/PageContactSection";
 import styles from "./ai-musings.module.css";
 
 export const metadata: Metadata = {
-  title: "I am Steve Fisher - AI Musings",
+  title: "AI Musings",
   description: aiMusingsIndex.metaDescription ?? undefined,
 };
 

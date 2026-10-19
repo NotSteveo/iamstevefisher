@@ -15,3 +15,10 @@ export function altFor(ref: { alt?: string; context?: string }): string {
   const explicit = ctx.match(/alt:\s*(.+)$/i);
   return explicit ? explicit[1].trim() : ctx;
 }
+
+/** Poster frame (public/posters/<name>.jpg) for a local /videos/... file; undefined for anything else. */
+export function posterFor(videoSrc: string | undefined | null): string | undefined {
+  if (!videoSrc || !videoSrc.startsWith("/videos/")) return undefined;
+  const name = videoSrc.split("/").pop()!.replace(/\.(mp4|webm)$/i, "");
+  return `/posters/${name}.jpg`;
+}
